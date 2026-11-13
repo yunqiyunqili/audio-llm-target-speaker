@@ -1,0 +1,206 @@
+{
+  "annotation_dir": "<SHARED_ROOT>/data/slurp/annotations/8eb1654",
+  "rules": {
+    "A": "status==correct & wer==0 & ent_wer==0",
+    "B": "status==correct"
+  },
+  "usrid_gender_prefixes": {
+    "FO": 25107,
+    "FE": 17045,
+    "MO": 11246,
+    "UNK": 7205,
+    "ME": 11792
+  },
+  "usrid_numbers_with_conflicting_prefix": [],
+  "splits": {
+    "train": {
+      "slurp_records": 11514,
+      "recordings_all": 50628,
+      "headset_recordings": 24210,
+      "headset_missing_in_metadata": 0,
+      "headset_status_mismatch_jsonl_vs_metadata": 0,
+      "headset_speakers": 124,
+      "headset_ent_wer_null": 9138,
+      "headset_without_entities": 9034,
+      "headset_status_counts": {
+        "correct": 24210
+      },
+      "A": {
+        "recordings": 10474,
+        "speakers": 116,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 18,
+          "FO": 32,
+          "MO": 20,
+          "UNK": 24
+        },
+        "speakers_by_gender": {
+          "F": 54,
+          "M": 38,
+          "UNK": 24
+        },
+        "recordings_ent_wer_null": 0,
+        "recordings_ent_wer_null_with_entities": 0,
+        "recordings_without_entities": 0,
+        "groups_intent_typeset": 782,
+        "pairable_pairs": 371911,
+        "pairable_pairs_same_gender": 160785,
+        "recordings_with_at_least_one_partner": 9525
+      },
+      "B": {
+        "recordings": 24210,
+        "speakers": 124,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 18,
+          "FO": 33,
+          "MO": 21,
+          "UNK": 30
+        },
+        "speakers_by_gender": {
+          "F": 55,
+          "M": 39,
+          "UNK": 30
+        },
+        "recordings_ent_wer_null": 9138,
+        "recordings_ent_wer_null_with_entities": 107,
+        "recordings_without_entities": 9034,
+        "groups_intent_typeset": 964,
+        "pairable_pairs": 722147,
+        "pairable_pairs_same_gender": 303801,
+        "recordings_with_at_least_one_partner": 13868
+      }
+    },
+    "devel": {
+      "slurp_records": 2033,
+      "recordings_all": 8690,
+      "headset_recordings": 4173,
+      "headset_missing_in_metadata": 0,
+      "headset_status_mismatch_jsonl_vs_metadata": 0,
+      "headset_speakers": 110,
+      "headset_ent_wer_null": 1466,
+      "headset_without_entities": 1456,
+      "headset_status_counts": {
+        "correct": 4173
+      },
+      "A": {
+        "recordings": 1936,
+        "speakers": 107,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 17,
+          "FO": 31,
+          "MO": 20,
+          "UNK": 17
+        },
+        "speakers_by_gender": {
+          "F": 53,
+          "M": 37,
+          "UNK": 17
+        },
+        "recordings_ent_wer_null": 0,
+        "recordings_ent_wer_null_with_entities": 0,
+        "recordings_without_entities": 0,
+        "groups_intent_typeset": 318,
+        "pairable_pairs": 13074,
+        "pairable_pairs_same_gender": 5753,
+        "recordings_with_at_least_one_partner": 1524
+      },
+      "B": {
+        "recordings": 4173,
+        "speakers": 110,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 18,
+          "FO": 31,
+          "MO": 20,
+          "UNK": 19
+        },
+        "speakers_by_gender": {
+          "F": 53,
+          "M": 38,
+          "UNK": 19
+        },
+        "recordings_ent_wer_null": 1466,
+        "recordings_ent_wer_null_with_entities": 10,
+        "recordings_without_entities": 1456,
+        "groups_intent_typeset": 383,
+        "pairable_pairs": 25153,
+        "pairable_pairs_same_gender": 10506,
+        "recordings_with_at_least_one_partner": 2203
+      }
+    },
+    "test": {
+      "slurp_records": 2974,
+      "recordings_all": 13078,
+      "headset_recordings": 6281,
+      "headset_missing_in_metadata": 0,
+      "headset_status_mismatch_jsonl_vs_metadata": 0,
+      "headset_speakers": 115,
+      "headset_ent_wer_null": 2355,
+      "headset_without_entities": 2321,
+      "headset_status_counts": {
+        "correct": 6281
+      },
+      "A": {
+        "recordings": 2856,
+        "speakers": 113,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 18,
+          "FO": 32,
+          "MO": 20,
+          "UNK": 21
+        },
+        "speakers_by_gender": {
+          "F": 54,
+          "M": 38,
+          "UNK": 21
+        },
+        "recordings_ent_wer_null": 0,
+        "recordings_ent_wer_null_with_entities": 0,
+        "recordings_without_entities": 0,
+        "groups_intent_typeset": 391,
+        "pairable_pairs": 27875,
+        "pairable_pairs_same_gender": 12272,
+        "recordings_with_at_least_one_partner": 2353
+      },
+      "B": {
+        "recordings": 6281,
+        "speakers": 115,
+        "speakers_by_prefix": {
+          "FE": 22,
+          "ME": 18,
+          "FO": 33,
+          "MO": 20,
+          "UNK": 22
+        },
+        "speakers_by_gender": {
+          "F": 55,
+          "M": 38,
+          "UNK": 22
+        },
+        "recordings_ent_wer_null": 2355,
+        "recordings_ent_wer_null_with_entities": 34,
+        "recordings_without_entities": 2321,
+        "groups_intent_typeset": 462,
+        "pairable_pairs": 49873,
+        "pairable_pairs_same_gender": 21526,
+        "recordings_with_at_least_one_partner": 3304
+      }
+    }
+  },
+  "speaker_overlap_between_splits": {
+    "A": {
+      "train&devel": 106,
+      "train&test": 106,
+      "devel&test": 104
+    },
+    "B": {
+      "train&devel": 109,
+      "train&test": 111,
+      "devel&test": 106
+    }
+  }
+}

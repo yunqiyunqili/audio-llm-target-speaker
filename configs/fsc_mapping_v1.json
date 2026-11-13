@@ -1,0 +1,71 @@
+{
+ "version": "fsc_mapping_v1",
+ "frozen_by": "docs/fsc_extension_plan_v1.md section 2 (project lead decision 2026-11-12)",
+ "sources": {
+  "a": "label definitions: SLURP intent / entity-type names (configs/slurp_label_inventory_train.json, sha256 a3e86457fafa4aaf60f28654f3778a278b29132068977285b3996c46773880e9) and the 31 FSC (action, object, location) triples",
+  "b": "frequency in FSC TRAIN annotations (data/fsc/source/fluent_speech_commands_dataset/data/train_data.csv, 23,132 records): count = number of train records whose transcription contains the word, by label",
+  "excluded": "no model output of any kind was used to define or adjust any rule"
+ },
+ "applies_to": "model structured output only: parsed intent and entity values (normalize_v2, whole-word match inside each value); the transcript field is NOT used",
+ "object_keywords": {
+  "rule": "first entity (output order) whose normalized value contains one of the words below as a whole word determines the object; keywords = FSC train words with >= 95% of their records in one object class and >= 20 records that name the object or its degree; function words and verbs are not keywords (listed under object_keywords_rejected)",
+  "lights": {"words": ["lights"], "basis": "a (label word) + b", "counts": {"lights": "4794/4794 lights"}, "note": "singular 'light' never occurs in FSC train (0 records) and is not a keyword"},
+  "lamp": {"words": ["lamp"], "basis": "a + b", "counts": {"lamp": "792/792 lamp"}},
+  "heat": {"words": ["heat", "temperature", "heating", "hotter", "cooler"], "basis": "b (only words occurring in FSC train sentences whose object is heat)", "counts": {"heat": "2946/2946 heat", "temperature": "2805/2805", "heating": "1322/1322", "hotter": "92/92", "cooler": "90/90"}},
+  "volume": {"words": ["volume", "sound", "louder", "loud", "quiet", "quieter", "audio", "softer"], "basis": "a (label word) + b", "counts": {"volume": "2203/2203 volume", "sound": "647/647", "louder": "492/492", "loud": "476/476", "quiet": "278/278", "quieter": "192/192", "audio": "190/190", "softer": "100/100"}},
+  "juice": {"words": ["juice"], "basis": "a + b", "counts": {"juice": "466/466"}},
+  "newspaper": {"words": ["newspaper"], "basis": "a + b", "counts": {"newspaper": "551/551"}},
+  "socks": {"words": ["socks"], "basis": "a + b", "counts": {"socks": "538/538"}},
+  "shoes": {"words": ["shoes"], "basis": "a + b", "counts": {"shoes": "536/536"}},
+  "Chinese": {"words": ["chinese"], "basis": "a + b", "counts": {"chinese": "449/449 Chinese"}},
+  "English": {"words": ["english"], "basis": "a + b", "counts": {"english": "349/349 English"}},
+  "German": {"words": ["german"], "basis": "a + b", "counts": {"german": "342/342 German"}},
+  "Korean": {"words": ["korean"], "basis": "a + b", "counts": {"korean": "345/345 Korean"}},
+  "music": {"words": [], "basis": "b", "counts": {"music": "988 music / 198 volume = 83% < 95%"}, "note": "no keyword; object music only via the play_music default"}
+ },
+ "object_keywords_rejected": {
+  "rule": ">= 95% concentrated but not a name of the object or its degree (verbs, function words, carrier words); listed for transparency, not used",
+  "words": {"could": "371 heat", "you": "371 heat", "more": "95 heat", "less": "90 heat", "some": "375 juice", "device": "89 Chinese", "stop": "287 music", "play": "285 music", "pause": "242 music", "resume": "197 music", "put": "105 music", "start": "105 music", "too": "844 volume", "hear": "283 volume", "that's": "195 volume", "lower": "191 volume", "it's": "190 volume", "far": "188 volume", "this": "185 volume", "max": "99 volume", "mute": "99 volume", "phone": "97 volume", "couldn't": "97 volume", "anything": "97 volume", "reduce": "96 volume", "levels": "93 volume", "can't": "91 volume", "that": "91 volume", "video": "90 volume", "is": "90 volume", "low": "90 volume"}
+ },
+ "object_tie_rule": "if one entity value contains both a lights and a lamp keyword, object = lamp (no FSC triple has both; basis a); otherwise the first matching keyword in the value in the order of the object list above",
+ "location_keywords": {
+  "rule": "first entity value containing one of the words (whole word); none if no match",
+  "kitchen": {"words": ["kitchen"], "basis": "a + b", "counts": {"kitchen": "2608/2608 kitchen"}},
+  "bedroom": {"words": ["bedroom"], "basis": "a + b", "counts": {"bedroom": "2412/2412 bedroom"}},
+  "washroom": {"words": ["washroom", "bathroom"], "basis": "a + b", "counts": {"washroom": "2211/2211 washroom", "bathroom": "1751/1751 washroom"}}
+ },
+ "intent_to_action": {
+  "rule": "action and default object from the parsed SLURP intent; default object used only when no object keyword matched",
+  "iot_hue_lighton": {"action": "activate", "default_object": "lights", "basis": "a"},
+  "iot_hue_lightoff": {"action": "deactivate", "default_object": "lights", "basis": "a"},
+  "iot_hue_lightup": {"action": "increase", "default_object": "lights", "basis": "a"},
+  "iot_hue_lightdim": {"action": "decrease", "default_object": "lights", "basis": "a"},
+  "iot_hue_lightchange": {"action": "unmapped", "default_object": "lights", "basis": "a (colour change has no FSC action)"},
+  "iot_wemo_on": {"action": "activate", "default_object": null, "basis": "a; no default object (project lead decision)"},
+  "iot_wemo_off": {"action": "deactivate", "default_object": null, "basis": "a; no default object (project lead decision)"},
+  "play_music": {"action": "activate", "default_object": "music", "basis": "a + b ('play' 285/285 records are activate music)"},
+  "play_radio": {"action": "activate", "default_object": null, "basis": "a"},
+  "play_podcasts": {"action": "activate", "default_object": null, "basis": "a"},
+  "play_audiobook": {"action": "activate", "default_object": null, "basis": "a"},
+  "audio_volume_up": {"action": "increase", "default_object": "volume", "basis": "a"},
+  "audio_volume_down": {"action": "decrease", "default_object": "volume", "basis": "a"},
+  "audio_volume_mute": {"action": "decrease", "default_object": "volume", "basis": "b ('mute' occurs in 99 FSC train records: 99/99 action decrease, object volume)"},
+  "audio_volume_other": {"action": "unmapped", "default_object": "volume", "basis": "a"},
+  "music_settings": {"action": "unmapped", "default_object": "music", "basis": "a"},
+  "*": {"action": "unmapped", "default_object": null, "basis": "a (the remaining 44 SLURP intents have no FSC action)"}
+ },
+ "object_implies_action": {
+  "rule": "applied after intent_to_action and overrides it (in the 31 FSC triples these objects occur with exactly one action; basis a)",
+  "bring": ["juice", "newspaper", "socks", "shoes"],
+  "change language": ["Chinese", "English", "German", "Korean"],
+  "language_words": {"words": ["language", "languages"], "action": "change language", "object_if_no_language_name": "none", "basis": "b ('language' 2298/2298, 'languages' 92/92 change language)"}
+ },
+ "unmapped_policy": "action 'unmapped' is a wrong action (kept in the denominator); missing object/location -> 'none'",
+ "metrics": {
+  "triple": "(action, object, location) predicted vs gold; 'none' compared as a value",
+  "target_any": "PRIMARY: >= 1 gold slot whose gold value is not 'none' has an equal predicted value (same slot)",
+  "intent_exact": "descriptive: all three slots equal",
+  "intent_family": "descriptive: action and object equal (location ignored)",
+  "binding": "two-speaker: binding_score_v1.judge on slot-value multisets D_T = T - I, D_I = I - T (non-'none' (slot, value) pairs); hit = predicted (slot, value) pairs"
+ }
+}

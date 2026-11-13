@@ -1,0 +1,88 @@
+{
+  "sources": {
+    "blstm_mvdr": "<SEPARATION_REPO>/multichannel/blstm_mvdr/exp/sms_blstm_mvdr_v1/test_utterances.jsonl",
+    "oracle_mvdr": "<SEPARATION_REPO>/multichannel/oracle_mvdr/exp/21977751/test/utterances.jsonl",
+    "cacgmm_mvdr": "<SEPARATION_REPO>/multichannel/spatial_baseline/exp/full_21976118/test/utterances.jsonl"
+  },
+  "utterances": 1332,
+  "max_abs_mixture_si_sdr_diff_between_files": 2.86102294921875e-06,
+  "mean": {
+    "blstm_mvdr": {
+      "si_sdr_db": -1.0428,
+      "si_sdri_db": 4.4121,
+      "mixture_si_sdr_db": -5.4549
+    },
+    "oracle_mvdr": {
+      "si_sdr_db": -0.231,
+      "si_sdri_db": 5.2238,
+      "mixture_si_sdr_db": -5.4549
+    },
+    "cacgmm_mvdr": {
+      "si_sdr_db": -0.4138,
+      "si_sdri_db": 5.0411,
+      "mixture_si_sdr_db": -5.4549
+    }
+  },
+  "blstm_minus_oracle_si_sdr": {
+    "mean": -0.8117,
+    "median": -0.5291,
+    "stdev": 1.0737,
+    "frac_blstm_better": 0.1149,
+    "min": -7.5287,
+    "max": 1.8137
+  },
+  "blstm_minus_cacgmm_si_sdr": {
+    "mean": -0.629,
+    "frac_blstm_better": 0.2035
+  },
+  "permutation_agreement_blstm_oracle": 0.4955,
+  "pearson_si_sdr_blstm_vs_oracle": 0.9337,
+  "si_sdri_by_bucket": {
+    "separation_deg": {
+      "[0,15)": {
+        "n": 104,
+        "blstm_mvdr": 2.1394,
+        "oracle_mvdr": 2.015,
+        "cacgmm_mvdr": 0.2941
+      },
+      "[15,30)": {
+        "n": 94,
+        "blstm_mvdr": 3.5796,
+        "oracle_mvdr": 3.8578,
+        "cacgmm_mvdr": 3.3029
+      },
+      "[30,60)": {
+        "n": 207,
+        "blstm_mvdr": 4.5293,
+        "oracle_mvdr": 5.2619,
+        "cacgmm_mvdr": 5.1759
+      },
+      "[60,180.001)": {
+        "n": 927,
+        "blstm_mvdr": 4.7253,
+        "oracle_mvdr": 5.7139,
+        "cacgmm_mvdr": 5.7198
+      }
+    },
+    "t60_s": {
+      "[0.2,0.3)": {
+        "n": 436,
+        "blstm_mvdr": 5.2603,
+        "oracle_mvdr": 6.147,
+        "cacgmm_mvdr": 5.9489
+      },
+      "[0.3,0.4)": {
+        "n": 448,
+        "blstm_mvdr": 4.1933,
+        "oracle_mvdr": 5.0187,
+        "cacgmm_mvdr": 4.908
+      },
+      "[0.4,0.501)": {
+        "n": 448,
+        "blstm_mvdr": 3.8055,
+        "oracle_mvdr": 4.5305,
+        "cacgmm_mvdr": 4.2906
+      }
+    }
+  }
+}

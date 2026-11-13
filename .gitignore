@@ -1,0 +1,17 @@
+data/
+outputs/
+checkpoints/
+*.wav
+*.flac
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+envs/
+data
+checkpoints
+envs
+# CSV > 1 MB: not committed (regenerability reported in docs/log)
+results/sms_wsj_geometry/train_si284_per_mixture.csv
+__pycache__/
+*.pyc

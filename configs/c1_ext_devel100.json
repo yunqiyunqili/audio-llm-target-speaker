@@ -1,0 +1,1939 @@
+{
+ "seed": 2026,
+ "n": 100,
+ "source": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/devel_recordings.csv",
+ "rule": "Select 100 DEVEL recordings (split_v2_seed2026) for the C1 extension (P0 / P1 / T0) + 3 fixed TRAIN examples. List only.\n\nPopulation: DATA/devel_recordings.csv (v2 devel; rule A; intent = scenario_action). Test is never read.\nPriority tiers (a recording's best tier counts):\n  1 = in >= 1 devel candidate pair with same gender and |duration diff| <= 1 s (the formal-pair criterion)\n  2 = in >= 1 devel candidate pair (any gender / duration)\n  3 = in no candidate pair\nStratification by scenario_action: quota_s = proportional to the number of DISTINCT slurp_ids of s in devel,\n  largest-remainder rounding to N=100. Within a stratum: recordings sorted by file, random.Random(2026) shuffle,\n  then stable-sorted by tier; greedy pick with distinct slurp_id (one recording per sentence).\n  If a stratum cannot fill its quota, the shortfall is filled from the remaining recordings of all strata in the\n  same (tier, shuffled) order.\nExamples for P1: 3 recordings' TEXT + labels from DATA/train_recordings.csv (v2 train): sorted by file, same seed\n  shuffle, greedy: >= 1 entity, distinct scenarios, no shared entity type, entity values without \" 's\" tokens.\n",
+ "stats": {
+  "n": 100,
+  "strata_in_devel": 49,
+  "strata_in_sample": 40,
+  "quota_shortfall_filled_globally": 0,
+  "tier_counts": {
+   "3": 8,
+   "2": 16,
+   "1": 76
+  },
+  "devel_tier_counts": {
+   "2": 99,
+   "1": 192,
+   "3": 137
+  },
+  "speakers": 10,
+  "gender": {
+   "F": 80,
+   "M": 20
+  },
+  "source_split": {
+   "train": 64,
+   "devel": 36
+  },
+  "with_entities": 100,
+  "n_entities": 128,
+  "overlap_with_c1_devel20": 5,
+  "seconds_min": 0.96,
+  "seconds_max": 7.488
+ },
+ "quota": {
+  "email_sendemail": 3,
+  "calendar_query": 8,
+  "calendar_set": 7,
+  "iot_hue_lightchange": 1,
+  "iot_cleaning": 2,
+  "play_music": 8,
+  "datetime_query": 4,
+  "calendar_remove": 3,
+  "qa_definition": 4,
+  "transport_taxi": 2,
+  "email_query": 3,
+  "iot_hue_lightoff": 1,
+  "weather_query": 8,
+  "iot_wemo_on": 1,
+  "play_podcasts": 2,
+  "news_query": 5,
+  "recommendation_events": 1,
+  "lists_remove": 1,
+  "qa_currency": 1,
+  "social_post": 2,
+  "recommendation_locations": 2,
+  "qa_factoid": 6,
+  "play_game": 2,
+  "recommendation_movies": 0,
+  "lists_createoradd": 1,
+  "qa_stock": 1,
+  "email_querycontact": 2,
+  "lists_query": 0,
+  "takeaway_order": 2,
+  "transport_query": 2,
+  "iot_coffee": 1,
+  "cooking_recipe": 2,
+  "audio_volume_up": 1,
+  "alarm_query": 1,
+  "audio_volume_down": 0,
+  "takeaway_query": 1,
+  "music_likeness": 1,
+  "audio_volume_mute": 0,
+  "play_radio": 2,
+  "social_query": 1,
+  "general_quirky": 2,
+  "alarm_set": 1,
+  "iot_hue_lightdim": 1,
+  "email_addcontact": 0,
+  "transport_ticket": 1,
+  "music_settings": 0,
+  "play_audiobook": 0,
+  "transport_traffic": 0,
+  "general_joke": 0
+ },
+ "examples_train": [
+  {
+   "file": "audio-1497862409-headset.flac",
+   "slurp_id": 6807,
+   "sentence": "delete all the events of today",
+   "intent": "calendar_remove",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ]
+  },
+  {
+   "file": "audio-1498757564-headset.flac",
+   "slurp_id": 2743,
+   "sentence": "show me news from cnn for today",
+   "intent": "news_query",
+   "entities": [
+    [
+     "media_type",
+     "cnn"
+    ]
+   ]
+  },
+  {
+   "file": "audio-1495733363-headset.flac",
+   "slurp_id": 2418,
+   "sentence": "put the current song on repeat",
+   "intent": "music_settings",
+   "entities": [
+    [
+     "player_setting",
+     "repeat"
+    ]
+   ]
+  }
+ ],
+ "items": [
+  {
+   "file": "audio-1501692417-headset.flac",
+   "slurp_id": 5120,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 3.648,
+   "sentence": "check if any alarm is there after five am",
+   "intent": "alarm_query",
+   "entities": [
+    [
+     "time",
+     "five am"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 3
+  },
+  {
+   "file": "audio-1501694597-headset.flac",
+   "slurp_id": 534,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.56,
+   "sentence": "set a wake up call for ten am",
+   "intent": "alarm_set",
+   "entities": [
+    [
+     "time",
+     "ten am"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497438541-headset.flac",
+   "slurp_id": 1682,
+   "usrid": "MO-189",
+   "gender": "M",
+   "seconds": 5.632,
+   "sentence": "set the music volume to ninety",
+   "intent": "audio_volume_up",
+   "entities": [
+    [
+     "change_amount",
+     "to ninety"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 3
+  },
+  {
+   "file": "audio-1490368435-headset.flac",
+   "slurp_id": 8046,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 1.984,
+   "sentence": "how many meetings do i have next week",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "next week"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490263479-headset.flac",
+   "slurp_id": 7396,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 3.136,
+   "sentence": "are there any events schedule for this week",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "this week"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498574116-headset.flac",
+   "slurp_id": 7488,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "appointments this wednesday",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "wednesday"
+    ],
+    [
+     "event_name",
+     "appointments"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1497270694-headset.flac",
+   "slurp_id": 7818,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 2.88,
+   "sentence": "do i have a meeting tomorrow",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "tomorrow"
+    ],
+    [
+     "event_name",
+     "meeting"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490368390-headset.flac",
+   "slurp_id": 7065,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 2.496,
+   "sentence": "what events are in my calendar for today",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490262044-headset.flac",
+   "slurp_id": 8355,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.728,
+   "sentence": "is there a holiday on the twenty second",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "twenty second"
+    ],
+    [
+     "event_name",
+     "holiday"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490367437-headset.flac",
+   "slurp_id": 7600,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 2.432,
+   "sentence": "do i have any events happening next week",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "next week"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1499244312-headset.flac",
+   "slurp_id": 7071,
+   "usrid": "MO-374",
+   "gender": "M",
+   "seconds": 2.496,
+   "sentence": "what are my reminders today",
+   "intent": "calendar_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498573573-headset.flac",
+   "slurp_id": 8636,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.944,
+   "sentence": "can you delete the doctors appointment i had tuesday",
+   "intent": "calendar_remove",
+   "entities": [
+    [
+     "date",
+     "tuesday"
+    ],
+    [
+     "event_name",
+     "doctors appointment"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694806-headset.flac",
+   "slurp_id": 7115,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 3.52,
+   "sentence": "remove my car payment on the fifteenth from my calendar",
+   "intent": "calendar_remove",
+   "entities": [
+    [
+     "date",
+     "fifteenth"
+    ],
+    [
+     "event_name",
+     "car payment"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694727-headset.flac",
+   "slurp_id": 7999,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 4.864,
+   "sentence": "please remove the parent teacher conference scheduled on march seven",
+   "intent": "calendar_remove",
+   "entities": [
+    [
+     "date",
+     "march seven"
+    ],
+    [
+     "event_name",
+     "parent teacher conference"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1490198903-headset.flac",
+   "slurp_id": 7097,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.56,
+   "sentence": "add my doctor appointment for the fifteenth",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "date",
+     "fifteenth"
+    ],
+    [
+     "event_name",
+     "doctor appointment"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio--1505323885-headset.flac",
+   "slurp_id": 9006,
+   "usrid": "FE-491",
+   "gender": "F",
+   "seconds": 2.816,
+   "sentence": "set a birthday event for wednesday",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "date",
+     "wednesday"
+    ],
+    [
+     "event_name",
+     "birthday"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490366448-headset.flac",
+   "slurp_id": 7593,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 2.56,
+   "sentence": "remind me to turn off the lights in ten minutes",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "event_name",
+     "turn off the lights"
+    ],
+    [
+     "time",
+     "in ten minutes"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497272055-headset.flac",
+   "slurp_id": 8808,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 5.12,
+   "sentence": "do i need to be reminded of any meetings on monday",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "date",
+     "monday"
+    ],
+    [
+     "event_name",
+     "meetings"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497270542-headset.flac",
+   "slurp_id": 9189,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 3.136,
+   "sentence": "remind me about the meeting in one hour",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "event_name",
+     "meeting"
+    ],
+    [
+     "time",
+     "one hour"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1498573229-headset.flac",
+   "slurp_id": 9013,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.944,
+   "sentence": "remind me on fifth april there is a meeting with boss",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "date",
+     "fifth april"
+    ],
+    [
+     "event_name",
+     "meeting"
+    ],
+    [
+     "relation",
+     "boss"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497438989-headset.flac",
+   "slurp_id": 7653,
+   "usrid": "MO-189",
+   "gender": "M",
+   "seconds": 6.208,
+   "sentence": "don't forget to remind me of my brother's birthday on april twenty",
+   "intent": "calendar_set",
+   "entities": [
+    [
+     "date",
+     "april twenty"
+    ],
+    [
+     "event_name",
+     "birthday"
+    ],
+    [
+     "relation",
+     "brother 's"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1498573180-headset.flac",
+   "slurp_id": 10195,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.176,
+   "sentence": "recipe for crabmeat",
+   "intent": "cooking_recipe",
+   "entities": [
+    [
+     "food_type",
+     "crabmeat"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498566583-headset.flac",
+   "slurp_id": 10124,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.048,
+   "sentence": "how do i make peanut butter cookies",
+   "intent": "cooking_recipe",
+   "entities": [
+    [
+     "food_type",
+     "peanut butter cookies"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1499246453-headset.flac",
+   "slurp_id": 434,
+   "usrid": "MO-374",
+   "gender": "M",
+   "seconds": 1.856,
+   "sentence": "what day is it today",
+   "intent": "datetime_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490261656-headset.flac",
+   "slurp_id": 6018,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.92,
+   "sentence": "time in chicago",
+   "intent": "datetime_query",
+   "entities": [
+    [
+     "place_name",
+     "chicago"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490262976-headset.flac",
+   "slurp_id": 1795,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "what is the date today",
+   "intent": "datetime_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490199143-headset.flac",
+   "slurp_id": 2835,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.664,
+   "sentence": "tell me the date today",
+   "intent": "datetime_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498573552-headset.flac",
+   "slurp_id": 16825,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.856,
+   "sentence": "check for all emails from tom brady",
+   "intent": "email_query",
+   "entities": [
+    [
+     "person",
+     "tom brady"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1490291383-headset.flac",
+   "slurp_id": 17076,
+   "usrid": "ME-352",
+   "gender": "M",
+   "seconds": 2.048,
+   "sentence": "did i get any emails from sam today",
+   "intent": "email_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ],
+    [
+     "person",
+     "sam"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497439493-headset.flac",
+   "slurp_id": 16580,
+   "usrid": "MO-189",
+   "gender": "M",
+   "seconds": 7.488,
+   "sentence": "google find the new email address for bill that i added friday",
+   "intent": "email_query",
+   "entities": [
+    [
+     "date",
+     "friday"
+    ],
+    [
+     "person",
+     "bill"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1490199777-headset.flac",
+   "slurp_id": 16155,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.112,
+   "sentence": "what is the address of tara john",
+   "intent": "email_querycontact",
+   "entities": [
+    [
+     "person",
+     "tara john"
+    ],
+    [
+     "personal_info",
+     "address"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498572681-headset.flac",
+   "slurp_id": 15870,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.304,
+   "sentence": "what is email id of john",
+   "intent": "email_querycontact",
+   "entities": [
+    [
+     "person",
+     "john"
+    ],
+    [
+     "personal_info",
+     "email i d"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498573886-headset.flac",
+   "slurp_id": 17027,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.56,
+   "sentence": "let's email sandy",
+   "intent": "email_sendemail",
+   "entities": [
+    [
+     "person",
+     "sandy"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1497270056-headset.flac",
+   "slurp_id": 16119,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 2.496,
+   "sentence": "send to jane only help",
+   "intent": "email_sendemail",
+   "entities": [
+    [
+     "person",
+     "jane"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490199179-headset.flac",
+   "slurp_id": 16479,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.728,
+   "sentence": "reply to mark's email",
+   "intent": "email_sendemail",
+   "entities": [
+    [
+     "person",
+     "mark 's"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490366858-headset.flac",
+   "slurp_id": 13617,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 3.904,
+   "sentence": "tell me the most strange thing happening in the world today",
+   "intent": "general_quirky",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 3
+  },
+  {
+   "file": "audio-1498573440-headset.flac",
+   "slurp_id": 6548,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.112,
+   "sentence": "today was a tiring day",
+   "intent": "general_quirky",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 3
+  },
+  {
+   "file": "audio-1498566415-headset.flac",
+   "slurp_id": 1943,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.536,
+   "sentence": "start house cleanup",
+   "intent": "iot_cleaning",
+   "entities": [
+    [
+     "house_place",
+     "house"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694660-headset.flac",
+   "slurp_id": 26,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 1.536,
+   "sentence": "clean the flat",
+   "intent": "iot_cleaning",
+   "entities": [
+    [
+     "house_place",
+     "flat"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490198849-headset.flac",
+   "slurp_id": 1569,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.856,
+   "sentence": "can i have an espresso please",
+   "intent": "iot_coffee",
+   "entities": [
+    [
+     "coffee_type",
+     "espresso"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1498572419-headset.flac",
+   "slurp_id": 496,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "change the light color to blue",
+   "intent": "iot_hue_lightchange",
+   "entities": [
+    [
+     "color_type",
+     "blue"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 2
+  },
+  {
+   "file": "audio-1490263026-headset.flac",
+   "slurp_id": 2015,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.984,
+   "sentence": "dim the lights in the bathroom",
+   "intent": "iot_hue_lightdim",
+   "entities": [
+    [
+     "house_place",
+     "bathroom"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694879-headset.flac",
+   "slurp_id": 553,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.624,
+   "sentence": "turn the lights off in the living room",
+   "intent": "iot_hue_lightoff",
+   "entities": [
+    [
+     "house_place",
+     "living room"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490368934-headset.flac",
+   "slurp_id": 5048,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 2.496,
+   "sentence": "on mobile charger plug",
+   "intent": "iot_wemo_on",
+   "entities": [
+    [
+     "device_type",
+     "mobile charger plug"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694719-headset.flac",
+   "slurp_id": 10627,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.944,
+   "sentence": "put pencil on a new grocery list",
+   "intent": "lists_createoradd",
+   "entities": [
+    [
+     "list_name",
+     "grocery"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694767-headset.flac",
+   "slurp_id": 10935,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.24,
+   "sentence": "remove grocery list please",
+   "intent": "lists_remove",
+   "entities": [
+    [
+     "list_name",
+     "grocery"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501692381-headset.flac",
+   "slurp_id": 145,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 1.92,
+   "sentence": "i like jazz",
+   "intent": "music_likeness",
+   "entities": [
+    [
+     "music_genre",
+     "jazz"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 2
+  },
+  {
+   "file": "audio-1490263658-headset.flac",
+   "slurp_id": 5926,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.752,
+   "sentence": "search for the latest news about iphone",
+   "intent": "news_query",
+   "entities": [
+    [
+     "news_topic",
+     "iphone"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498565173-headset.flac",
+   "slurp_id": 2755,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.92,
+   "sentence": "recent conroe news",
+   "intent": "news_query",
+   "entities": [
+    [
+     "place_name",
+     "conroe"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490261861-headset.flac",
+   "slurp_id": 5326,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "how are things in the world",
+   "intent": "news_query",
+   "entities": [
+    [
+     "place_name",
+     "world"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio--1505323842-headset.flac",
+   "slurp_id": 1269,
+   "usrid": "FE-491",
+   "gender": "F",
+   "seconds": 2.304,
+   "sentence": "what's going on in the world right now",
+   "intent": "news_query",
+   "entities": [
+    [
+     "news_topic",
+     "world"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498564967-headset.flac",
+   "slurp_id": 1583,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 3.392,
+   "sentence": "get the latest news about formula one racing please",
+   "intent": "news_query",
+   "entities": [
+    [
+     "news_topic",
+     "formula one racing"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498572831-headset.flac",
+   "slurp_id": 10344,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.536,
+   "sentence": "open chess game",
+   "intent": "play_game",
+   "entities": [
+    [
+     "game_name",
+     "chess"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490261275-headset.flac",
+   "slurp_id": 10354,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.24,
+   "sentence": "play for me the game candy crush",
+   "intent": "play_game",
+   "entities": [
+    [
+     "game_name",
+     "candy crush"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490367450-headset.flac",
+   "slurp_id": 4057,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 2.56,
+   "sentence": "can you play emo music please",
+   "intent": "play_music",
+   "entities": [
+    [
+     "music_genre",
+     "emo music"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490262257-headset.flac",
+   "slurp_id": 4936,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 1.856,
+   "sentence": "pull up my party playlist",
+   "intent": "play_music",
+   "entities": [
+    [
+     "playlist_name",
+     "party playlist"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501692959-headset.flac",
+   "slurp_id": 3530,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 1.984,
+   "sentence": "play something romantic",
+   "intent": "play_music",
+   "entities": [
+    [
+     "music_genre",
+     "romantic"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1499244634-headset.flac",
+   "slurp_id": 2117,
+   "usrid": "MO-374",
+   "gender": "M",
+   "seconds": 2.816,
+   "sentence": "play the latest pop song",
+   "intent": "play_music",
+   "entities": [
+    [
+     "music_genre",
+     "pop"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490369087-headset.flac",
+   "slurp_id": 147,
+   "usrid": "MO-355",
+   "gender": "M",
+   "seconds": 1.536,
+   "sentence": "i like to listen to jazz",
+   "intent": "play_music",
+   "entities": [
+    [
+     "music_genre",
+     "jazz"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490200504-headset.flac",
+   "slurp_id": 2700,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "play rock music",
+   "intent": "play_music",
+   "entities": [
+    [
+     "music_genre",
+     "rock"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490199782-headset.flac",
+   "slurp_id": 828,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.112,
+   "sentence": "play newest bob dylan playlist",
+   "intent": "play_music",
+   "entities": [
+    [
+     "artist_name",
+     "bob dylan"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490199188-headset.flac",
+   "slurp_id": 2377,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.24,
+   "sentence": "turn on my electronic playlist",
+   "intent": "play_music",
+   "entities": [
+    [
+     "playlist_name",
+     "electronic"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490263412-headset.flac",
+   "slurp_id": 11348,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.624,
+   "sentence": "hey play that podcast i stopped last night",
+   "intent": "play_podcasts",
+   "entities": [
+    [
+     "podcast_descriptor",
+     "stopped last night"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498572565-headset.flac",
+   "slurp_id": 11407,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.368,
+   "sentence": "play the next podcast episode",
+   "intent": "play_podcasts",
+   "entities": [
+    [
+     "podcast_descriptor",
+     "next podcast episode"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490262905-headset.flac",
+   "slurp_id": 9481,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.496,
+   "sentence": "turn on hot ninety seven",
+   "intent": "play_radio",
+   "entities": [
+    [
+     "radio_name",
+     "hot ninety seven"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498566503-headset.flac",
+   "slurp_id": 9642,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.56,
+   "sentence": "play bbc radio four",
+   "intent": "play_radio",
+   "entities": [
+    [
+     "radio_name",
+     "bbc radio four"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498574109-headset.flac",
+   "slurp_id": 13795,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.816,
+   "sentence": "what is the exchange rate between us and france",
+   "intent": "qa_currency",
+   "entities": [
+    [
+     "currency_name",
+     "france"
+    ],
+    [
+     "currency_name",
+     "us"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 2
+  },
+  {
+   "file": "audio-1498573530-headset.flac",
+   "slurp_id": 14459,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 3.52,
+   "sentence": "please describe the new harley davidson street bike",
+   "intent": "qa_definition",
+   "entities": [
+    [
+     "definition_word",
+     "harley davidson street bike"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1499246946-headset.flac",
+   "slurp_id": 13339,
+   "usrid": "MO-374",
+   "gender": "M",
+   "seconds": 3.712,
+   "sentence": "what does the word hypocrisy mean",
+   "intent": "qa_definition",
+   "entities": [
+    [
+     "definition_word",
+     "hypocrisy"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490292194-headset.flac",
+   "slurp_id": 13139,
+   "usrid": "ME-352",
+   "gender": "M",
+   "seconds": 1.472,
+   "sentence": "what is hurricane",
+   "intent": "qa_definition",
+   "entities": [
+    [
+     "definition_word",
+     "hurricane"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490262606-headset.flac",
+   "slurp_id": 13792,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.816,
+   "sentence": "please describe this sunset for me",
+   "intent": "qa_definition",
+   "entities": [
+    [
+     "definition_word",
+     "this sunset"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1497270966-headset.flac",
+   "slurp_id": 15014,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 2.432,
+   "sentence": "how big is japan",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "place_name",
+     "japan"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694949-headset.flac",
+   "slurp_id": 13232,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 1.792,
+   "sentence": "how old is brad pitt",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "person",
+     "brad pitt"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501692888-headset.flac",
+   "slurp_id": 13968,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.368,
+   "sentence": "when was born abraham lincoln",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "person",
+     "abraham lincoln"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498573260-headset.flac",
+   "slurp_id": 14415,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.624,
+   "sentence": "how much long is atlanta",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "place_name",
+     "atlanta"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490261936-headset.flac",
+   "slurp_id": 12946,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.24,
+   "sentence": "how tall is micheal jackson",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "person",
+     "micheal jackson"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498566475-headset.flac",
+   "slurp_id": 12947,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.664,
+   "sentence": "who is president of poland",
+   "intent": "qa_factoid",
+   "entities": [
+    [
+     "place_name",
+     "poland"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694638-headset.flac",
+   "slurp_id": 14300,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.624,
+   "sentence": "what price google up to",
+   "intent": "qa_stock",
+   "entities": [
+    [
+     "business_name",
+     "google"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501694907-headset.flac",
+   "slurp_id": 12110,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 3.968,
+   "sentence": "find a kid friendly event in my area for tonight",
+   "intent": "recommendation_events",
+   "entities": [
+    [
+     "event_name",
+     "kid friendly event"
+    ],
+    [
+     "timeofday",
+     "tonight"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 3
+  },
+  {
+   "file": "audio-1497271443-headset.flac",
+   "slurp_id": 12116,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 3.584,
+   "sentence": "find tacos near my home",
+   "intent": "recommendation_locations",
+   "entities": [
+    [
+     "business_type",
+     "tacos"
+    ],
+    [
+     "place_name",
+     "home"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498565773-headset.flac",
+   "slurp_id": 11666,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 4.224,
+   "sentence": "i'm looking for some dress shows can you find clothing stores within one mile",
+   "intent": "recommendation_locations",
+   "entities": [
+    [
+     "business_type",
+     "dress shows"
+    ],
+    [
+     "place_name",
+     "within one mile"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490200743-headset.flac",
+   "slurp_id": 15666,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.304,
+   "sentence": "make a complaint to target",
+   "intent": "social_post",
+   "entities": [
+    [
+     "business_name",
+     "target"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498572461-headset.flac",
+   "slurp_id": 15494,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 2.432,
+   "sentence": "i need to write a bad review for yahoo",
+   "intent": "social_post",
+   "entities": [
+    [
+     "business_name",
+     "yahoo"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1497437155-headset.flac",
+   "slurp_id": 15259,
+   "usrid": "MO-189",
+   "gender": "M",
+   "seconds": 4.992,
+   "sentence": "latest instagram posts",
+   "intent": "social_query",
+   "entities": [
+    [
+     "media_type",
+     "instagram"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 2
+  },
+  {
+   "file": "audio-1498564298-headset.flac",
+   "slurp_id": 3888,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 3.264,
+   "sentence": "please call china wok and order number seven",
+   "intent": "takeaway_order",
+   "entities": [
+    [
+     "business_name",
+     "china wok"
+    ],
+    [
+     "food_type",
+     "number seven"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490263300-headset.flac",
+   "slurp_id": 4565,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 2.944,
+   "sentence": "call domino's pizza",
+   "intent": "takeaway_order",
+   "entities": [
+    [
+     "business_name",
+     "domino 's pizza"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490263355-headset.flac",
+   "slurp_id": 2525,
+   "usrid": "FE-349",
+   "gender": "F",
+   "seconds": 3.008,
+   "sentence": "do they have takeout",
+   "intent": "takeaway_query",
+   "entities": [
+    [
+     "food_type",
+     "takeout"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 2
+  },
+  {
+   "file": "audio-1497270909-headset.flac",
+   "slurp_id": 12375,
+   "usrid": "FO-180",
+   "gender": "F",
+   "seconds": 3.392,
+   "sentence": "what is the next metro to dc",
+   "intent": "transport_query",
+   "entities": [
+    [
+     "place_name",
+     "dc"
+    ],
+    [
+     "transport_type",
+     "metro"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501693006-headset.flac",
+   "slurp_id": 12542,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 3.584,
+   "sentence": "what is the time train coming from sacramento",
+   "intent": "transport_query",
+   "entities": [
+    [
+     "place_name",
+     "sacramento"
+    ],
+    [
+     "transport_type",
+     "train"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490200718-headset.flac",
+   "slurp_id": 12296,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 0.96,
+   "sentence": "get me a taxi",
+   "intent": "transport_taxi",
+   "entities": [
+    [
+     "transport_type",
+     "taxi"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 3
+  },
+  {
+   "file": "audio-1490292281-headset.flac",
+   "slurp_id": 12711,
+   "usrid": "ME-352",
+   "gender": "M",
+   "seconds": 1.28,
+   "sentence": "set up uber",
+   "intent": "transport_taxi",
+   "entities": [
+    [
+     "transport_agency",
+     "uber"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 3
+  },
+  {
+   "file": "audio-1490200605-headset.flac",
+   "slurp_id": 12470,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 2.176,
+   "sentence": "book ticket to depart in the morning",
+   "intent": "transport_ticket",
+   "entities": [
+    [
+     "timeofday",
+     "morning"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 3
+  },
+  {
+   "file": "audio-1498573247-headset.flac",
+   "slurp_id": 346,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.408,
+   "sentence": "what is tomorrows weather predictions",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "tomorrows"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501693833-headset.flac",
+   "slurp_id": 4558,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 2.112,
+   "sentence": "what is the weather near me this week",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "this week"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1501695034-headset.flac",
+   "slurp_id": 1321,
+   "usrid": "FO-445",
+   "gender": "F",
+   "seconds": 1.984,
+   "sentence": "what is the weather today",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490291032-headset.flac",
+   "slurp_id": 3254,
+   "usrid": "ME-352",
+   "gender": "M",
+   "seconds": 1.728,
+   "sentence": "what was the weather report for today",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "today"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498574005-headset.flac",
+   "slurp_id": 606,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 3.072,
+   "sentence": "what is the weekend weather forecast",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "weekend"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490201302-headset.flac",
+   "slurp_id": 318,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.344,
+   "sentence": "is it going to rain tomorrow",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "tomorrow"
+    ],
+    [
+     "weather_descriptor",
+     "rain"
+    ]
+   ],
+   "source_split": "devel",
+   "tier": 1
+  },
+  {
+   "file": "audio-1490200429-headset.flac",
+   "slurp_id": 2041,
+   "usrid": "FE-347",
+   "gender": "F",
+   "seconds": 1.6,
+   "sentence": "today's weather is awesome",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "date",
+     "today 's"
+    ],
+    [
+     "weather_descriptor",
+     "awesome"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  },
+  {
+   "file": "audio-1498564603-headset.flac",
+   "slurp_id": 97,
+   "usrid": "FE-250",
+   "gender": "F",
+   "seconds": 1.408,
+   "sentence": "is it going to rain",
+   "intent": "weather_query",
+   "entities": [
+    [
+     "weather_descriptor",
+     "rain"
+    ]
+   ],
+   "source_split": "train",
+   "tier": 1
+  }
+ ]
+}

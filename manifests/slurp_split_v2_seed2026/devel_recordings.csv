@@ -1,0 +1,429 @@
+split,slurp_id,sentence,intent,types,values,file,usrid,gender,status,wer,ent_wer,seconds,intent_field
+train,16190,write email to my company mate to submit the task tomorrow,email_sendemail,date|relation,"[[""date"", ""tomorrow""], [""relation"", ""company mate""]]",audio-1499244813-headset.flac,MO-374,M,correct,0.0,0.0,4.736,email_sendemail
+train,17027,let's email sandy,email_sendemail,person,"[[""person"", ""sandy""]]",audio-1498573886-headset.flac,FE-250,F,correct,0.0,0.0,2.56,email_sendemail
+train,7488,appointments this wednesday,calendar_query,date|event_name,"[[""date"", ""wednesday""], [""event_name"", ""appointments""]]",audio-1498574116-headset.flac,FE-250,F,correct,0.0,0.0,1.6,calendar_query
+train,13109,please schedule a meeting with my secretary,calendar_set,event_name|relation,"[[""event_name"", ""meeting""], [""relation"", ""secretary""]]",audio-1490200199-headset.flac,FE-347,F,correct,0.0,0.0,2.176,calendar_set
+train,496,change the light color to blue,iot_hue_lightchange,color_type,"[[""color_type"", ""blue""]]",audio-1498572419-headset.flac,FE-250,F,correct,0.0,0.0,1.6,iot_hue_lightchange
+train,1056,start the robot vacuum cleaner at one pm today,iot_cleaning,date|device_type|time,"[[""date"", ""today""], [""device_type"", ""robot vacuum cleaner""], [""time"", ""one pm""]]",audio-1490200282-headset.flac,FE-347,F,correct,0.0,0.0,2.752,iot_cleaning
+train,7593,remind me to turn off the lights in ten minutes,calendar_set,event_name|time,"[[""event_name"", ""turn off the lights""], [""time"", ""in ten minutes""]]",audio-1490366448-headset.flac,MO-355,M,correct,0.0,0.0,2.56,calendar_set
+train,2700,play rock music,play_music,music_genre,"[[""music_genre"", ""rock""]]",audio-1498564904-headset.flac,FE-250,F,correct,0.0,0.0,1.792,music
+train,2700,play rock music,play_music,music_genre,"[[""music_genre"", ""rock""]]",audio-1490200504-headset.flac,FE-347,F,correct,0.0,0.0,1.6,music
+train,1869,what date is today,datetime_query,date,"[[""date"", ""today""]]",audio-1490198593-headset.flac,FE-347,F,correct,0.0,0.0,2.176,datetime_query
+train,8246,give me the information of today's cricket match,calendar_query,date|sport_type,"[[""date"", ""today 's""], [""sport_type"", ""cricket match""]]",audio-1490197974-headset.flac,FE-347,F,correct,0.0,0.0,3.264,calendar_query
+train,7954,can you please disregard the party that i will be going to this weekend on my calendar,calendar_remove,date|event_name,"[[""date"", ""this weekend""], [""event_name"", ""party""]]",audio-1501692724-headset.flac,FO-445,F,correct,0.0,0.0,4.672,calendar_remove
+train,14459,please describe the new harley davidson street bike,qa_definition,definition_word,"[[""definition_word"", ""harley davidson street bike""]]",audio-1498573530-headset.flac,FE-250,F,correct,0.0,0.0,3.52,qa_definition
+train,12297,hail taxi,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1490199624-headset.flac,FE-347,F,correct,0.0,0.0,1.472,transport_taxi
+train,12297,hail taxi,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1490290872-headset.flac,ME-352,M,correct,0.0,0.0,1.408,transport_taxi
+train,9125,when is my next dentist appointment,calendar_query,event_name,"[[""event_name"", ""dentist appointment""]]",audio-1490292277-headset.flac,ME-352,M,correct,0.0,0.0,2.304,calendar_query
+train,17158,did joe leave any contact information in his email,email_query,person|personal_info,"[[""person"", ""joe""], [""personal_info"", ""contact information""]]",audio-1498574239-headset.flac,FE-250,F,correct,0.0,0.0,2.688,email_query
+train,5646,switch off kitchen lights,iot_hue_lightoff,house_place,"[[""house_place"", ""kitchen""]]",audio-1498573511-headset.flac,FE-250,F,correct,0.0,0.0,1.472,iot_hue_lightoff
+train,16114,reply to all emails received from ten pm to nine am,email_sendemail,time|time,"[[""time"", ""nine am""], [""time"", ""ten pm""]]",audio-1498573020-headset.flac,FE-250,F,correct,0.0,0.0,3.264,email_sendemail
+train,792,is summer going on,weather_query,weather_descriptor,"[[""weather_descriptor"", ""summer""]]",audio-1501693893-headset.flac,FO-445,F,correct,0.0,0.0,2.048,weather_query
+train,7197,remind me of my sister's birthday party tomorrow an hour before it starts,calendar_set,date|event_name|relation,"[[""date"", ""tomorrow""], [""event_name"", ""birthday party""], [""relation"", ""sister 's""]]",audio-1498566091-headset.flac,FE-250,F,correct,0.0,0.0,3.648,calendar_set
+train,8969,cancel future event from place i worked,calendar_remove,event_name,"[[""event_name"", ""future event""]]",audio-1490368619-headset.flac,MO-355,M,correct,0.0,0.0,2.56,calendar_remove
+train,5048,on mobile charger plug,iot_wemo_on,device_type,"[[""device_type"", ""mobile charger plug""]]",audio-1490368934-headset.flac,MO-355,M,correct,0.0,0.0,2.496,iot_wemo_on
+train,11473,i want to hear yesterday's podcast from my favorite channel,play_podcasts,date,"[[""date"", ""yesterday 's""]]",audio-1497270600-headset.flac,FO-180,F,correct,0.0,0.0,4.736,play_podcasts
+train,9730,please start my music,play_music,media_type|player_setting,"[[""media_type"", ""music""], [""player_setting"", ""start""]]",audio-1490201122-headset.flac,FE-347,F,correct,0.0,0.0,1.6,play_music
+train,5889,open cnn app,news_query,media_type,"[[""media_type"", ""cnn""]]",audio-1490200537-headset.flac,FE-347,F,correct,0.0,0.0,1.6,news_query
+train,2768,start playing jazz music,play_music,music_genre,"[[""music_genre"", ""jazz""]]",audio-1490199406-headset.flac,FE-347,F,correct,0.0,0.0,1.728,play_music
+train,8787,searching for any special holidays for us country,recommendation_events,event_name|place_name,"[[""event_name"", ""special holidays""], [""place_name"", ""us country""]]",audio-1498566111-headset.flac,FE-250,F,correct,0.0,0.0,3.136,recommendation_events
+train,11132,remove my shopping list,lists_remove,list_name,"[[""list_name"", ""shopping""]]",audio-1497438258-headset.flac,MO-189,M,correct,0.0,0.0,4.608,lists_remove
+train,14056,what is the us dollar to euro exchange rate,qa_currency,currency_name|currency_name,"[[""currency_name"", ""euro""], [""currency_name"", ""us dollar""]]",audio-1497439640-headset.flac,MO-189,M,correct,0.0,0.0,5.376,qa_currency
+train,16119,send to jane only help,email_sendemail,person,"[[""person"", ""jane""]]",audio-1497270056-headset.flac,FO-180,F,correct,0.0,0.0,2.496,email_sendemail
+train,4936,pull up my party playlist,play_music,playlist_name,"[[""playlist_name"", ""party playlist""]]",audio-1490262257-headset.flac,FE-349,F,correct,0.0,0.0,1.856,play_music
+train,15493,write a complaint to best buy,social_post,business_name,"[[""business_name"", ""best buy""]]",audio-1490367980-headset.flac,MO-355,M,correct,0.0,0.0,2.112,social_post
+train,11926,i'm looking for reasonably priced tapas in miami beach,recommendation_locations,food_type|place_name,"[[""food_type"", ""tapas""], [""place_name"", ""miami beach""]]",audio-1498564557-headset.flac,FE-250,F,correct,0.0,0.0,5.44,recommendation_locations
+train,7911,remove dinner with mike from my calendar,calendar_remove,meal_type|person,"[[""meal_type"", ""dinner""], [""person"", ""mike""]]",audio-1490368665-headset.flac,MO-355,M,correct,0.0,0.0,2.752,calendar_remove
+train,14017,tell me about george washington,qa_factoid,person,"[[""person"", ""george washington""]]",audio-1498573121-headset.flac,FE-250,F,correct,0.0,0.0,2.624,qa_factoid
+train,8275,please clear jeff's birthday from the calendar,calendar_remove,event_name|person,"[[""event_name"", ""birthday""], [""person"", ""jeff 's""]]",audio-1490366793-headset.flac,MO-355,M,correct,0.0,0.0,2.88,calendar_remove
+train,828,play newest bob dylan playlist,play_music,artist_name,"[[""artist_name"", ""bob dylan""]]",audio-1490199782-headset.flac,FE-347,F,correct,0.0,0.0,2.112,play_music
+train,7600,do i have any events happening next week,calendar_query,date,"[[""date"", ""next week""]]",audio-1490261101-headset.flac,FE-349,F,correct,0.0,0.0,2.88,calendar_query
+train,7600,do i have any events happening next week,calendar_query,date,"[[""date"", ""next week""]]",audio-1490367437-headset.flac,MO-355,M,correct,0.0,0.0,2.432,calendar_query
+train,11260,skip to next episode,play_podcasts,player_setting|podcast_descriptor,"[[""player_setting"", ""skip""], [""podcast_descriptor"", ""next episode""]]",audio-1490368214-headset.flac,MO-355,M,correct,0.0,0.0,2.176,play_podcasts
+train,5745,show me what day the thirty first is on,datetime_query,date,"[[""date"", ""the thirty first""]]",audio-1498564963-headset.flac,FE-250,F,correct,0.0,0.0,2.56,datetime_query
+train,10354,play for me the game candy crush,play_game,game_name,"[[""game_name"", ""candy crush""]]",audio-1490261275-headset.flac,FE-349,F,correct,0.0,0.0,2.24,play_game
+train,8364,where am i supposed to be wednesday from two to eleven,calendar_query,date|time,"[[""date"", ""wednesday""], [""time"", ""two to eleven""]]",audio-1490201365-headset.flac,FE-347,F,correct,0.0,0.0,3.008,calendar_query
+train,1875,play sixty,play_music,playlist_name,"[[""playlist_name"", ""sixty""]]",audio-1490262483-headset.flac,FE-349,F,correct,0.0,0.0,2.496,play_music
+train,10271,play solitaire with me,play_game,game_name,"[[""game_name"", ""solitaire""]]",audio-1501692539-headset.flac,FO-445,F,correct,0.0,0.0,2.56,play_game
+train,453,what is today's date,datetime_query,date,"[[""date"", ""today 's""]]",audio-1498572838-headset.flac,FE-250,F,correct,0.0,0.0,1.28,datetime_query
+train,453,what is today's date,datetime_query,date,"[[""date"", ""today 's""]]",audio-1490200214-headset.flac,FE-347,F,correct,0.0,0.0,1.536,datetime_query
+train,453,what is today's date,datetime_query,date,"[[""date"", ""today 's""]]",audio-1490264231-headset.flac,FE-349,F,correct,0.0,0.0,1.984,datetime_query
+train,453,what is today's date,datetime_query,date,"[[""date"", ""today 's""]]",audio-1501692903-headset.flac,FO-445,F,correct,0.0,0.0,2.304,datetime_query
+train,12176,set up a taxi for eleven am tomorrow,transport_taxi,date|time|transport_type,"[[""date"", ""tomorrow""], [""time"", ""eleven am""], [""transport_type"", ""taxi""]]",audio-1490200478-headset.flac,FE-347,F,correct,0.0,0.0,2.368,transport_taxi
+train,13232,how old is brad pitt,qa_factoid,person,"[[""person"", ""brad pitt""]]",audio-1501694949-headset.flac,FO-445,F,correct,0.0,0.0,1.792,qa_factoid
+train,2618,add a notification from bob's news on the weather,news_query,media_type|news_topic,"[[""media_type"", ""bob 's news""], [""news_topic"", ""weather""]]",audio-1501693581-headset.flac,FO-445,F,correct,0.0,0.0,3.84,news_query
+train,10935,remove grocery list please,lists_remove,list_name,"[[""list_name"", ""grocery""]]",audio-1501694767-headset.flac,FO-445,F,correct,0.0,0.0,2.24,lists_remove
+train,2650,what is the headline from today's morning local news,news_query,date|media_type,"[[""date"", ""today 's""], [""media_type"", ""morning local news""]]",audio-1497271931-headset.flac,FO-180,F,correct,0.0,0.0,5.44,news_query
+train,11407,play the next podcast episode,play_podcasts,podcast_descriptor,"[[""podcast_descriptor"", ""next podcast episode""]]",audio-1498572565-headset.flac,FE-250,F,correct,0.0,0.0,2.368,play_podcasts
+train,6730,schedule a chat with adam on thursday afternoon,calendar_set,date|event_name|person|timeofday,"[[""date"", ""thursday""], [""event_name"", ""chat""], [""person"", ""adam""], [""timeofday"", ""afternoon""]]",audio-1497439222-headset.flac,MO-189,M,correct,0.0,0.0,5.12,calendar_set
+train,6730,schedule a chat with adam on thursday afternoon,calendar_set,date|event_name|person|timeofday,"[[""date"", ""thursday""], [""event_name"", ""chat""], [""person"", ""adam""], [""timeofday"", ""afternoon""]]",audio-1490368186-headset.flac,MO-355,M,correct,0.0,0.0,3.072,calendar_set
+train,4628,what time will it rain tomorrow,weather_query,date,"[[""date"", ""tomorrow""]]",audio-1498566580-headset.flac,FE-250,F,correct,0.0,0.0,1.92,weather_query
+train,4628,what time will it rain tomorrow,weather_query,date,"[[""date"", ""tomorrow""]]",audio-1490199723-headset.flac,FE-347,F,correct,0.0,0.0,1.728,weather_query
+train,5247,do i need to bring a coat today,weather_query,date|weather_descriptor,"[[""date"", ""today""], [""weather_descriptor"", ""coat""]]",audio-1498572825-headset.flac,FE-250,F,correct,0.0,0.0,1.984,weather_query
+train,14411,is euro the best currency to trade,qa_currency,currency_name,"[[""currency_name"", ""euro""]]",audio-1497437265-headset.flac,MO-189,M,correct,0.0,0.0,6.016,qa_currency
+train,5926,search for the latest news about iphone,news_query,news_topic,"[[""news_topic"", ""iphone""]]",audio-1490263658-headset.flac,FE-349,F,correct,0.0,0.0,2.752,news_query
+train,4110,turn my smart plug socket on,iot_wemo_on,device_type,"[[""device_type"", ""smart plug socket""]]",audio-1490292530-headset.flac,ME-352,M,correct,0.0,0.0,1.856,iot_wemo_on
+train,7384,make a list of management staff for the twentieth october meeting,calendar_set,date|event_name|event_name,"[[""date"", ""twentieth october""], [""event_name"", ""management staff""], [""event_name"", ""meeting""]]",audio-1501172834-headset.flac,ME-434,M,correct,0.0,0.0,4.864,calendar_set
+train,11657,what are the show times of logan,recommendation_movies,movie_name,"[[""movie_name"", ""logan""]]",audio--1505323765-headset.flac,FE-491,F,correct,0.0,0.0,2.816,recommendation_movies
+train,10971,add pencil to school supplies list,lists_createoradd,list_name,"[[""list_name"", ""school supplies""]]",audio-1490262981-headset.flac,FE-349,F,correct,0.0,0.0,2.816,lists_createoradd
+train,14712,how old is adele,qa_factoid,artist_name,"[[""artist_name"", ""adele""]]",audio-1498564922-headset.flac,FE-250,F,correct,0.0,0.0,1.536,qa_factoid
+train,8833,clear my calendar for the rest of the day,calendar_remove,time,"[[""time"", ""the rest of the day""]]",audio-1490262131-headset.flac,FE-349,F,correct,0.0,0.0,2.176,calendar_remove
+train,3188,what is donald trump's new policy on immigration,news_query,news_topic|person,"[[""news_topic"", ""new policy on immigration""], [""person"", ""donald trump 's""]]",audio-1498574220-headset.flac,FE-250,F,correct,0.0,0.0,2.496,news_query
+train,14312,show me share price of facebook,qa_stock,business_name,"[[""business_name"", ""facebook""]]",audio-1490261296-headset.flac,FE-349,F,correct,0.0,0.0,2.944,qa_stock
+train,16272,how do i dial sarah,email_querycontact,person|personal_info,"[[""person"", ""sarah""], [""personal_info"", ""dial""]]",audio-1490292505-headset.flac,ME-352,M,correct,0.0,0.0,1.344,email_querycontact
+train,17152,please let me know when delia replies to my email from this morning,email_query,person|timeofday,"[[""person"", ""delia""], [""timeofday"", ""morning""]]",audio-1490201396-headset.flac,FE-347,F,correct,0.0,0.0,3.584,email_query
+train,13716,what are the tallest mountains in america,qa_factoid,place_name,"[[""place_name"", ""america""]]",audio-1497438746-headset.flac,MO-189,M,correct,0.0,0.0,5.44,qa_factoid
+train,11251,olly read back my grocery list to me,lists_query,list_name,"[[""list_name"", ""grocery""]]",audio-1490291052-headset.flac,ME-352,M,correct,0.0,0.0,1.92,lists_query
+train,1140,order spaghetti from spaghetti warehouse to bring home,takeaway_order,business_name|food_type|order_type,"[[""business_name"", ""spaghetti warehouse""], [""food_type"", ""spaghetti""], [""order_type"", ""bring home""]]",audio-1490368988-headset.flac,MO-355,M,correct,0.0,0.0,3.072,takeaway_order
+train,12785,train times,transport_query,transport_type,"[[""transport_type"", ""train""]]",audio-1497439358-headset.flac,MO-189,M,correct,0.0,0.0,3.968,transport_query
+train,2676,what is today date,datetime_query,date,"[[""date"", ""today""]]",audio-1498574058-headset.flac,FE-250,F,correct,0.0,0.0,1.408,datetime_query
+train,2911,play cd led zeppelin houses of the holy,play_music,movie_name,"[[""movie_name"", ""led zeppelin houses of the holy""]]",audio-1498574072-headset.flac,FE-250,F,correct,0.0,0.0,2.496,play_music
+train,7097,add my doctor appointment for the fifteenth,calendar_set,date|event_name,"[[""date"", ""fifteenth""], [""event_name"", ""doctor appointment""]]",audio-1490198903-headset.flac,FE-347,F,correct,0.0,0.0,2.56,calendar_set
+train,7071,what are my reminders today,calendar_query,date,"[[""date"", ""today""]]",audio--1505323807-headset.flac,FE-491,F,correct,0.0,0.0,1.984,calendar_query
+train,7071,what are my reminders today,calendar_query,date,"[[""date"", ""today""]]",audio-1499244312-headset.flac,MO-374,M,correct,0.0,0.0,2.496,calendar_query
+train,1112,play one thousand nine hundred and ninety nine by prince,play_music,artist_name|song_name,"[[""artist_name"", ""prince""], [""song_name"", ""one thousand nine hundred and ninety nine""]]",audio-1498573705-headset.flac,FE-250,F,correct,0.0,0.0,3.072,play_music
+train,1570,make me a cappuccino,iot_coffee,coffee_type,"[[""coffee_type"", ""capuccino""]]",audio-1490367836-headset.flac,MO-355,M,correct,0.0,0.0,1.856,iot_coffee
+train,11337,can you start my saved podcast,play_podcasts,podcast_name,"[[""podcast_name"", ""saved""]]",audio-1490199746-headset.flac,FE-347,F,correct,0.0,0.0,2.24,play_podcasts
+train,8675,who is going to my meeting at nine am,calendar_query,event_name|time,"[[""event_name"", ""meeting""], [""time"", ""nine am""]]",audio-1490262415-headset.flac,FE-349,F,correct,0.0,0.0,2.048,calendar_query
+train,1321,what is the weather today,weather_query,date,"[[""date"", ""today""]]",audio-1501695034-headset.flac,FO-445,F,correct,0.0,0.0,1.984,weather_query
+train,1321,what is the weather today,weather_query,date,"[[""date"", ""today""]]",audio-1490291274-headset.flac,ME-352,M,correct,0.0,0.0,1.6,weather_query
+train,10040,what is a cookie recipe,cooking_recipe,food_type,"[[""food_type"", ""cookie""]]",audio--1505323945-headset.flac,FE-491,F,correct,0.0,0.0,2.048,cooking_recipe
+train,5130,play recently added songs,play_music,music_descriptor,"[[""music_descriptor"", ""recently added""]]",audio-1501694681-headset.flac,FO-445,F,correct,0.0,0.0,3.328,play_music
+train,2377,turn on my electronic playlist,play_music,playlist_name,"[[""playlist_name"", ""electronic""]]",audio-1490199188-headset.flac,FE-347,F,correct,0.0,0.0,2.24,play_music
+train,472,play songs by sia,play_music,artist_name,"[[""artist_name"", ""sia""]]",audio-1490367277-headset.flac,MO-355,M,correct,0.0,0.0,2.368,play_music
+train,15494,i need to write a bad review for yahoo,social_post,business_name,"[[""business_name"", ""yahoo""]]",audio-1498572461-headset.flac,FE-250,F,correct,0.0,0.0,2.432,social_post
+train,14325,where was kelly clarkson born,qa_factoid,person,"[[""person"", ""kelly clarkson""]]",audio-1497437172-headset.flac,MO-189,M,correct,0.0,0.0,6.656,qa_factoid
+train,1682,set the music volume to ninety,audio_volume_up,change_amount,"[[""change_amount"", ""to ninety""]]",audio-1497438541-headset.flac,MO-189,M,correct,0.0,0.0,5.632,audio_volume_up
+train,7481,i want a reminder that repeats every week,calendar_set,general_frequency,"[[""general_frequency"", ""every week""]]",audio-1497439396-headset.flac,MO-189,M,correct,0.0,0.0,6.016,calendar_set
+train,7818,do i have a meeting tomorrow,calendar_query,date|event_name,"[[""date"", ""tomorrow""], [""event_name"", ""meeting""]]",audio-1497270694-headset.flac,FO-180,F,correct,0.0,0.0,2.88,calendar_query
+train,5277,please increase volume in music player,audio_volume_up,device_type,"[[""device_type"", ""music player""]]",audio-1498565090-headset.flac,FE-250,F,correct,0.0,0.0,2.432,audio_volume_up
+train,11378,skip this one,play_podcasts,player_setting,"[[""player_setting"", ""skip""]]",audio-1490291818-headset.flac,ME-352,M,correct,0.0,0.0,1.28,play_podcasts
+train,14344,refer the stock price of hdfc,qa_stock,business_name,"[[""business_name"", ""hdfc""]]",audio-1490200631-headset.flac,FE-347,F,correct,0.0,0.0,3.456,qa_stock
+train,3440,play jack johnson playlist music,play_music,artist_name,"[[""artist_name"", ""jack johnson""]]",audio-1501694593-headset.flac,FO-445,F,correct,0.0,0.0,2.304,play_music
+train,13104,do you know actor surya,qa_factoid,person,"[[""person"", ""surya""]]",audio-1498567259-headset.flac,FE-250,F,correct,0.0,0.0,1.664,qa_factoid
+train,7705,remind me of my meeting tomorrow ten in the morning,calendar_set,date|event_name|time|timeofday,"[[""date"", ""tomorrow""], [""event_name"", ""meeting""], [""time"", ""ten""], [""timeofday"", ""morning""]]",audio-1490366185-headset.flac,MO-355,M,correct,0.0,0.0,3.904,calendar_set
+train,5120,check if any alarm is there after five am,alarm_query,time,"[[""time"", ""five am""]]",audio-1501692417-headset.flac,FO-445,F,correct,0.0,0.0,3.648,alarm_query
+train,1707,turn the speakers down to five percent,audio_volume_down,change_amount,"[[""change_amount"", ""to five percent""]]",audio-1499244724-headset.flac,MO-374,M,correct,0.0,0.0,3.328,audio_volume_down
+train,7115,remove my car payment on the fifteenth from my calendar,calendar_remove,date|event_name,"[[""date"", ""fifteenth""], [""event_name"", ""car payment""]]",audio-1501691734-headset.flac,FO-445,F,correct,0.0,0.0,4.096,calendar_remove
+train,7115,remove my car payment on the fifteenth from my calendar,calendar_remove,date|event_name,"[[""date"", ""fifteenth""], [""event_name"", ""car payment""]]",audio-1501694806-headset.flac,FO-445,F,correct,0.0,0.0,3.52,calendar_remove
+train,12542,what is the time train coming from sacramento,transport_query,place_name|transport_type,"[[""place_name"", ""sacramento""], [""transport_type"", ""train""]]",audio-1501693006-headset.flac,FO-445,F,correct,0.0,0.0,3.584,transport_query
+train,4564,order food from applebees,takeaway_order,business_name,"[[""business_name"", ""applebees""]]",audio-1490198430-headset.flac,FE-347,F,correct,0.0,0.0,2.24,takeaway_order
+train,606,what is the weekend weather forecast,weather_query,date,"[[""date"", ""weekend""]]",audio-1498574005-headset.flac,FE-250,F,correct,0.0,0.0,3.072,weather_query
+train,14392,define acceleration,qa_definition,definition_word,"[[""definition_word"", ""acceleration""]]",audio-1497438314-headset.flac,MO-189,M,correct,0.0,0.0,4.928,qa_definition
+train,2041,today's weather is awesome,weather_query,date|weather_descriptor,"[[""date"", ""today 's""], [""weather_descriptor"", ""awesome""]]",audio-1490200429-headset.flac,FE-347,F,correct,0.0,0.0,1.6,weather_query
+train,4829,does the restaurant have carryout,takeaway_query,business_type|order_type,"[[""business_type"", ""restaurant""], [""order_type"", ""carryout""]]",audio-1490264410-headset.flac,FE-349,F,correct,0.0,0.0,3.072,takeaway_query
+train,1018,what will the weather be today,weather_query,date,"[[""date"", ""today""]]",audio-1490198678-headset.flac,FE-347,F,correct,0.0,0.0,2.304,weather_query
+train,5641,play all songs from blue genre,play_music,music_genre,"[[""music_genre"", ""blue""]]",audio-1498574132-headset.flac,FE-250,F,correct,0.0,0.0,1.984,play_music
+train,1512,change the colour to red,iot_hue_lightchange,color_type,"[[""color_type"", ""red""]]",audio-1497438760-headset.flac,MO-189,M,correct,0.0,0.0,4.672,iot_hue_lightchange
+train,2755,recent conroe news,news_query,place_name,"[[""place_name"", ""conroe""]]",audio-1498565173-headset.flac,FE-250,F,correct,0.0,0.0,1.92,news_query
+train,5385,remember metallica selections for next time,music_likeness,artist_name,"[[""artist_name"", ""metallica""]]",audio-1501692266-headset.flac,FO-445,F,correct,0.0,0.0,4.352,music_likeness
+train,10337,play for me the game temple run,play_game,game_name,"[[""game_name"", ""temple run""]]",audio-1490200096-headset.flac,FE-347,F,correct,0.0,0.0,1.984,play_game
+train,3227,what's the date tomorrow,datetime_query,date,"[[""date"", ""tomorrow""]]",audio-1490291100-headset.flac,ME-352,M,correct,0.0,0.0,1.152,datetime_query
+train,12077,what are the concerts happening nearby,recommendation_events,event_name,"[[""event_name"", ""concerts""]]",audio-1490261413-headset.flac,FE-349,F,correct,0.0,0.0,1.856,recommendation_events
+train,8355,is there a holiday on the twenty second,calendar_query,date|event_name,"[[""date"", ""twenty second""], [""event_name"", ""holiday""]]",audio-1490261972-headset.flac,FE-349,F,correct,0.0,0.0,2.176,calendar_query
+train,8355,is there a holiday on the twenty second,calendar_query,date|event_name,"[[""date"", ""twenty second""], [""event_name"", ""holiday""]]",audio-1490262044-headset.flac,FE-349,F,correct,0.0,0.0,1.728,calendar_query
+train,5896,repeat earth song,play_music,song_name,"[[""song_name"", ""earth song""]]",audio-1490262395-headset.flac,FE-349,F,correct,0.0,0.0,1.792,play_music
+train,10124,how do i make peanut butter cookies,cooking_recipe,food_type,"[[""food_type"", ""peanut butter cookies""]]",audio-1498566583-headset.flac,FE-250,F,correct,0.0,0.0,2.048,cooking_recipe
+train,2117,play the latest pop song,play_music,music_genre,"[[""music_genre"", ""pop""]]",audio-1499244634-headset.flac,MO-374,M,correct,0.0,0.0,2.816,play_music
+train,7,pause for ten seconds,audio_volume_mute,time,"[[""time"", ""ten seconds""]]",audio--1505323976-headset.flac,FE-491,F,correct,0.0,0.0,2.176,audio_volume_mute
+train,11835,what are some good restaurants near by,recommendation_locations,business_type,"[[""business_type"", ""restaurants""]]",audio-1490262245-headset.flac,FE-349,F,correct,0.0,0.0,1.984,recommendation_locations
+train,12110,find a kid friendly event in my area for tonight,recommendation_events,event_name|timeofday,"[[""event_name"", ""kid friendly event""], [""timeofday"", ""tonight""]]",audio-1501694907-headset.flac,FO-445,F,correct,0.0,0.0,3.968,recommendation_events
+train,14595,how much did facebook stock increase last night,qa_stock,business_name,"[[""business_name"", ""facebook""]]",audio-1498573193-headset.flac,FE-250,F,correct,0.0,0.0,2.432,qa_stock
+train,10309,start spider,play_game,game_name,"[[""game_name"", ""spider""]]",audio-1490368086-headset.flac,MO-355,M,correct,0.0,0.0,1.728,play_game
+train,14519,give me the definition of the word haughty,qa_definition,definition_word,"[[""definition_word"", ""haughty""]]",audio-1490290980-headset.flac,ME-352,M,correct,0.0,0.0,4.288,qa_definition
+train,6880,when is my meeting with human resources,calendar_query,business_name|event_name,"[[""business_name"", ""human resources""], [""event_name"", ""meeting""]]",audio-1490368949-headset.flac,MO-355,M,correct,0.0,0.0,2.304,calendar_query
+train,14300,what price google up to,qa_stock,business_name,"[[""business_name"", ""google""]]",audio-1501694638-headset.flac,FO-445,F,correct,0.0,0.0,2.624,qa_stock
+train,8636,can you delete the doctors appointment i had tuesday,calendar_remove,date|event_name,"[[""date"", ""tuesday""], [""event_name"", ""doctors appointment""]]",audio-1498573573-headset.flac,FE-250,F,correct,0.0,0.0,2.944,calendar_remove
+train,4676,fire in columbus ohio,news_query,news_topic|place_name,"[[""news_topic"", ""fire""], [""place_name"", ""columbus ohio""]]",audio-1497438440-headset.flac,MO-189,M,correct,0.0,0.0,5.568,news_query
+train,4097,what's happening today,news_query,date,"[[""date"", ""today""]]",audio-1498566385-headset.flac,FE-250,F,correct,0.0,0.0,1.536,news_query
+train,4097,what's happening today,news_query,date,"[[""date"", ""today""]]",audio-1497270188-headset.flac,FO-180,F,correct,0.0,0.0,2.752,news_query
+train,4097,what's happening today,news_query,date,"[[""date"", ""today""]]",audio-1490291237-headset.flac,ME-352,M,correct,0.0,0.0,2.048,news_query
+train,13763,how old is miley cyrus,qa_factoid,person,"[[""person"", ""miley cyrus""]]",audio-1490365707-headset.flac,MO-355,M,correct,0.0,0.0,2.56,qa_factoid
+train,15515,tweet error log to samsung,social_post,business_name|media_type,"[[""business_name"", ""samsung""], [""media_type"", ""tweet""]]",audio-1497439146-headset.flac,MO-189,M,correct,0.0,0.0,5.76,social_post
+train,1717,turn off the upstairs bathroom light,iot_hue_lightoff,house_place,"[[""house_place"", ""bathroom""]]",audio-1490198503-headset.flac,FE-347,F,correct,0.0,0.0,2.496,iot_hue_lightoff
+train,7336,what do i have scheduled for next week,calendar_query,date,"[[""date"", ""next week""]]",audio-1490262420-headset.flac,FE-349,F,correct,0.0,0.0,2.048,calendar_query
+train,8316,please add march fifth as john's birthday,calendar_set,date|event_name|person,"[[""date"", ""march fifth""], [""event_name"", ""birthday""], [""person"", ""john 's""]]",audio-1490262409-headset.flac,FE-349,F,correct,0.0,0.0,2.56,calendar_set
+train,9638,i would like to hear rush limbaugh on i heart radio,play_radio,radio_name,"[[""radio_name"", ""i heart radio""]]",audio-1490200081-headset.flac,FE-347,F,correct,0.0,0.0,6.208,play_radio
+train,9638,i would like to hear rush limbaugh on i heart radio,play_radio,radio_name,"[[""radio_name"", ""i heart radio""]]",audio-1490200293-headset.flac,FE-347,F,correct,0.0,0.0,3.008,play_radio
+train,568,how cold is it,weather_query,weather_descriptor,"[[""weather_descriptor"", ""cold""]]",audio-1490367307-headset.flac,MO-355,M,correct,0.0,0.0,2.176,weather_query
+train,13134,who is the person behind the song of taylor swift back to december,qa_factoid,date,"[[""date"", ""december""]]",audio-1501691794-headset.flac,FO-445,F,correct,0.0,0.0,4.928,qa_factoid
+train,438,is it going to rain today,weather_query,date|weather_descriptor,"[[""date"", ""today""], [""weather_descriptor"", ""rain""]]",audio-1490262434-headset.flac,FE-349,F,correct,0.0,0.0,1.28,weather_query
+train,12375,what is the next metro to dc,transport_query,place_name|transport_type,"[[""place_name"", ""dc""], [""transport_type"", ""metro""]]",audio-1497270909-headset.flac,FO-180,F,correct,0.0,0.0,3.392,transport_query
+train,15658,can you put this on facebook,social_post,media_type,"[[""media_type"", ""facebook""]]",audio-1501172960-headset.flac,ME-434,M,correct,0.0,0.0,2.944,social_post
+train,7246,when is my anniversary,calendar_query,event_name,"[[""event_name"", ""anniversary""]]",audio-1490290857-headset.flac,ME-352,M,correct,0.0,0.0,1.472,calendar_query
+train,13792,please describe this sunset for me,qa_definition,definition_word,"[[""definition_word"", ""this sunset""]]",audio-1490262606-headset.flac,FE-349,F,correct,0.0,0.0,2.816,qa_definition
+train,9411,play the next howard stern show on the radio,play_radio,radio_name,"[[""radio_name"", ""next howard stern show""]]",audio-1501692491-headset.flac,FO-445,F,correct,0.0,0.0,3.2,play_radio
+train,15259,latest instagram posts,social_query,media_type,"[[""media_type"", ""instagram""]]",audio-1497437155-headset.flac,MO-189,M,correct,0.0,0.0,4.992,social_query
+train,5326,how are things in the world,news_query,place_name,"[[""place_name"", ""world""]]",audio-1490261861-headset.flac,FE-349,F,correct,0.0,0.0,1.6,news_query
+train,5326,how are things in the world,news_query,place_name,"[[""place_name"", ""world""]]",audio-1497271053-headset.flac,FO-180,F,correct,0.0,0.0,3.264,news_query
+train,12812,call a taxi company,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1499244216-headset.flac,MO-374,M,correct,0.0,0.0,1.92,transport_taxi
+train,12812,call a taxi company,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1499246360-headset.flac,MO-374,M,correct,0.0,0.0,1.984,transport_taxi
+train,4976,what day of the week is the twenty fifth,datetime_query,date,"[[""date"", ""the twenty fifth""]]",audio-1501694895-headset.flac,FO-445,F,correct,0.0,0.0,2.944,datetime_query
+train,4739,is it noon in paris,datetime_query,place_name|timeofday,"[[""place_name"", ""paris""], [""timeofday"", ""noon""]]",audio-1497438283-headset.flac,MO-189,M,correct,0.0,0.0,5.056,datetime_query
+train,14372,what is a basketball,qa_definition,definition_word,"[[""definition_word"", ""basketball""]]",audio-1490261257-headset.flac,FE-349,F,correct,0.0,0.0,2.24,qa_definition
+train,14372,what is a basketball,qa_definition,definition_word,"[[""definition_word"", ""basketball""]]",audio-1490264514-headset.flac,FE-349,F,correct,0.0,0.0,1.536,qa_definition
+train,6852,show me the programmes i have today,calendar_query,date,"[[""date"", ""today""]]",audio-1490290907-headset.flac,ME-352,M,correct,0.0,0.0,2.368,calendar_query
+train,4565,call domino's pizza,takeaway_order,business_name,"[[""business_name"", ""domino 's pizza""]]",audio-1490263300-headset.flac,FE-349,F,correct,0.0,0.0,2.944,takeaway_order
+train,4194,tell me the time in boston,datetime_query,place_name,"[[""place_name"", ""boston""]]",audio-1490366439-headset.flac,MO-355,M,correct,0.0,0.0,2.176,datetime_query
+train,8691,do i have any events scheduled today,calendar_query,date,"[[""date"", ""today""]]",audio-1497271116-headset.flac,FO-180,F,correct,0.0,0.0,3.584,calendar_query
+train,14602,who is the prime minister of india,qa_factoid,place_name,"[[""place_name"", ""india""]]",audio-1490291399-headset.flac,ME-352,M,correct,0.0,0.0,2.944,factoid
+train,4057,can you play emo music please,play_music,music_genre,"[[""music_genre"", ""emo music""]]",audio-1490291177-headset.flac,ME-352,M,correct,0.0,0.0,2.432,play_music
+train,4057,can you play emo music please,play_music,music_genre,"[[""music_genre"", ""emo music""]]",audio-1490367450-headset.flac,MO-355,M,correct,0.0,0.0,2.56,play_music
+train,10372,temple runner play,play_game,game_name,"[[""game_name"", ""temple runner""]]",audio-1490262141-headset.flac,FE-349,F,correct,0.0,0.0,1.536,play_game
+train,9469,turn on the local radio,play_radio,radio_name,"[[""radio_name"", ""local""]]",audio-1501692973-headset.flac,FO-445,F,correct,0.0,0.0,1.92,play_radio
+train,4413,is it snowing in seattle,weather_query,place_name|weather_descriptor,"[[""place_name"", ""seattle""], [""weather_descriptor"", ""snowing""]]",audio-1490264381-headset.flac,FE-349,F,correct,0.0,0.0,2.112,weather_query
+train,12296,get me a taxi,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1490200718-headset.flac,FE-347,F,correct,0.0,0.0,0.96,transport_taxi
+train,12227,where to buy a train ticket,transport_query,transport_type,"[[""transport_type"", ""train""]]",audio-1490262405-headset.flac,FE-349,F,correct,0.0,0.0,1.536,transport_query
+train,2183,what's the date today,datetime_query,date,"[[""date"", ""today""]]",audio-1490262206-headset.flac,FE-349,F,correct,0.0,0.0,1.792,datetime_query
+train,5170,show me articles about the new iphone eight,news_query,news_topic,"[[""news_topic"", ""the new iphone eight""]]",audio-1499245021-headset.flac,MO-374,M,correct,0.0,0.0,2.56,news_query
+train,1269,what's going on in the world right now,news_query,news_topic,"[[""news_topic"", ""world""]]",audio--1505323842-headset.flac,FE-491,F,correct,0.0,0.0,2.304,news_query
+train,13712,what is the meaning of the word sanctimonious,qa_definition,definition_word,"[[""definition_word"", ""sanctimonious""]]",audio-1490200872-headset.flac,FE-347,F,correct,0.0,0.0,2.688,qa_definition
+train,97,is it going to rain,weather_query,weather_descriptor,"[[""weather_descriptor"", ""rain""]]",audio-1498564603-headset.flac,FE-250,F,correct,0.0,0.0,1.408,weather_query
+train,11301,play last reason podcast,play_podcasts,podcast_name,"[[""podcast_name"", ""last reason""]]",audio-1490262641-headset.flac,FE-349,F,correct,0.0,0.0,3.648,play_podcasts
+train,10278,tag you're it,play_game,game_name,"[[""game_name"", ""tag you 're it""]]",audio-1490199897-headset.flac,FE-347,F,correct,0.0,0.0,1.728,play_game
+train,7842,remind me that i have to go see hannah about our math project next tuesday at ten pm,calendar_set,date|event_name|person|time,"[[""date"", ""tuesday""], [""event_name"", ""math project""], [""person"", ""hannah""], [""time"", ""ten pm""]]",audio--1505323800-headset.flac,FE-491,F,correct,0.0,0.0,4.864,calendar_set
+train,7842,remind me that i have to go see hannah about our math project next tuesday at ten pm,calendar_set,date|event_name|person|time,"[[""date"", ""tuesday""], [""event_name"", ""math project""], [""person"", ""hannah""], [""time"", ""ten pm""]]",audio-1497270979-headset.flac,FO-180,F,correct,0.0,0.0,7.488,calendar_set
+train,8785,schedule meeting with our employees regarding bonus,calendar_set,event_name|relation,"[[""event_name"", ""meeting""], [""relation"", ""employees""]]",audio-1490198789-headset.flac,FE-347,F,correct,0.0,0.0,3.2,calendar_set
+train,16794,please list the senders of received emails from the last three days,email_query,time,"[[""time"", ""last three days""]]",audio-1490367772-headset.flac,MO-355,M,correct,0.0,0.0,4.608,email_query
+train,6276,i went skiing today,general_quirky,date,"[[""date"", ""today""]]",audio-1501694876-headset.flac,FO-445,F,correct,0.0,0.0,1.792,general_quirky
+train,6276,i went skiing today,general_quirky,date,"[[""date"", ""today""]]",audio-1490291492-headset.flac,ME-352,M,correct,0.0,0.0,2.368,general_quirky
+train,14028,where is george w bush from,qa_factoid,person,"[[""person"", ""george w bush""]]",audio-1490198212-headset.flac,FE-347,F,correct,0.0,0.0,3.2,qa_factoid
+train,1555,how's the weather going to be this week,weather_query,date,"[[""date"", ""this week""]]",audio-1501173005-headset.flac,ME-434,M,correct,0.0,0.0,2.432,weather_query
+train,1795,what is the date today,datetime_query,date,"[[""date"", ""today""]]",audio-1490262976-headset.flac,FE-349,F,correct,0.0,0.0,1.6,datetime_query
+train,10473,i need to put together a todo list for work,lists_createoradd,list_name,"[[""list_name"", ""todo""]]",audio-1497439519-headset.flac,MO-189,M,correct,0.0,0.0,5.44,lists_createoradd
+train,5817,home town weather,weather_query,place_name,"[[""place_name"", ""home town""]]",audio-1498574261-headset.flac,FE-250,F,correct,0.0,0.0,1.728,weather_query
+train,16257,send an email to my wife about next week weather,email_sendemail,date|relation,"[[""date"", ""next week""], [""relation"", ""wife""]]",audio-1490367928-headset.flac,MO-355,M,correct,0.0,0.0,3.52,email_sendemail
+train,12560,i need a taxi uber,transport_taxi,transport_agency|transport_type,"[[""transport_agency"", ""uber""], [""transport_type"", ""taxi""]]",audio-1498572869-headset.flac,FE-250,F,correct,0.0,0.0,1.664,transport_taxi
+train,15870,what is email id of john,email_querycontact,person|personal_info,"[[""person"", ""john""], [""personal_info"", ""email i d""]]",audio-1498572681-headset.flac,FE-250,F,correct,0.0,0.0,2.304,email_querycontact
+train,130,order a pizza,takeaway_order,food_type,"[[""food_type"", ""pizza""]]",audio-1497439185-headset.flac,MO-189,M,correct,0.0,0.0,4.928,takeaway_order
+train,14905,is the pound up or down against the dollar,qa_currency,currency_name|currency_name,"[[""currency_name"", ""dollar""], [""currency_name"", ""pound""]]",audio-1490292753-headset.flac,ME-352,M,correct,0.0,0.0,2.368,qa_currency
+train,13956,what is a banana,qa_definition,definition_word,"[[""definition_word"", ""banana""]]",audio-1498566948-headset.flac,FE-250,F,correct,0.0,0.0,1.216,qa_definition
+train,13956,what is a banana,qa_definition,definition_word,"[[""definition_word"", ""banana""]]",audio-1497271469-headset.flac,FO-180,F,correct,0.0,0.0,2.944,qa_definition
+train,15483,post to facebook i'm home,social_post,media_type,"[[""media_type"", ""facebook""]]",audio-1499247012-headset.flac,MO-374,M,correct,0.0,0.0,2.112,social_post
+train,9558,can you please put on music,play_radio,media_type,"[[""media_type"", ""music""]]",audio-1497439617-headset.flac,MO-189,M,correct,0.0,0.0,7.04,play_radio
+train,14415,how much long is atlanta,qa_factoid,place_name,"[[""place_name"", ""atlanta""]]",audio-1498573260-headset.flac,FE-250,F,correct,0.0,0.0,2.624,qa_factoid
+train,16351,check my mailbox and let me know if there is any mail post seven am today,email_query,date|time,"[[""date"", ""today""], [""time"", ""seven am""]]",audio-1498574093-headset.flac,FE-250,F,correct,0.0,0.0,4.16,email_query
+train,11352,please let me know the train time to washington,play_podcasts,transport_type,"[[""transport_type"", ""train""]]",audio-1498573740-headset.flac,FE-250,F,correct,0.0,0.0,2.304,play_podcasts
+train,11352,please let me know the train time to washington,play_podcasts,transport_type,"[[""transport_type"", ""train""]]",audio-1499246910-headset.flac,MO-374,M,correct,0.0,0.0,3.52,play_podcasts
+train,418,make me a wake up alarm for eight forty five am,alarm_set,time,"[[""time"", ""eight forty five am""]]",audio-1498566734-headset.flac,FE-250,F,correct,0.0,0.0,3.904,alarm_set
+train,9481,turn on hot ninety seven,play_radio,radio_name,"[[""radio_name"", ""hot ninety seven""]]",audio-1490262905-headset.flac,FE-349,F,correct,0.0,0.0,2.496,play_radio
+train,9481,turn on hot ninety seven,play_radio,radio_name,"[[""radio_name"", ""hot ninety seven""]]",audio-1490367989-headset.flac,MO-355,M,correct,0.0,0.0,1.92,play_radio
+train,4030,alexa play pandora nineties dance party,play_music,song_name,"[[""song_name"", ""pandora nineties dance party""]]",audio-1490290899-headset.flac,ME-352,M,correct,0.0,0.0,3.008,play_music
+train,7527,on twenty third march i have to go to meet my aunt,calendar_set,date|relation,"[[""date"", ""twenty third march""], [""relation"", ""aunt""]]",audio-1498573269-headset.flac,FE-250,F,correct,0.0,0.0,2.688,calendar_set
+train,16243,how old is joanne,email_querycontact,person|personal_info,"[[""person"", ""joanne""], [""personal_info"", ""old""]]",audio-1498565593-headset.flac,FE-250,F,correct,0.0,0.0,1.472,email_querycontact
+train,12029,show latest events around new york,recommendation_events,place_name,"[[""place_name"", ""new york""]]",audio-1498564774-headset.flac,FE-250,F,correct,0.0,0.0,3.648,recommendation_events
+train,3636,i want you to put on be warned by tech n9ne,play_music,artist_name|song_name,"[[""artist_name"", ""tech n9ne""], [""song_name"", ""be warned""]]",audio-1499246329-headset.flac,MO-374,M,correct,0.0,0.0,4.736,play_music
+train,12946,how tall is micheal jackson,qa_factoid,person,"[[""person"", ""micheal jackson""]]",audio-1490261936-headset.flac,FE-349,F,correct,0.0,0.0,2.24,factoid
+train,5205,turn on surfin usa,play_music,song_name,"[[""song_name"", ""surfin usa""]]",audio-1490290955-headset.flac,ME-352,M,correct,0.0,0.0,1.728,play_music
+train,16155,what is the address of tara john,email_querycontact,person|personal_info,"[[""person"", ""tara john""], [""personal_info"", ""address""]]",audio-1490199777-headset.flac,FE-347,F,correct,0.0,0.0,2.112,email_querycontact
+train,16155,what is the address of tara john,email_querycontact,person|personal_info,"[[""person"", ""tara john""], [""personal_info"", ""address""]]",audio-1490368420-headset.flac,MO-355,M,correct,0.0,0.0,2.24,email_querycontact
+train,14148,describe blanket,qa_definition,definition_word,"[[""definition_word"", ""blanket""]]",audio-1490369023-headset.flac,MO-355,M,correct,0.0,0.0,1.728,qa_definition
+train,1733,checkout today alarm of meeting,alarm_query,date,"[[""date"", ""today""]]",audio-1501693134-headset.flac,FO-445,F,correct,0.0,0.0,2.176,alarm_query
+train,2525,do they have takeout,takeaway_query,food_type,"[[""food_type"", ""takeout""]]",audio-1490263355-headset.flac,FE-349,F,correct,0.0,0.0,3.008,takeaway_query
+train,2015,dim the lights in the bathroom,iot_hue_lightdim,house_place,"[[""house_place"", ""bathroom""]]",audio-1490263026-headset.flac,FE-349,F,correct,0.0,0.0,1.984,iot_hue_lightdim
+train,11038,delete butterfly clips from my wish list,lists_remove,list_name,"[[""list_name"", ""wish list""]]",audio-1490263207-headset.flac,FE-349,F,correct,0.0,0.0,3.776,lists_remove
+train,11038,delete butterfly clips from my wish list,lists_remove,list_name,"[[""list_name"", ""wish list""]]",audio-1501694613-headset.flac,FO-445,F,correct,0.0,0.0,2.944,lists_remove
+train,15666,make a complaint to target,social_post,business_name,"[[""business_name"", ""target""]]",audio-1490200743-headset.flac,FE-347,F,correct,0.0,0.0,2.304,social_post
+train,10215,show results for cooking lasagna from web,cooking_recipe,food_type,"[[""food_type"", ""lasagna""]]",audio-1501692739-headset.flac,FO-445,F,correct,0.0,0.0,3.136,cooking_recipe
+train,145,i like jazz,music_likeness,music_genre,"[[""music_genre"", ""jazz""]]",audio-1501692381-headset.flac,FO-445,F,correct,0.0,0.0,1.92,music_likeness
+train,6770,set a meeting with hongbin,calendar_set,event_name|person,"[[""event_name"", ""meeting""], [""person"", ""hongbin""]]",audio-1490292246-headset.flac,ME-352,M,correct,0.0,0.0,5.056,calendar_set
+train,3814,will it be cold tomorrow,weather_query,date|weather_descriptor,"[[""date"", ""tomorrow""], [""weather_descriptor"", ""cold""]]",audio--1505323914-headset.flac,FE-491,F,correct,0.0,0.0,1.856,weather_query
+train,10262,let's play a game of chess,play_game,game_name,"[[""game_name"", ""chess""]]",audio-1497269659-headset.flac,FO-180,F,correct,0.0,0.0,3.2,play_game
+train,3057,i have not gotten my daily news yet can you please brief me a little bit,news_query,general_frequency,"[[""general_frequency"", ""daily""]]",audio-1490201218-headset.flac,FE-347,F,correct,0.0,0.0,4.096,news_query
+train,11992,show me the shops that are in the area,recommendation_locations,business_type,"[[""business_type"", ""shops""]]",audio-1490291309-headset.flac,ME-352,M,correct,0.0,0.0,1.984,recommendation_locations
+train,7008,what does my calendar look like for the next week,calendar_query,date,"[[""date"", ""next week""]]",audio-1490198892-headset.flac,FE-347,F,correct,0.0,0.0,2.624,calendar_query
+train,2550,change the lights in my home to orange,iot_hue_lightchange,color_type|house_place,"[[""color_type"", ""orange""], [""house_place"", ""home""]]",audio-1497438951-headset.flac,MO-189,M,correct,0.0,0.0,3.712,iot_hue_lightchange
+train,2945,turn off the lamp in the living room,iot_hue_lightoff,device_type|house_place,"[[""device_type"", ""lamp""], [""house_place"", ""living room""]]",audio-1490199017-headset.flac,FE-347,F,correct,0.0,0.0,2.56,iot_hue_lightoff
+train,2945,turn off the lamp in the living room,iot_hue_lightoff,device_type|house_place,"[[""device_type"", ""lamp""], [""house_place"", ""living room""]]",audio-1490200302-headset.flac,FE-347,F,correct,0.0,0.0,1.728,iot_hue_lightoff
+train,10344,open chess game,play_game,game_name,"[[""game_name"", ""chess""]]",audio-1498572831-headset.flac,FE-250,F,correct,0.0,0.0,1.536,play_game
+train,15744,add new email to anna,email_addcontact,person|personal_info,"[[""person"", ""anna""], [""personal_info"", ""email""]]",audio-1498566887-headset.flac,FE-250,F,correct,0.0,0.0,1.664,email_addcontact
+train,14517,how much does one euro cost in rupees,qa_currency,currency_name|currency_name,"[[""currency_name"", ""euro""], [""currency_name"", ""rupees""]]",audio-1499245861-headset.flac,MO-374,M,correct,0.0,0.0,3.392,qa_currency
+train,14517,how much does one euro cost in rupees,qa_currency,currency_name|currency_name,"[[""currency_name"", ""euro""], [""currency_name"", ""rupees""]]",audio-1499246416-headset.flac,MO-374,M,correct,0.0,0.0,3.776,qa_currency
+train,3254,what was the weather report for today,weather_query,date,"[[""date"", ""today""]]",audio-1490264595-headset.flac,FE-349,F,correct,0.0,0.0,2.56,weather_query
+train,3254,what was the weather report for today,weather_query,date,"[[""date"", ""today""]]",audio-1490291032-headset.flac,ME-352,M,correct,0.0,0.0,1.728,weather_query
+train,3067,order me post mates of mcdonald,takeaway_order,business_name|food_type,"[[""business_name"", ""mcdonald""], [""food_type"", ""postmates""]]",audio-1490199024-headset.flac,FE-347,F,correct,0.0,0.0,2.496,takeaway_order
+train,8191,make sure i have nothing to do on friday,calendar_query,date,"[[""date"", ""friday""]]",audio-1501693015-headset.flac,FO-445,F,correct,0.0,0.0,2.688,calendar_query
+train,8191,make sure i have nothing to do on friday,calendar_query,date,"[[""date"", ""friday""]]",audio-1499246953-headset.flac,MO-374,M,correct,0.0,0.0,2.88,calendar_query
+train,15691,show me the customer service number for mcdonalds,social_post,business_name|personal_info,"[[""business_name"", ""mcdonalds""], [""personal_info"", ""customer service number""]]",audio--1505323871-headset.flac,FE-491,F,correct,0.0,0.0,2.752,social_post
+train,1060,does the robot vacuum cleaner have to be plugged in,iot_cleaning,device_type,"[[""device_type"", ""robot vacuum cleaner""]]",audio-1490263036-headset.flac,FE-349,F,correct,0.0,0.0,3.328,iot_cleaning
+train,9006,set a birthday event for wednesday,calendar_set,date|event_name,"[[""date"", ""wednesday""], [""event_name"", ""birthday""]]",audio--1505323885-headset.flac,FE-491,F,correct,0.0,0.0,2.816,calendar_set
+train,553,turn the lights off in the living room,iot_hue_lightoff,house_place,"[[""house_place"", ""living room""]]",audio-1501694879-headset.flac,FO-445,F,correct,0.0,0.0,2.624,iot_hue_lightoff
+train,553,turn the lights off in the living room,iot_hue_lightoff,house_place,"[[""house_place"", ""living room""]]",audio-1490292633-headset.flac,ME-352,M,correct,0.0,0.0,1.344,iot_hue_lightoff
+train,2238,what are the top world news stories,news_query,place_name,"[[""place_name"", ""world""]]",audio-1490291279-headset.flac,ME-352,M,correct,0.0,0.0,3.2,news_query
+train,12126,hey i want to get trains to manchester on wednesday,transport_ticket,date|place_name,"[[""date"", ""wednesday""], [""place_name"", ""manchester""]]",audio-1499244978-headset.flac,MO-374,M,correct,0.0,0.0,4.16,transport_ticket
+train,1219,turn on spotify shuffle,music_settings,app_name|player_setting,"[[""app_name"", ""spotify""], [""player_setting"", ""shuffle""]]",audio-1490367986-headset.flac,MO-355,M,correct,0.0,0.0,1.984,music_settings
+train,1219,turn on spotify shuffle,music_settings,app_name|player_setting,"[[""app_name"", ""spotify""], [""player_setting"", ""shuffle""]]",audio-1490368732-headset.flac,MO-355,M,correct,0.0,0.0,2.112,music_settings
+train,13985,mobile device explanation,qa_definition,definition_word,"[[""definition_word"", ""mobile device""]]",audio-1497438425-headset.flac,MO-189,M,correct,0.0,0.0,5.504,qa_definition
+train,13752,current price of coca cola stock,qa_stock,business_name,"[[""business_name"", ""coca cola""]]",audio-1490369010-headset.flac,MO-355,M,correct,0.0,0.0,2.752,qa_stock
+train,3888,please call china wok and order number seven,takeaway_order,business_name|food_type,"[[""business_name"", ""china wok""], [""food_type"", ""number seven""]]",audio-1498564298-headset.flac,FE-250,F,correct,0.0,0.0,3.264,takeaway_order
+train,7396,are there any events schedule for this week,calendar_query,date,"[[""date"", ""this week""]]",audio-1490263479-headset.flac,FE-349,F,correct,0.0,0.0,3.136,calendar_query
+train,642,play me a song of adele,play_music,artist_name,"[[""artist_name"", ""adele""]]",audio-1498566975-headset.flac,FE-250,F,correct,0.0,0.0,1.408,play_music
+train,7827,please remind me to call duker at one pm on thursday,calendar_set,date|person|time,"[[""date"", ""thursday""], [""person"", ""duker""], [""time"", ""one pm""]]",audio-1490198958-headset.flac,FE-347,F,correct,0.0,0.0,3.584,calendar_set
+train,8186,tell me when my next meeting is,calendar_set,event_name,"[[""event_name"", ""meeting""]]",audio-1498564329-headset.flac,FE-250,F,correct,0.0,0.0,2.496,calendar_set
+train,16625,tell chris i will be late through email,email_sendemail,person,"[[""person"", ""chris""]]",audio-1497438933-headset.flac,MO-189,M,correct,0.0,0.0,6.528,email_sendemail
+train,6933,what events are this week,calendar_query,date,"[[""date"", ""this week""]]",audio-1490263426-headset.flac,FE-349,F,correct,0.0,0.0,1.792,calendar_query
+train,6933,what events are this week,calendar_query,date,"[[""date"", ""this week""]]",audio-1490292534-headset.flac,ME-352,M,correct,0.0,0.0,1.216,calendar_query
+train,4053,is it sunny outside at this moment,weather_query,time|weather_descriptor,"[[""time"", ""this moment""], [""weather_descriptor"", ""sunny""]]",audio-1490261646-headset.flac,FE-349,F,correct,0.0,0.0,2.432,weather_query
+train,13814,what is a hibachi grill,qa_definition,definition_word,"[[""definition_word"", ""hibachi grill""]]",audio-1490366027-headset.flac,MO-355,M,correct,0.0,0.0,2.24,qa_definition
+train,15606,tweet a complaint about more electricity bill this month,social_post,date|media_type,"[[""date"", ""this month""], [""media_type"", ""tweet""]]",audio-1497271506-headset.flac,FO-180,F,correct,0.0,0.0,4.544,social_post
+train,5587,is today a sunscreen day,weather_query,date|weather_descriptor,"[[""date"", ""today""], [""weather_descriptor"", ""sunscreen""]]",audio-1499245521-headset.flac,MO-374,M,correct,0.0,0.0,3.072,weather_query
+train,1583,get the latest news about formula one racing please,news_query,news_topic,"[[""news_topic"", ""formula one racing""]]",audio-1498564967-headset.flac,FE-250,F,correct,0.0,0.0,3.392,news_query
+train,1583,get the latest news about formula one racing please,news_query,news_topic,"[[""news_topic"", ""formula one racing""]]",audio-1490365564-headset.flac,MO-355,M,correct,0.0,0.0,4.48,news_query
+train,4062,does this restaurant deliver,takeaway_query,business_type,"[[""business_type"", ""restaurant""]]",audio-1497437338-headset.flac,MO-189,M,correct,0.0,0.0,6.208,query
+train,6018,time in chicago,datetime_query,place_name,"[[""place_name"", ""chicago""]]",audio-1490261656-headset.flac,FE-349,F,correct,0.0,0.0,1.92,datetime_query
+train,9667,please continue playing odd thomas by dean koontz,play_audiobook,audiobook_author|audiobook_name|player_setting,"[[""audiobook_author"", ""dean koontz""], [""audiobook_name"", ""odd thomas""], [""player_setting"", ""continue playing""]]",audio-1490366546-headset.flac,MO-355,M,correct,0.0,0.0,3.712,play_audiobook
+train,3389,what is the weather forecast for chicago,weather_query,place_name,"[[""place_name"", ""chicago""]]",audio-1490261317-headset.flac,FE-349,F,correct,0.0,0.0,2.624,weather_query
+train,8920,what events do i have between twelve pm and four pm,calendar_query,time,"[[""time"", ""twelve pm and four pm""]]",audio-1501693770-headset.flac,FO-445,F,correct,0.0,0.0,4.032,calendar_query
+train,12333,book a ticket for me on a train to get to boston tomorrow what is available,transport_ticket,date|place_name|transport_type,"[[""date"", ""tomorrow""], [""place_name"", ""boston""], [""transport_type"", ""train""]]",audio-1497439367-headset.flac,MO-189,M,correct,0.0,0.0,6.464,transport_ticket
+train,13968,when was born abraham lincoln,qa_factoid,person,"[[""person"", ""abraham lincoln""]]",audio-1501692888-headset.flac,FO-445,F,correct,0.0,0.0,2.368,qa_factoid
+train,8435,please set work meeting at twelve pm for every thursday in february,calendar_set,date|event_name|general_frequency|time,"[[""date"", ""february""], [""event_name"", ""work meeting""], [""general_frequency"", ""every thursday""], [""time"", ""twelve pm""]]",audio-1501692939-headset.flac,FO-445,F,correct,0.0,0.0,4.928,calendar_set
+train,8435,please set work meeting at twelve pm for every thursday in february,calendar_set,date|event_name|general_frequency|time,"[[""date"", ""february""], [""event_name"", ""work meeting""], [""general_frequency"", ""every thursday""], [""time"", ""twelve pm""]]",audio-1499245879-headset.flac,MO-374,M,correct,0.0,0.0,7.104,calendar_set
+train,6740,when is peter's birthday,calendar_query,event_name|person,"[[""event_name"", ""birthday""], [""person"", ""peter 's""]]",audio-1490200298-headset.flac,FE-347,F,correct,0.0,0.0,1.28,query
+train,14636,what does regal mean,qa_definition,definition_word,"[[""definition_word"", ""regal""]]",audio-1497270499-headset.flac,FO-180,F,correct,0.0,0.0,2.624,qa_definition
+train,12116,find tacos near my home,recommendation_locations,business_type|place_name,"[[""business_type"", ""tacos""], [""place_name"", ""home""]]",audio-1497271443-headset.flac,FO-180,F,correct,0.0,0.0,3.584,recommendation_locations
+devel,3843,order me chinese food,takeaway_order,food_type,"[[""food_type"", ""chinese""]]",audio-1490201253-headset.flac,FE-347,F,correct,0.0,0.0,1.344,takeaway_order
+devel,6158,turn on the vacuum,iot_cleaning,device_type,"[[""device_type"", ""vacuum""]]",audio-1498565245-headset.flac,FE-250,F,correct,0.0,0.0,1.984,iot_cleaning
+devel,5028,is the twenty third of april a saturday,datetime_query,date,"[[""date"", ""the twenty third of april""]]",audio-1497271513-headset.flac,FO-180,F,correct,0.0,0.0,4.288,datetime_query
+devel,26,clean the flat,iot_cleaning,house_place,"[[""house_place"", ""flat""]]",audio-1501694660-headset.flac,FO-445,F,correct,0.0,0.0,1.536,iot_cleaning
+devel,15014,how big is japan,qa_factoid,place_name,"[[""place_name"", ""japan""]]",audio-1497270966-headset.flac,FO-180,F,correct,0.0,0.0,2.432,qa_factoid
+devel,8447,set a reminder for next saturday go to the library at five o'clock,calendar_set,date|place_name|time,"[[""date"", ""saturday""], [""place_name"", ""library""], [""time"", ""five""]]",audio-1498567099-headset.flac,FE-250,F,correct,0.0,0.0,3.456,calendar_set
+devel,2936,play my second playlist,play_music,playlist_name,"[[""playlist_name"", ""second playlist""]]",audio-1498572929-headset.flac,FE-250,F,correct,0.0,0.0,1.408,play_music
+devel,12470,book ticket to depart in the morning,transport_ticket,timeofday,"[[""timeofday"", ""morning""]]",audio-1490200605-headset.flac,FE-347,F,correct,0.0,0.0,2.176,transport_ticket
+devel,2835,tell me the date today,datetime_query,date,"[[""date"", ""today""]]",audio-1490199143-headset.flac,FE-347,F,correct,0.0,0.0,1.664,datetime_query
+devel,7070,do i have any reminders today,calendar_query,date,"[[""date"", ""today""]]",audio-1497439430-headset.flac,MO-189,M,correct,0.0,0.0,4.48,calendar_query
+devel,2272,play my top rated pop songs please,play_music,music_descriptor|music_genre,"[[""music_descriptor"", ""top rated""], [""music_genre"", ""pop""]]",audio-1490200420-headset.flac,FE-347,F,correct,0.0,0.0,2.368,play_music
+devel,5596,closest chipotle,takeaway_order,business_name,"[[""business_name"", ""chipotle""]]",audio-1497271223-headset.flac,FO-180,F,correct,0.0,0.0,2.88,takeaway_order
+devel,9817,please resume this playback in audiobook,play_audiobook,media_type|player_setting,"[[""media_type"", ""audiobook""], [""player_setting"", ""resume""]]",audio-1501693629-headset.flac,FO-445,F,correct,0.0,0.0,2.816,play_audiobook
+devel,8873,remember dinner on thursday at bistro italia,calendar_set,date|meal_type|place_name,"[[""date"", ""thursday""], [""meal_type"", ""dinner""], [""place_name"", ""bistro italia""]]",audio-1498565122-headset.flac,FE-250,F,correct,0.0,0.0,3.072,calendar_set
+devel,4424,will it rain at all this week,weather_query,date|weather_descriptor,"[[""date"", ""this week""], [""weather_descriptor"", ""rain""]]",audio-1501692000-headset.flac,FO-445,F,correct,0.0,0.0,2.496,weather_query
+devel,4424,will it rain at all this week,weather_query,date|weather_descriptor,"[[""date"", ""this week""], [""weather_descriptor"", ""rain""]]",audio-1490367463-headset.flac,MO-355,M,correct,0.0,0.0,2.24,weather_query
+devel,2963,please play my favorite song by bruno mars,play_music,artist_name,"[[""artist_name"", ""bruno mars""]]",audio-1501693567-headset.flac,FO-445,F,correct,0.0,0.0,2.944,play_music
+devel,7086,remove today's meeting at evening,calendar_remove,date|event_name|timeofday,"[[""date"", ""today 's""], [""event_name"", ""meeting""], [""timeofday"", ""evening""]]",audio-1490197992-headset.flac,FE-347,F,correct,0.0,0.0,2.88,calendar_remove
+devel,9067,am i busy this weekend,calendar_query,date,"[[""date"", ""this weekend""]]",audio-1497439350-headset.flac,MO-189,M,correct,0.0,0.0,5.12,calendar_query
+devel,10627,put pencil on a new grocery list,lists_createoradd,list_name,"[[""list_name"", ""grocery""]]",audio-1501694719-headset.flac,FO-445,F,correct,0.0,0.0,2.944,lists_createoradd
+devel,7065,what events are in my calendar for today,calendar_query,date,"[[""date"", ""today""]]",audio-1490368390-headset.flac,MO-355,M,correct,0.0,0.0,2.496,calendar_query
+devel,17,dim the lights in the hall,iot_hue_lightdim,house_place,"[[""house_place"", ""hall""]]",audio-1498574172-headset.flac,FE-250,F,correct,0.0,0.0,1.536,iot_hue_lightdim
+devel,13339,what does the word hypocrisy mean,qa_definition,definition_word,"[[""definition_word"", ""hypocrisy""]]",audio-1499246946-headset.flac,MO-374,M,correct,0.0,0.0,3.712,qa_definition
+devel,10238,find recipe chicken casserole,cooking_recipe,food_type,"[[""food_type"", ""chicken casserole""]]",audio-1490262469-headset.flac,FE-349,F,correct,0.0,0.0,2.048,cooking_recipe
+devel,14430,can you tell me what haggis looks like,qa_definition,definition_word,"[[""definition_word"", ""haggis""]]",audio-1490368920-headset.flac,MO-355,M,correct,0.0,0.0,2.176,qa_definition
+devel,12715,call a taxi to pick me up right now,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1490201068-headset.flac,FE-347,F,correct,0.0,0.0,2.24,transport_taxi
+devel,16825,check for all emails from tom brady,email_query,person,"[[""person"", ""tom brady""]]",audio-1498573552-headset.flac,FE-250,F,correct,0.0,0.0,1.856,email_query
+devel,12602,how much for a train ticket,transport_query,transport_type,"[[""transport_type"", ""train""]]",audio-1490263176-headset.flac,FE-349,F,correct,0.0,0.0,2.624,transport_query
+devel,9013,remind me on fifth april there is a meeting with boss,calendar_set,date|event_name|relation,"[[""date"", ""fifth april""], [""event_name"", ""meeting""], [""relation"", ""boss""]]",audio-1498573229-headset.flac,FE-250,F,correct,0.0,0.0,2.944,calendar_set
+devel,7880,tell me all the events between today and the twenty first,calendar_query,date|date,"[[""date"", ""today""], [""date"", ""twenty first""]]",audio--1505323875-headset.flac,FE-491,F,correct,0.0,0.0,3.456,calendar_query
+devel,7653,don't forget to remind me of my brother's birthday on april twenty,calendar_set,date|event_name|relation,"[[""date"", ""april twenty""], [""event_name"", ""birthday""], [""relation"", ""brother 's""]]",audio-1497438989-headset.flac,MO-189,M,correct,0.0,0.0,6.208,calendar_set
+devel,3056,what is new in politics today can you filter out trump news though,news_query,date|news_topic|person,"[[""date"", ""today""], [""news_topic"", ""politics""], [""person"", ""trump""]]",audio-1498566859-headset.flac,FE-250,F,correct,0.0,0.0,4.416,news_query
+devel,6908,i need a reminder every single day at nine am,calendar_set,general_frequency|time,"[[""general_frequency"", ""every single day""], [""time"", ""nine am""]]",audio-1499245771-headset.flac,MO-374,M,correct,0.0,0.0,4.032,calendar_set
+devel,15265,give me details of my twitter handle profile including the total number of followers,social_query,media_type,"[[""media_type"", ""twitter""]]",audio-1501694771-headset.flac,FO-445,F,correct,0.0,0.0,5.312,social_query
+devel,2515,tell me the weather for this week,weather_query,date,"[[""date"", ""this week""]]",audio-1498566482-headset.flac,FE-250,F,correct,0.0,0.0,1.536,weather_query
+devel,10616,by tomorrow create a new list,lists_createoradd,date,"[[""date"", ""tomorrow""]]",audio-1498565491-headset.flac,FE-250,F,correct,0.0,0.0,2.816,lists_createoradd
+devel,8046,how many meetings do i have next week,calendar_query,date,"[[""date"", ""next week""]]",audio-1490368435-headset.flac,MO-355,M,correct,0.0,0.0,1.984,calendar_query
+devel,15863,check emails for unread emails from mom,email_query,relation,"[[""relation"", ""mom""]]",audio-1490198940-headset.flac,FE-347,F,correct,0.0,0.0,2.368,email_query
+devel,14361,at what age michael phelps got married,qa_factoid,person,"[[""person"", ""michael phelps""]]",audio-1490367423-headset.flac,MO-355,M,correct,0.0,0.0,3.2,qa_factoid
+devel,58,find my thai takeaways around grass market,takeaway_query,food_type|order_type|place_name,"[[""food_type"", ""thai""], [""order_type"", ""takeaways""], [""place_name"", ""grassmarket""]]",audio-1501691810-headset.flac,FO-445,F,correct,0.0,0.0,4.096,takeaway_query
+devel,2042,is the meeting scheduled for tomorrow,calendar_query,date|event_name,"[[""date"", ""tomorrow""], [""event_name"", ""meeting""]]",audio-1490263108-headset.flac,FE-349,F,correct,0.0,0.0,2.304,calendar_query
+devel,3530,play something romantic,play_music,music_genre,"[[""music_genre"", ""romantic""]]",audio-1501692959-headset.flac,FO-445,F,correct,0.0,0.0,1.984,play_music
+devel,7999,please remove the parent teacher conference scheduled on march seven,calendar_remove,date|event_name,"[[""date"", ""march seven""], [""event_name"", ""parent teacher conference""]]",audio-1501694727-headset.flac,FO-445,F,correct,0.0,0.0,4.864,calendar_remove
+devel,14285,tell me about new york,qa_factoid,place_name,"[[""place_name"", ""new york""]]",audio-1490261341-headset.flac,FE-349,F,correct,0.0,0.0,1.984,qa_factoid
+devel,16104,send an email to my friend say birthday wishes,email_sendemail,event_name|relation,"[[""event_name"", ""birthday""], [""relation"", ""friend""]]",audio-1497437349-headset.flac,MO-189,M,correct,0.0,0.0,7.36,email_sendemail
+devel,2600,turn off my bedside lamp please,iot_hue_lightoff,device_type,"[[""device_type"", ""bedside lamp""]]",audio-1498573799-headset.flac,FE-250,F,correct,0.0,0.0,2.048,iot_hue_lightoff
+devel,217,is it raining outside,weather_query,weather_descriptor,"[[""weather_descriptor"", ""raining""]]",audio-1490367363-headset.flac,MO-355,M,correct,0.0,0.0,2.368,query
+devel,3620,what is the weather in sydney now,weather_query,place_name,"[[""place_name"", ""sydney""]]",audio-1497270370-headset.flac,FO-180,F,correct,0.0,0.0,3.392,weather_query
+devel,2935,play my country playlist,play_music,music_genre,"[[""music_genre"", ""country""]]",audio-1490199539-headset.flac,FE-347,F,correct,0.0,0.0,1.792,play_music
+devel,11450,start podcast mlb daily,play_podcasts,podcast_name,"[[""podcast_name"", ""mlb daily""]]",audio-1490367103-headset.flac,MO-355,M,correct,0.0,0.0,2.816,play_podcasts
+devel,2006,please play rap,play_music,music_genre,"[[""music_genre"", ""rap""]]",audio-1497270718-headset.flac,FO-180,F,correct,0.0,0.0,3.456,play_music
+devel,9965,how can i cook pasta,cooking_recipe,food_type,"[[""food_type"", ""pasta""]]",audio-1497439695-headset.flac,MO-189,M,correct,0.0,0.0,3.328,cooking_recipe
+devel,15157,what was the last thing my mom said,social_query,relation,"[[""relation"", ""mom""]]",audio-1490366482-headset.flac,MO-355,M,correct,0.0,0.0,2.176,social_query
+devel,12711,set up uber,transport_taxi,transport_agency,"[[""transport_agency"", ""uber""]]",audio-1490292281-headset.flac,ME-352,M,correct,0.0,0.0,1.28,transport_taxi
+devel,8729,set a weekly appointment reminder,calendar_set,general_frequency,"[[""general_frequency"", ""weekly""]]",audio-1497439572-headset.flac,MO-189,M,correct,0.0,0.0,3.84,calendar_set
+devel,1192,i need to hear notorious thugs by bone thugs now,play_music,artist_name|song_name,"[[""artist_name"", ""bone thugs""], [""song_name"", ""notorious thugs""]]",audio-1498565989-headset.flac,FE-250,F,correct,0.0,0.0,3.2,play_music
+devel,9580,play a news radio station,play_radio,radio_name,"[[""radio_name"", ""news radio station""]]",audio-1497439888-headset.flac,MO-189,M,correct,0.0,0.0,5.12,play_radio
+devel,1943,start house cleanup,iot_cleaning,house_place,"[[""house_place"", ""house""]]",audio-1498566415-headset.flac,FE-250,F,correct,0.0,0.0,1.536,iot_cleaning
+devel,13037,what should i cook tonight,general_quirky,timeofday,"[[""timeofday"", ""tonight""]]",audio-1501694708-headset.flac,FO-445,F,correct,0.0,0.0,2.112,general_quirky
+devel,3968,indie,play_music,music_genre,"[[""music_genre"", ""indie""]]",audio-1497270747-headset.flac,FO-180,F,correct,0.0,0.0,2.624,play_music
+devel,6548,today was a tiring day,general_quirky,date,"[[""date"", ""today""]]",audio-1498573440-headset.flac,FE-250,F,correct,0.0,0.0,2.112,general_quirky
+devel,10195,recipe for crabmeat,cooking_recipe,food_type,"[[""food_type"", ""crabmeat""]]",audio-1498573180-headset.flac,FE-250,F,correct,0.0,0.0,2.176,cooking_recipe
+devel,6778,do i have any events today,calendar_query,date,"[[""date"", ""today""]]",audio-1490262497-headset.flac,FE-349,F,correct,0.0,0.0,3.456,calendar_query
+devel,1016,what are the headlines from the new york times,news_query,media_type,"[[""media_type"", ""new york times""]]",audio-1499244951-headset.flac,MO-374,M,correct,0.0,0.0,3.52,news_query
+devel,14458,how would the volkswagen golf car look like,qa_definition,definition_word,"[[""definition_word"", ""volkswagen golf car""]]",audio-1490199991-headset.flac,FE-347,F,correct,0.0,0.0,2.88,qa_definition
+devel,12947,who is president of poland,qa_factoid,place_name,"[[""place_name"", ""poland""]]",audio-1498566475-headset.flac,FE-250,F,correct,0.0,0.0,1.664,factoid
+devel,365,is it monday today,datetime_query,date|date,"[[""date"", ""monday""], [""date"", ""today""]]",audio-1498567402-headset.flac,FE-250,F,correct,0.0,0.0,1.728,datetime_query
+devel,12669,could you please check the traffic to our home,transport_traffic,place_name,"[[""place_name"", ""home""]]",audio-1490199288-headset.flac,FE-347,F,correct,0.0,0.0,2.24,transport_traffic
+devel,295,tell me today's newspaper's headlines,news_query,date|media_type,"[[""date"", ""today 's""], [""media_type"", ""newspaper 's""]]",audio-1501694778-headset.flac,FO-445,F,correct,0.0,0.0,2.24,news_query
+devel,1271,what's happening in the world today,news_query,date,"[[""date"", ""today""]]",audio-1490261832-headset.flac,FE-349,F,correct,0.0,0.0,2.368,news_query
+devel,15753,when did i get an email from john smith about car accident,email_query,person,"[[""person"", ""john smith""]]",audio-1490367661-headset.flac,MO-355,M,correct,0.0,0.0,3.584,email_query
+devel,14320,who is the wife of obama,qa_factoid,person,"[[""person"", ""obama""]]",audio-1490198672-headset.flac,FE-347,F,correct,0.0,0.0,2.432,qa_factoid
+devel,2221,weather in homestead,weather_query,place_name,"[[""place_name"", ""homestead""]]",audio-1490369066-headset.flac,MO-355,M,correct,0.0,0.0,2.176,weather_query
+devel,1416,order some takeaway food,takeaway_order,order_type,"[[""order_type"", ""takeaway""]]",audio-1497437745-headset.flac,MO-189,M,correct,0.0,0.0,5.376,takeaway_order
+devel,638,can you find an animal joke for me,general_joke,joke_type,"[[""joke_type"", ""animal""]]",audio-1499246817-headset.flac,MO-374,M,correct,0.0,0.0,2.624,general_joke
+devel,16479,reply to mark's email,email_sendemail,person,"[[""person"", ""mark 's""]]",audio-1490199179-headset.flac,FE-347,F,correct,0.0,0.0,1.728,email_sendemail
+devel,271,what's the time in tokyo now,datetime_query,place_name,"[[""place_name"", ""tokyo""]]",audio-1501693726-headset.flac,FO-445,F,correct,0.0,0.0,1.792,datetime_query
+devel,5021,i like r n b,music_likeness,music_genre,"[[""music_genre"", ""r n b""]]",audio-1499244626-headset.flac,MO-374,M,correct,0.0,0.0,3.2,music_likeness
+devel,30,cleaning is good dust is so bad do now your magic clean my carpet,iot_cleaning,house_place,"[[""house_place"", ""carpet""]]",audio-1490291426-headset.flac,ME-352,M,correct,0.0,0.0,4.736,iot_cleaning
+devel,4967,what were the winning powerball numbers last night,news_query,date|news_topic,"[[""date"", ""last night""], [""news_topic"", ""winning powerball numbers""]]",audio-1490368210-headset.flac,MO-355,M,correct,0.0,0.0,3.072,news_query
+devel,5015,please tell me the latest news about the election scenario in our state,news_query,news_topic|place_name,"[[""news_topic"", ""election scenario""], [""place_name"", ""state""]]",audio-1490368109-headset.flac,MO-355,M,correct,0.0,0.0,3.968,news_query
+devel,16396,send the email to john,email_sendemail,person,"[[""person"", ""john""]]",audio-1498572898-headset.flac,FE-250,F,correct,0.0,0.0,2.176,email_sendemail
+devel,2620,please start vacuum,iot_cleaning,device_type,"[[""device_type"", ""vacuum""]]",audio-1490200305-headset.flac,FE-347,F,correct,0.0,0.0,1.216,iot_cleaning
+devel,17167,what's the address for alex,email_querycontact,person|personal_info,"[[""person"", ""alex""], [""personal_info"", ""address""]]",audio-1498573910-headset.flac,FE-250,F,correct,0.0,0.0,1.536,email_querycontact
+devel,17167,what's the address for alex,email_querycontact,person|personal_info,"[[""person"", ""alex""], [""personal_info"", ""address""]]",audio-1490369017-headset.flac,MO-355,M,correct,0.0,0.0,2.56,email_querycontact
+devel,17076,did i get any emails from sam today,email_query,date|person,"[[""date"", ""today""], [""person"", ""sam""]]",audio-1490291383-headset.flac,ME-352,M,correct,0.0,0.0,2.048,email_query
+devel,17076,did i get any emails from sam today,email_query,date|person,"[[""date"", ""today""], [""person"", ""sam""]]",audio-1497439998-headset.flac,MO-189,M,correct,0.0,0.0,5.12,email_query
+devel,16372,are there any emails in regard to my promotion,email_query,event_name,"[[""event_name"", ""promotion""]]",audio-1501692611-headset.flac,FO-445,F,correct,0.0,0.0,3.712,email_query
+devel,15193,post new status on facebook time to celebrate,social_post,media_type,"[[""media_type"", ""facebook""]]",audio-1501693786-headset.flac,FO-445,F,correct,0.0,0.0,3.264,social_post
+devel,3713,play my most favorite country song,play_music,music_genre,"[[""music_genre"", ""country""]]",audio-1498574151-headset.flac,FE-250,F,correct,0.0,0.0,2.176,play_music
+devel,12095,can you recommend any pub in mg road,recommendation_locations,business_type|place_name,"[[""business_type"", ""pub""], [""place_name"", ""mg road""]]",audio-1490292324-headset.flac,ME-352,M,correct,0.0,0.0,2.88,recommendation_locations
+devel,1726,what will be the highest temperature in coming week,weather_query,date|weather_descriptor,"[[""date"", ""coming week""], [""weather_descriptor"", ""temperature""]]",audio-1498572808-headset.flac,FE-250,F,correct,0.0,0.0,3.008,weather_query
+devel,16821,open derek's contact information,email_querycontact,person,"[[""person"", ""derek 's""]]",audio-1490199209-headset.flac,FE-347,F,correct,0.0,0.0,2.112,email_querycontact
+devel,8808,do i need to be reminded of any meetings on monday,calendar_set,date|event_name,"[[""date"", ""monday""], [""event_name"", ""meetings""]]",audio-1497272055-headset.flac,FO-180,F,correct,0.0,0.0,5.12,calendar_set
+devel,7317,can you set the location to my sisters house for this event,calendar_set,place_name|relation,"[[""place_name"", ""house""], [""relation"", ""sisters""]]",audio-1490367734-headset.flac,MO-355,M,correct,0.0,0.0,3.52,calendar_set
+devel,12178,how much traffic is there right now in bowery street,transport_traffic,place_name,"[[""place_name"", ""bowery street""]]",audio-1490261554-headset.flac,FE-349,F,correct,0.0,0.0,2.88,transport_traffic
+devel,3676,can i hear some britney spears,play_music,artist_name,"[[""artist_name"", ""britney spears""]]",audio-1490201422-headset.flac,FE-347,F,correct,0.0,0.0,1.728,play_music
+devel,16580,google find the new email address for bill that i added friday,email_query,date|person,"[[""date"", ""friday""], [""person"", ""bill""]]",audio-1497439493-headset.flac,MO-189,M,correct,0.0,0.0,7.488,email_query
+devel,5456,i want to read yahoo news,news_query,media_type,"[[""media_type"", ""yahoo news""]]",audio-1490200780-headset.flac,FE-347,F,correct,0.0,0.0,2.24,news_query
+devel,13490,is there a correlation between the weather in beijing and nasdaq prices over the last week,general_quirky,date|place_name,"[[""date"", ""last week""], [""place_name"", ""beijing""]]",audio-1490262075-headset.flac,FE-349,F,correct,0.0,0.0,4.992,general_quirky
+devel,10870,add buy groceries to my to do list for today,lists_createoradd,date,"[[""date"", ""today""]]",audio-1497271142-headset.flac,FO-180,F,correct,0.0,0.0,4.608,lists_createoradd
+devel,12368,how do i get to brighton,transport_query,place_name,"[[""place_name"", ""brighton""]]",audio-1497270754-headset.flac,FO-180,F,correct,0.0,0.0,3.52,transport_query
+devel,12368,how do i get to brighton,transport_query,place_name,"[[""place_name"", ""brighton""]]",audio-1501694760-headset.flac,FO-445,F,correct,0.0,0.0,2.24,transport_query
+devel,5142,could you please tell me what is the weather predication for this week,weather_query,date,"[[""date"", ""this week""]]",audio-1499246534-headset.flac,MO-374,M,correct,0.0,0.0,4.608,weather_query
+devel,11666,i'm looking for some dress shows can you find clothing stores within one mile,recommendation_locations,business_type|place_name,"[[""business_type"", ""dress shows""], [""place_name"", ""within one mile""]]",audio-1498565773-headset.flac,FE-250,F,correct,0.0,0.0,4.224,recommendation_locations
+devel,11654,search for nearby chinese restaurants,recommendation_locations,business_type|food_type,"[[""business_type"", ""restaurants""], [""food_type"", ""chinese""]]",audio-1501692977-headset.flac,FO-445,F,correct,0.0,0.0,2.56,recommendation_locations
+devel,147,i like to listen to jazz,play_music,music_genre,"[[""music_genre"", ""jazz""]]",audio-1498573697-headset.flac,FE-250,F,correct,0.0,0.0,1.6,play_music
+devel,147,i like to listen to jazz,play_music,music_genre,"[[""music_genre"", ""jazz""]]",audio-1490366200-headset.flac,MO-355,M,correct,0.0,0.0,3.456,play_music
+devel,147,i like to listen to jazz,play_music,music_genre,"[[""music_genre"", ""jazz""]]",audio-1490369087-headset.flac,MO-355,M,correct,0.0,0.0,1.536,play_music
+devel,16885,send an email to ms palmer ask her if dean turned in his last homework assignment,email_sendemail,person,"[[""person"", ""ms palmer""]]",audio-1490263318-headset.flac,FE-349,F,correct,0.0,0.0,7.296,email_sendemail
+devel,2009,what will be this week weather condition,weather_query,date,"[[""date"", ""this week""]]",audio-1499245711-headset.flac,MO-374,M,correct,0.0,0.0,3.456,weather_query
+devel,14018,what does triumph mean,qa_definition,definition_word,"[[""definition_word"", ""triumph""]]",audio-1490262790-headset.flac,FE-349,F,correct,0.0,0.0,1.6,qa_definition
+devel,13795,what is the exchange rate between us and france,qa_currency,currency_name|currency_name,"[[""currency_name"", ""france""], [""currency_name"", ""us""]]",audio-1498574109-headset.flac,FE-250,F,correct,0.0,0.0,2.816,qa_currency
+devel,318,is it going to rain tomorrow,weather_query,date|weather_descriptor,"[[""date"", ""tomorrow""], [""weather_descriptor"", ""rain""]]",audio-1490201302-headset.flac,FE-347,F,correct,0.0,0.0,1.344,weather_query
+devel,318,is it going to rain tomorrow,weather_query,date|weather_descriptor,"[[""date"", ""tomorrow""], [""weather_descriptor"", ""rain""]]",audio-1490367669-headset.flac,MO-355,M,correct,0.0,0.0,1.536,weather_query
+devel,318,is it going to rain tomorrow,weather_query,date|weather_descriptor,"[[""date"", ""tomorrow""], [""weather_descriptor"", ""rain""]]",audio-1490368612-headset.flac,MO-355,M,correct,0.0,0.0,1.728,weather_query
+devel,8372,hey siri make sure my calendar is completely clear tomorrow,calendar_remove,date,"[[""date"", ""tomorrow""]]",audio-1490263008-headset.flac,FE-349,F,correct,0.0,0.0,4.096,calendar_remove
+devel,434,what day is it today,datetime_query,date,"[[""date"", ""today""]]",audio-1490263403-headset.flac,FE-349,F,correct,0.0,0.0,1.92,datetime_query
+devel,434,what day is it today,datetime_query,date,"[[""date"", ""today""]]",audio-1499246453-headset.flac,MO-374,M,correct,0.0,0.0,1.856,datetime_query
+devel,534,set a wake up call for ten am,alarm_set,time,"[[""time"", ""ten am""]]",audio-1490264329-headset.flac,FE-349,F,correct,0.0,0.0,2.688,alarm_set
+devel,534,set a wake up call for ten am,alarm_set,time,"[[""time"", ""ten am""]]",audio-1501694597-headset.flac,FO-445,F,correct,0.0,0.0,2.56,alarm_set
+devel,12185,where is the train station,transport_query,place_name,"[[""place_name"", ""train station""]]",audio-1499244805-headset.flac,MO-374,M,correct,0.0,0.0,1.984,transport_query
+devel,9189,remind me about the meeting in one hour,calendar_set,event_name|time,"[[""event_name"", ""meeting""], [""time"", ""one hour""]]",audio-1497270542-headset.flac,FO-180,F,correct,0.0,0.0,3.136,calendar_set
+devel,6009,when can i pick up my chinese food,takeaway_query,food_type,"[[""food_type"", ""chinese""]]",audio-1490291548-headset.flac,ME-352,M,correct,0.0,0.0,3.008,takeaway_query
+devel,13139,what is hurricane,qa_definition,definition_word,"[[""definition_word"", ""hurricane""]]",audio-1490292194-headset.flac,ME-352,M,correct,0.0,0.0,1.472,qa_definition
+devel,13617,tell me the most strange thing happening in the world today,general_quirky,date,"[[""date"", ""today""]]",audio-1490366858-headset.flac,MO-355,M,correct,0.0,0.0,3.904,general_quirky
+devel,3402,what will the weather be next week,weather_query,date,"[[""date"", ""next week""]]",audio-1490366884-headset.flac,MO-355,M,correct,0.0,0.0,3.776,weather_query
+devel,4558,what is the weather near me this week,weather_query,date,"[[""date"", ""this week""]]",audio-1501693833-headset.flac,FO-445,F,correct,0.0,0.0,2.112,weather_query
+devel,8385,is this week a payday week,calendar_query,date,"[[""date"", ""this week""]]",audio-1490368940-headset.flac,MO-355,M,correct,0.0,0.0,1.856,calendar_query
+devel,2428,let me know the time in india,datetime_query,place_name,"[[""place_name"", ""india""]]",audio-1501693094-headset.flac,FO-445,F,correct,0.0,0.0,2.048,datetime_query
+devel,12363,book my nearest available taxi,transport_taxi,transport_type,"[[""transport_type"", ""taxi""]]",audio-1490261865-headset.flac,FE-349,F,correct,0.0,0.0,2.368,transport_taxi
+devel,8258,more about the concert in st pete,calendar_query,event_name|place_name,"[[""event_name"", ""concert""], [""place_name"", ""st pete""]]",audio-1490201373-headset.flac,FE-347,F,correct,0.0,0.0,2.304,calendar_query
+devel,11348,hey play that podcast i stopped last night,play_podcasts,podcast_descriptor,"[[""podcast_descriptor"", ""stopped last night""]]",audio-1490263412-headset.flac,FE-349,F,correct,0.0,0.0,2.624,play_podcasts
+devel,13658,how old is angelina jolie,qa_factoid,person,"[[""person"", ""angelina jolie""]]",audio-1497270900-headset.flac,FO-180,F,correct,0.0,0.0,3.52,qa_factoid
+devel,14377,who is arnold schwarzenegger,qa_factoid,person,"[[""person"", ""arnold schwarzenegger""]]",audio-1498572604-headset.flac,FE-250,F,correct,0.0,0.0,2.624,qa_factoid
+devel,13806,what year was bill pullman born,qa_factoid,person,"[[""person"", ""bill pullman""]]",audio-1490261527-headset.flac,FE-349,F,correct,0.0,0.0,2.24,qa_factoid
+devel,9642,play bbc radio four,play_radio,radio_name,"[[""radio_name"", ""bbc radio four""]]",audio-1498566503-headset.flac,FE-250,F,correct,0.0,0.0,2.56,play_radio
+devel,6271,how is the day today,general_quirky,date,"[[""date"", ""today""]]",audio-1490262254-headset.flac,FE-349,F,correct,0.0,0.0,1.92,general_quirky
+devel,1569,can i have an espresso please,iot_coffee,coffee_type,"[[""coffee_type"", ""espresso""]]",audio-1490198849-headset.flac,FE-347,F,correct,0.0,0.0,1.856,iot_coffee
+devel,9926,how much time to cook pasta,cooking_recipe,cooking_type|food_type,"[[""cooking_type"", ""cook""], [""food_type"", ""pasta""]]",audio-1490261108-headset.flac,FE-349,F,correct,0.0,0.0,1.984,cooking_recipe
+devel,12236,book uber from my home,transport_taxi,place_name|transport_agency,"[[""place_name"", ""home""], [""transport_agency"", ""uber""]]",audio-1501693933-headset.flac,FO-445,F,correct,0.0,0.0,2.048,transport_taxi
+devel,12236,book uber from my home,transport_taxi,place_name|transport_agency,"[[""place_name"", ""home""], [""transport_agency"", ""uber""]]",audio-1499244960-headset.flac,MO-374,M,correct,0.0,0.0,2.432,transport_taxi
+devel,5636,will i need sunblock this weekend,weather_query,date|weather_descriptor,"[[""date"", ""this weekend""], [""weather_descriptor"", ""sunblock""]]",audio-1490262818-headset.flac,FE-349,F,correct,0.0,0.0,2.816,weather_query
+devel,10952,please delete list titled kickball,lists_remove,list_name,"[[""list_name"", ""kickball""]]",audio-1490262796-headset.flac,FE-349,F,correct,0.0,0.0,2.944,lists_remove
+devel,13875,how old is barack obama,qa_factoid,person,"[[""person"", ""barack obaba""]]",audio-1490199834-headset.flac,FE-347,F,correct,0.0,0.0,1.472,qa_factoid
+devel,346,what is tomorrows weather predictions,weather_query,date,"[[""date"", ""tomorrows""]]",audio-1498573247-headset.flac,FE-250,F,correct,0.0,0.0,1.408,weather_query

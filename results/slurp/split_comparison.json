@@ -1,0 +1,626 @@
+{
+  "seed": 2026,
+  "devel_fraction": 0.2,
+  "reuse_limit": 3,
+  "rule": "A: status==correct & wer==0 & ent_wer==0",
+  "annotations": "data/slurp/annotations/8eb1654",
+  "fractions": {
+    "0.2": {
+      "speakers_assigned": {
+        "train": 95,
+        "devel": 15,
+        "test": 19
+      },
+      "heldout_names": {
+        "F": {
+          "test": [
+            "FE-145",
+            "FE-149",
+            "FE-344",
+            "FE-351",
+            "FO-150",
+            "FO-171",
+            "FO-231",
+            "FO-413",
+            "FO-419",
+            "FO-462",
+            "FO-488"
+          ],
+          "devel": [
+            "FE-146",
+            "FE-178",
+            "FE-426",
+            "FE-443",
+            "FE-452",
+            "FO-122",
+            "FO-139",
+            "FO-152",
+            "FO-460"
+          ],
+          "n_pool": 55
+        },
+        "M": {
+          "test": [
+            "ME-354",
+            "ME-373",
+            "ME-473",
+            "MO-164",
+            "MO-190",
+            "MO-375",
+            "MO-463",
+            "MO-467"
+          ],
+          "devel": [
+            "ME-140",
+            "ME-147",
+            "ME-151",
+            "ME-223",
+            "ME-369",
+            "MO-418"
+          ],
+          "n_pool": 39
+        }
+      },
+      "cross_before_text_dedup": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "removed_by_text_dedup": {
+        "train": {
+          "recordings": 0,
+          "texts": 0
+        },
+        "devel": {
+          "recordings": 0,
+          "texts": 0
+        },
+        "test": {
+          "recordings": 0,
+          "texts": 0
+        }
+      },
+      "cross_after": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "splits": {
+        "train": {
+          "recordings": 6673,
+          "speakers": 83,
+          "speakers_by_gender": {
+            "F": 34,
+            "M": 25,
+            "UNK": 24
+          },
+          "sentences": 4192,
+          "sentence_texts": 4191,
+          "pairs": 156088,
+          "pairs_same_gender": 56601,
+          "pairs_same_gender_dur_le_1s": 34251,
+          "pairs_same_gender_dur_le_2s": 49864,
+          "recordings_with_partner": 5979
+        },
+        "devel": {
+          "recordings": 261,
+          "speakers": 14,
+          "speakers_by_gender": {
+            "F": 9,
+            "M": 5
+          },
+          "sentences": 234,
+          "sentence_texts": 234,
+          "pairs": 227,
+          "pairs_same_gender": 125,
+          "pairs_same_gender_dur_le_1s": 77,
+          "pairs_same_gender_dur_le_2s": 114,
+          "recordings_with_partner": 157
+        },
+        "test": {
+          "recordings": 719,
+          "speakers": 19,
+          "speakers_by_gender": {
+            "F": 11,
+            "M": 8
+          },
+          "sentences": 530,
+          "sentence_texts": 530,
+          "pairs": 1227,
+          "pairs_same_gender": 571,
+          "pairs_same_gender_dur_le_1s": 378,
+          "pairs_same_gender_dur_le_2s": 529,
+          "recordings_with_partner": 467,
+          "reuse_limited_same_gender_dur_le_1s": {
+            "edges": 378,
+            "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "ilp_optimal": true,
+            "ilp_max_pairs": 262,
+            "ilp_recordings_used": 303,
+            "upper_bound_sum_min_deg_k_over_2": 296,
+            "greedy_pairs": 262
+          }
+        }
+      }
+    },
+    "0.3": {
+      "speakers_assigned": {
+        "train": 88,
+        "devel": 13,
+        "test": 28
+      },
+      "heldout_names": {
+        "F": {
+          "test": [
+            "FE-145",
+            "FE-149",
+            "FE-178",
+            "FE-344",
+            "FE-351",
+            "FE-443",
+            "FE-452",
+            "FO-122",
+            "FO-150",
+            "FO-171",
+            "FO-231",
+            "FO-413",
+            "FO-419",
+            "FO-460",
+            "FO-462",
+            "FO-488"
+          ],
+          "devel": [
+            "FE-146",
+            "FE-250",
+            "FE-348",
+            "FE-349",
+            "FE-426",
+            "FO-139",
+            "FO-152",
+            "FO-219"
+          ],
+          "n_pool": 55
+        },
+        "M": {
+          "test": [
+            "ME-140",
+            "ME-223",
+            "ME-354",
+            "ME-369",
+            "ME-373",
+            "ME-473",
+            "MO-164",
+            "MO-190",
+            "MO-375",
+            "MO-418",
+            "MO-463",
+            "MO-467"
+          ],
+          "devel": [
+            "ME-147",
+            "ME-151",
+            "ME-352",
+            "ME-492",
+            "MO-446"
+          ],
+          "n_pool": 39
+        }
+      },
+      "cross_before_text_dedup": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 1,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "removed_by_text_dedup": {
+        "train": {
+          "recordings": 3,
+          "texts": 1
+        },
+        "devel": {
+          "recordings": 0,
+          "texts": 0
+        },
+        "test": {
+          "recordings": 0,
+          "texts": 0
+        }
+      },
+      "cross_after": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "splits": {
+        "train": {
+          "recordings": 5940,
+          "speakers": 76,
+          "speakers_by_gender": {
+            "F": 30,
+            "M": 22,
+            "UNK": 24
+          },
+          "sentences": 3900,
+          "sentence_texts": 3899,
+          "pairs": 120676,
+          "pairs_same_gender": 40751,
+          "pairs_same_gender_dur_le_1s": 24181,
+          "pairs_same_gender_dur_le_2s": 35563,
+          "recordings_with_partner": 5299
+        },
+        "devel": {
+          "recordings": 228,
+          "speakers": 13,
+          "speakers_by_gender": {
+            "F": 8,
+            "M": 5
+          },
+          "sentences": 207,
+          "sentence_texts": 207,
+          "pairs": 162,
+          "pairs_same_gender": 84,
+          "pairs_same_gender_dur_le_1s": 58,
+          "pairs_same_gender_dur_le_2s": 82,
+          "recordings_with_partner": 120
+        },
+        "test": {
+          "recordings": 960,
+          "speakers": 27,
+          "speakers_by_gender": {
+            "F": 16,
+            "M": 11
+          },
+          "sentences": 687,
+          "sentence_texts": 687,
+          "pairs": 2371,
+          "pairs_same_gender": 1178,
+          "pairs_same_gender_dur_le_1s": 765,
+          "pairs_same_gender_dur_le_2s": 1073,
+          "recordings_with_partner": 667,
+          "reuse_limited_same_gender_dur_le_1s": {
+            "edges": 765,
+            "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "ilp_optimal": true,
+            "ilp_max_pairs": 484,
+            "ilp_recordings_used": 471,
+            "upper_bound_sum_min_deg_k_over_2": 519,
+            "greedy_pairs": 480
+          }
+        }
+      }
+    },
+    "0.4": {
+      "speakers_assigned": {
+        "train": 79,
+        "devel": 12,
+        "test": 38
+      },
+      "heldout_names": {
+        "F": {
+          "test": [
+            "FE-145",
+            "FE-146",
+            "FE-149",
+            "FE-178",
+            "FE-344",
+            "FE-348",
+            "FE-351",
+            "FE-426",
+            "FE-443",
+            "FE-452",
+            "FO-122",
+            "FO-139",
+            "FO-150",
+            "FO-152",
+            "FO-171",
+            "FO-219",
+            "FO-231",
+            "FO-413",
+            "FO-419",
+            "FO-460",
+            "FO-462",
+            "FO-488"
+          ],
+          "devel": [
+            "FE-250",
+            "FE-347",
+            "FE-349",
+            "FE-491",
+            "FO-180",
+            "FO-230",
+            "FO-445"
+          ],
+          "n_pool": 55
+        },
+        "M": {
+          "test": [
+            "ME-140",
+            "ME-147",
+            "ME-151",
+            "ME-223",
+            "ME-354",
+            "ME-369",
+            "ME-373",
+            "ME-473",
+            "ME-492",
+            "MO-164",
+            "MO-190",
+            "MO-375",
+            "MO-418",
+            "MO-446",
+            "MO-463",
+            "MO-467"
+          ],
+          "devel": [
+            "ME-352",
+            "ME-434",
+            "MO-189",
+            "MO-355",
+            "MO-374"
+          ],
+          "n_pool": 39
+        }
+      },
+      "cross_before_text_dedup": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 1,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "removed_by_text_dedup": {
+        "train": {
+          "recordings": 3,
+          "texts": 1
+        },
+        "devel": {
+          "recordings": 0,
+          "texts": 0
+        },
+        "test": {
+          "recordings": 0,
+          "texts": 0
+        }
+      },
+      "cross_after": {
+        "train&devel": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "train&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        },
+        "devel&test": {
+          "slurp_id": 0,
+          "sentence_text": 0,
+          "speakers": 0
+        }
+      },
+      "splits": {
+        "train": {
+          "recordings": 5466,
+          "speakers": 68,
+          "speakers_by_gender": {
+            "F": 26,
+            "M": 18,
+            "UNK": 24
+          },
+          "sentences": 3674,
+          "sentence_texts": 3674,
+          "pairs": 101844,
+          "pairs_same_gender": 32713,
+          "pairs_same_gender_dur_le_1s": 19560,
+          "pairs_same_gender_dur_le_2s": 28893,
+          "recordings_with_partner": 4845
+        },
+        "devel": {
+          "recordings": 146,
+          "speakers": 10,
+          "speakers_by_gender": {
+            "F": 6,
+            "M": 4
+          },
+          "sentences": 135,
+          "sentence_texts": 135,
+          "pairs": 102,
+          "pairs_same_gender": 51,
+          "pairs_same_gender_dur_le_1s": 24,
+          "pairs_same_gender_dur_le_2s": 39,
+          "recordings_with_partner": 76
+        },
+        "test": {
+          "recordings": 1183,
+          "speakers": 37,
+          "speakers_by_gender": {
+            "F": 22,
+            "M": 15
+          },
+          "sentences": 812,
+          "sentence_texts": 812,
+          "pairs": 4025,
+          "pairs_same_gender": 2045,
+          "pairs_same_gender_dur_le_1s": 1389,
+          "pairs_same_gender_dur_le_2s": 1890,
+          "recordings_with_partner": 863,
+          "reuse_limited_same_gender_dur_le_1s": {
+            "edges": 1389,
+            "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "ilp_optimal": true,
+            "ilp_max_pairs": 756,
+            "ilp_recordings_used": 672,
+            "upper_bound_sum_min_deg_k_over_2": 805,
+            "greedy_pairs": 745
+          }
+        }
+      }
+    }
+  },
+  "sensitivity_S_seed2026_text_dedup": {
+    "cross_before": {
+      "train&devel": {
+        "slurp_id": 0,
+        "sentence_text": 2,
+        "speakers": 90
+      },
+      "train&test": {
+        "slurp_id": 0,
+        "sentence_text": 3,
+        "speakers": 0
+      },
+      "devel&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      }
+    },
+    "removed": {
+      "train": {
+        "recordings": 28,
+        "texts": 5
+      },
+      "devel": {
+        "recordings": 0,
+        "texts": 0
+      },
+      "test": {
+        "recordings": 0,
+        "texts": 0
+      }
+    },
+    "cross_after": {
+      "train&devel": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 90
+      },
+      "train&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      },
+      "devel&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      }
+    },
+    "splits": {
+      "train": {
+        "recordings": 18467,
+        "speakers": 105,
+        "speakers_by_gender": {
+          "F": 44,
+          "M": 31,
+          "UNK": 30
+        },
+        "sentences": 9507,
+        "sentence_texts": 9497,
+        "pairs": 449087,
+        "pairs_same_gender": 172419,
+        "pairs_same_gender_dur_le_1s": 97358,
+        "pairs_same_gender_dur_le_2s": 145829,
+        "recordings_with_partner": 10637,
+        "recordings_without_entities_not_pairable": 6764,
+        "pairs_dur_le_1s": 251307,
+        "pairs_dur_le_2s": 377228
+      },
+      "devel": {
+        "recordings": 3187,
+        "speakers": 91,
+        "speakers_by_gender": {
+          "F": 42,
+          "M": 30,
+          "UNK": 19
+        },
+        "sentences": 1694,
+        "sentence_texts": 1693,
+        "pairs": 15353,
+        "pairs_same_gender": 5726,
+        "pairs_same_gender_dur_le_1s": 3352,
+        "pairs_same_gender_dur_le_2s": 4973,
+        "recordings_with_partner": 1660,
+        "recordings_without_entities_not_pairable": 1103,
+        "pairs_dur_le_1s": 8921,
+        "pairs_dur_le_2s": 13280
+      },
+      "test": {
+        "recordings": 1550,
+        "speakers": 19,
+        "speakers_by_gender": {
+          "F": 11,
+          "M": 8
+        },
+        "sentences": 1081,
+        "sentence_texts": 1081,
+        "pairs": 2080,
+        "pairs_same_gender": 960,
+        "pairs_same_gender_dur_le_1s": 612,
+        "pairs_same_gender_dur_le_2s": 866,
+        "recordings_with_partner": 651,
+        "recordings_without_entities_not_pairable": 591,
+        "pairs_dur_le_1s": 1329,
+        "pairs_dur_le_2s": 1892
+      }
+    }
+  }
+}

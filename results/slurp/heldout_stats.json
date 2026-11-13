@@ -1,0 +1,183 @@
+{
+  "seed": 2026,
+  "heldout_total": 19,
+  "heldout_by_gender": {
+    "F": 11,
+    "M": 8
+  },
+  "known_gender_pool": {
+    "F": 55,
+    "M": 39
+  },
+  "excluded_files": {
+    "audio-1502309360-headset.flac": "same file attached to slurp_id 15959 and 16142 (different sentences)"
+  },
+  "recordings_removed_from_train_devel": 6699,
+  "recordings_removed_from_test": 4731,
+  "rules": {
+    "A": "status==correct & wer==0 & ent_wer==0",
+    "S": "status==correct"
+  },
+  "splits": {
+    "train": {
+      "A": {
+        "recordings": 8054,
+        "speakers": 97,
+        "speakers_by_gender": {
+          "M": 30,
+          "F": 43,
+          "UNK": 24
+        },
+        "sentences": 4707,
+        "recordings_without_entities_not_pairable": 0,
+        "seconds_total_hours": 6.513546666666643,
+        "pairs": 230145,
+        "pairs_same_gender": 90873,
+        "pairs_dur_le_1s": 141110,
+        "pairs_dur_le_2s": 203229,
+        "pairs_same_gender_dur_le_1s": 55676,
+        "pairs_same_gender_dur_le_2s": 80360,
+        "recordings_with_partner": 7287,
+        "groups": 727
+      },
+      "S": {
+        "recordings": 18495,
+        "speakers": 105,
+        "speakers_by_gender": {
+          "M": 31,
+          "F": 44,
+          "UNK": 30
+        },
+        "sentences": 9513,
+        "recordings_without_entities_not_pairable": 6792,
+        "seconds_total_hours": 14.594555798610699,
+        "pairs": 449087,
+        "pairs_same_gender": 172419,
+        "pairs_dur_le_1s": 251307,
+        "pairs_dur_le_2s": 377228,
+        "pairs_same_gender_dur_le_1s": 97358,
+        "pairs_same_gender_dur_le_2s": 145829,
+        "recordings_with_partner": 10637,
+        "groups": 910
+      }
+    },
+    "devel": {
+      "A": {
+        "recordings": 1458,
+        "speakers": 88,
+        "speakers_by_gender": {
+          "M": 29,
+          "F": 42,
+          "UNK": 17
+        },
+        "sentences": 847,
+        "recordings_without_entities_not_pairable": 0,
+        "seconds_total_hours": 1.1708622222222167,
+        "pairs": 7770,
+        "pairs_same_gender": 3020,
+        "pairs_dur_le_1s": 4845,
+        "pairs_dur_le_2s": 6961,
+        "pairs_same_gender_dur_le_1s": 1904,
+        "pairs_same_gender_dur_le_2s": 2727,
+        "recordings_with_partner": 1117,
+        "groups": 301
+      },
+      "S": {
+        "recordings": 3187,
+        "speakers": 91,
+        "speakers_by_gender": {
+          "M": 30,
+          "F": 42,
+          "UNK": 19
+        },
+        "sentences": 1694,
+        "recordings_without_entities_not_pairable": 1103,
+        "seconds_total_hours": 2.511680000000025,
+        "pairs": 15353,
+        "pairs_same_gender": 5726,
+        "pairs_dur_le_1s": 8921,
+        "pairs_dur_le_2s": 13280,
+        "pairs_same_gender_dur_le_1s": 3352,
+        "pairs_same_gender_dur_le_2s": 4973,
+        "recordings_with_partner": 1660,
+        "groups": 368
+      }
+    },
+    "test": {
+      "A": {
+        "recordings": 719,
+        "speakers": 19,
+        "speakers_by_gender": {
+          "F": 11,
+          "M": 8
+        },
+        "sentences": 530,
+        "recordings_without_entities_not_pairable": 0,
+        "seconds_total_hours": 0.5513599999999994,
+        "pairs": 1227,
+        "pairs_same_gender": 571,
+        "pairs_dur_le_1s": 814,
+        "pairs_dur_le_2s": 1134,
+        "pairs_same_gender_dur_le_1s": 378,
+        "pairs_same_gender_dur_le_2s": 529,
+        "recordings_with_partner": 467,
+        "groups": 228
+      },
+      "S": {
+        "recordings": 1550,
+        "speakers": 19,
+        "speakers_by_gender": {
+          "F": 11,
+          "M": 8
+        },
+        "sentences": 1081,
+        "recordings_without_entities_not_pairable": 591,
+        "seconds_total_hours": 1.1327288888888862,
+        "pairs": 2080,
+        "pairs_same_gender": 960,
+        "pairs_dur_le_1s": 1329,
+        "pairs_dur_le_2s": 1892,
+        "pairs_same_gender_dur_le_1s": 612,
+        "pairs_same_gender_dur_le_2s": 866,
+        "recordings_with_partner": 651,
+        "groups": 273
+      }
+    }
+  },
+  "checks": {
+    "A": {
+      "train&devel": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 87
+      },
+      "train&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      },
+      "devel&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      }
+    },
+    "S": {
+      "train&devel": {
+        "slurp_id": 0,
+        "sentence_text": 2,
+        "speakers": 90
+      },
+      "train&test": {
+        "slurp_id": 0,
+        "sentence_text": 3,
+        "speakers": 0
+      },
+      "devel&test": {
+        "slurp_id": 0,
+        "sentence_text": 0,
+        "speakers": 0
+      }
+    }
+  }
+}

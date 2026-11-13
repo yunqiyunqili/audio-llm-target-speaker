@@ -1,0 +1,28 @@
+{
+  "status": "acquired_cpu_audit_complete_manifest_frozen",
+  "official_dataset_page": "https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/",
+  "official_access_entry": "https://groups.google.com/a/fluent.ai/forum/",
+  "official_license": "https://fluent.ai/wp-content/uploads/2021/04/Fluent_Speech_Commands_Public_License.pdf",
+  "permitted_use": "noncommercial academic research only",
+  "pilot_split": "valid",
+  "pilot_n": 64,
+  "seed": 2026,
+  "test_split_used": false,
+  "archive_sha256": "c9fd67f2efa078daa84daddcad2de937eb96581c140e3131ed8cd06fbae9ba1b",
+  "manifest_sha256": "64a695df7de69a93d4e5abea7d13a31b642b8539dd9e9a7301c393a6abe8c173",
+  "license_sha256": "2714d08523da55400a57326efb4b42d7ea70b4fccaf3b6abba069a77695fb78d",
+  "access_check": {
+    "checked_utc": "2026-11-09",
+    "url": "http://fluent.ai:2052/jf8398hf30f0381738rucj3828chfdnchs.tar.gz",
+    "method": "HEAD and GET Range bytes=0-0",
+    "http_status": 404,
+    "final_url": null,
+    "content_type": null,
+    "content_length": null,
+    "redirect_chain": [],
+    "https_2052_result": "TLS wrong version number",
+    "https_default_port_result": 404
+  },
+  "note": "Third-party copy source and download details removed in the public version. Archive SHA256 verified; extracted without executing files.",
+  "source_note": "Obtain FSC from the official Fluent.ai channel (official_dataset_page / official_access_entry). The copy used in this project was used for noncommercial academic research only; its redistribution authorization has not yet been confirmed by Fluent.ai."
+}

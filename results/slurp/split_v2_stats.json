@@ -1,0 +1,411 @@
+{
+  "seed": 2026,
+  "test_fraction": 0.4,
+  "devel_train_sentence_fraction": 0.35,
+  "intent_label": "scenario_action",
+  "label_audit": {
+    "intent_field_mismatch": {
+      "train": 162,
+      "devel": 30,
+      "test": 37
+    },
+    "entity_types": {
+      "n_per_split": {
+        "train": 55,
+        "devel": 53,
+        "test": 53
+      },
+      "n_total": 55,
+      "not_in_train": {
+        "devel": [],
+        "test": []
+      },
+      "not_lowercase_snake": [],
+      "rare_in_train_lt5": [
+        [
+          "game_type",
+          1
+        ],
+        [
+          "music_album",
+          1
+        ]
+      ],
+      "counts_train": {
+        "date": 1823,
+        "place_name": 1088,
+        "event_name": 1000,
+        "person": 866,
+        "time": 799,
+        "media_type": 478,
+        "business_name": 384,
+        "weather_descriptor": 320,
+        "transport_type": 318,
+        "food_type": 295,
+        "relation": 251,
+        "timeofday": 239,
+        "artist_name": 232,
+        "device_type": 226,
+        "definition_word": 225,
+        "currency_name": 218,
+        "house_place": 198,
+        "list_name": 191,
+        "business_type": 189,
+        "news_topic": 183,
+        "music_genre": 182,
+        "player_setting": 161,
+        "radio_name": 132,
+        "song_name": 128,
+        "order_type": 107,
+        "color_type": 100,
+        "game_name": 87,
+        "general_frequency": 84,
+        "personal_info": 75,
+        "audiobook_name": 73,
+        "podcast_descriptor": 68,
+        "meal_type": 65,
+        "playlist_name": 62,
+        "podcast_name": 56,
+        "time_zone": 56,
+        "app_name": 51,
+        "change_amount": 49,
+        "music_descriptor": 45,
+        "joke_type": 35,
+        "email_address": 32,
+        "email_folder": 32,
+        "transport_agency": 31,
+        "coffee_type": 22,
+        "ingredient": 20,
+        "cooking_type": 17,
+        "movie_name": 16,
+        "movie_type": 10,
+        "transport_name": 9,
+        "drink_type": 9,
+        "alarm_type": 9,
+        "transport_descriptor": 8,
+        "audiobook_author": 6,
+        "sport_type": 5,
+        "music_album": 1,
+        "game_type": 1
+      }
+    },
+    "scenario_action_labels": {
+      "train": 60,
+      "devel": 59,
+      "test": 59
+    },
+    "intent_field_mismatch_pairs": {
+      "music -> play_music": 27,
+      "query -> weather_query": 21,
+      "query -> datetime_query": 12,
+      "quirky -> general_quirky": 12,
+      "query -> calendar_query": 11,
+      "factoid -> qa_factoid": 10,
+      "sendemail -> email_sendemail": 9,
+      "podcasts -> play_podcasts": 8,
+      "set -> calendar_set": 8,
+      "hue_lightoff -> iot_hue_lightoff": 8,
+      "createoradd -> lists_createoradd": 7,
+      "radio -> play_radio": 7,
+      "remove -> calendar_remove": 7,
+      "post -> social_post": 6,
+      "joke -> general_joke": 5,
+      "query -> email_query": 5,
+      "query -> takeaway_query": 5,
+      "currency -> qa_currency": 5,
+      "game -> play_game": 5,
+      "query -> news_query": 5,
+      "hue_lightup -> iot_hue_lightup": 4,
+      "query -> music_query": 4,
+      "coffee -> iot_coffee": 4,
+      "greet -> general_greet": 3,
+      "hue_lightdim -> iot_hue_lightdim": 3,
+      "wemo_off -> iot_wemo_off": 3,
+      "query -> lists_query": 3,
+      "cleaning -> iot_cleaning": 3,
+      "traffic -> transport_traffic": 2,
+      "remove -> lists_remove": 2,
+      "query -> social_query": 2,
+      "querycontact -> email_querycontact": 1,
+      "addcontact -> email_addcontact": 1,
+      "ticket -> transport_ticket": 1,
+      "wemo_on -> iot_wemo_on": 1,
+      "definition -> qa_definition": 1,
+      "events -> recommendation_events": 1,
+      "convert -> datetime_convert": 1,
+      "settings -> music_settings": 1,
+      "volume_other -> audio_volume_other": 1,
+      "set -> alarm_set": 1,
+      "likeness -> music_likeness": 1,
+      "email_sendemail -> email_query": 1,
+      "locations -> recommendation_locations": 1
+    },
+    "scenario_action_not_in_train": {
+      "devel": [],
+      "test": []
+    }
+  },
+  "speakers_assigned": {
+    "train": 79,
+    "devel": 12,
+    "test": 38
+  },
+  "heldout_names": {
+    "F": {
+      "test": [
+        "FE-145",
+        "FE-146",
+        "FE-149",
+        "FE-178",
+        "FE-344",
+        "FE-348",
+        "FE-351",
+        "FE-426",
+        "FE-443",
+        "FE-452",
+        "FO-122",
+        "FO-139",
+        "FO-150",
+        "FO-152",
+        "FO-171",
+        "FO-219",
+        "FO-231",
+        "FO-413",
+        "FO-419",
+        "FO-460",
+        "FO-462",
+        "FO-488"
+      ],
+      "devel": [
+        "FE-250",
+        "FE-347",
+        "FE-349",
+        "FE-491",
+        "FO-180",
+        "FO-230",
+        "FO-445"
+      ],
+      "n_pool": 55
+    },
+    "M": {
+      "test": [
+        "ME-140",
+        "ME-147",
+        "ME-151",
+        "ME-223",
+        "ME-354",
+        "ME-369",
+        "ME-373",
+        "ME-473",
+        "ME-492",
+        "MO-164",
+        "MO-190",
+        "MO-375",
+        "MO-418",
+        "MO-446",
+        "MO-463",
+        "MO-467"
+      ],
+      "devel": [
+        "ME-352",
+        "ME-434",
+        "MO-189",
+        "MO-355",
+        "MO-374"
+      ],
+      "n_pool": 39
+    }
+  },
+  "text_units_train_ruleA": 5388,
+  "text_units_multi_intent": 0,
+  "intent_strata": 59,
+  "devel_text_units_from_train": 1884,
+  "excluded_files": {
+    "audio-1502309360-headset.flac": "same file attached to slurp_id 15959 and 16142 (different sentences)"
+  },
+  "cross_before": {
+    "train&devel": {
+      "slurp_id": 0,
+      "sentence_text": 0,
+      "speakers": 0
+    },
+    "train&test": {
+      "slurp_id": 0,
+      "sentence_text": 1,
+      "speakers": 0
+    },
+    "devel&test": {
+      "slurp_id": 0,
+      "sentence_text": 0,
+      "speakers": 0
+    }
+  },
+  "removed": {
+    "train": 3,
+    "devel": 0,
+    "test": 0
+  },
+  "cross_after": {
+    "train&devel": {
+      "slurp_id": 0,
+      "sentence_text": 0,
+      "speakers": 0
+    },
+    "train&test": {
+      "slurp_id": 0,
+      "sentence_text": 0,
+      "speakers": 0
+    },
+    "devel&test": {
+      "slurp_id": 0,
+      "sentence_text": 0,
+      "speakers": 0
+    }
+  },
+  "splits": {
+    "train": {
+      "recordings": 3513,
+      "speakers": 66,
+      "speakers_by_gender": {
+        "F": 25,
+        "M": 18,
+        "UNK": 23
+      },
+      "sentences": 2363,
+      "sentence_texts": 2363,
+      "pairs": 44424,
+      "pairs_same_gender": 14141,
+      "pairs_same_gender_dur_le_1s": 8458,
+      "pairs_same_gender_dur_le_2s": 12540,
+      "recordings_with_partner": 3062,
+      "intents": 58,
+      "reuse_k3_same_gender_dur_le_1s": {
+        "edges": 8458,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 2623,
+        "ilp_recordings_used": 2045,
+        "upper_bound_sum_min_deg_k_over_2": 2711,
+        "greedy_pairs": 2564
+      },
+      "reuse_k3_same_gender_dur_le_2s": {
+        "edges": 12540,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 2893,
+        "ilp_recordings_used": 2201,
+        "upper_bound_sum_min_deg_k_over_2": 3011,
+        "greedy_pairs": 2827
+      }
+    },
+    "devel": {
+      "recordings": 428,
+      "speakers": 11,
+      "speakers_by_gender": {
+        "F": 6,
+        "M": 5
+      },
+      "sentences": 382,
+      "sentence_texts": 382,
+      "pairs": 871,
+      "pairs_same_gender": 444,
+      "pairs_same_gender_dur_le_1s": 270,
+      "pairs_same_gender_dur_le_2s": 388,
+      "recordings_with_partner": 291,
+      "intents": 49,
+      "source": {
+        "train": 282,
+        "devel": 146
+      },
+      "reuse_k3_same_gender_dur_le_1s": {
+        "edges": 270,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 197,
+        "ilp_recordings_used": 192,
+        "upper_bound_sum_min_deg_k_over_2": 203,
+        "greedy_pairs": 194
+      },
+      "reuse_k3_same_gender_dur_le_2s": {
+        "edges": 388,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 244,
+        "ilp_recordings_used": 223,
+        "upper_bound_sum_min_deg_k_over_2": 252,
+        "greedy_pairs": 239
+      }
+    },
+    "test": {
+      "recordings": 1183,
+      "speakers": 37,
+      "speakers_by_gender": {
+        "F": 22,
+        "M": 15
+      },
+      "sentences": 812,
+      "sentence_texts": 812,
+      "pairs": 4257,
+      "pairs_same_gender": 2146,
+      "pairs_same_gender_dur_le_1s": 1464,
+      "pairs_same_gender_dur_le_2s": 1981,
+      "recordings_with_partner": 886,
+      "intents": 55,
+      "reuse_k3_same_gender_dur_le_1s": {
+        "edges": 1464,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 799,
+        "ilp_recordings_used": 697,
+        "upper_bound_sum_min_deg_k_over_2": 852,
+        "greedy_pairs": 786
+      },
+      "reuse_k3_same_gender_dur_le_2s": {
+        "edges": 1981,
+        "ilp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "ilp_optimal": true,
+        "ilp_max_pairs": 922,
+        "ilp_recordings_used": 754,
+        "upper_bound_sum_min_deg_k_over_2": 989,
+        "greedy_pairs": 892
+      }
+    }
+  },
+  "tvd_sentences": {
+    "train_vs_devel": {
+      "intent": 0.13581324653858676,
+      "entity_types": 0.2642760445170192
+    },
+    "train_vs_test": {
+      "intent": 0.1140353437331271,
+      "entity_types": 0.20138829533301744
+    }
+  },
+  "thresholds": {
+    "min_test": 500,
+    "min_devel": 100,
+    "test": 799,
+    "devel": 197,
+    "met": true
+  },
+  "formal_lists": {
+    "train": {
+      "recordings": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/train_recordings.csv",
+      "candidate_pairs": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/train_candidate_pairs.csv.gz",
+      "n_recordings": 3513,
+      "n_candidate_pairs": 44424
+    },
+    "devel": {
+      "recordings": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/devel_recordings.csv",
+      "candidate_pairs": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/devel_candidate_pairs.csv.gz",
+      "n_recordings": 428,
+      "n_candidate_pairs": 871
+    },
+    "test": {
+      "recordings": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/test_recordings.csv",
+      "candidate_pairs": "<SHARED_ROOT>/data/slurp/manifests/split_v2_seed2026/test_candidate_pairs.csv.gz",
+      "n_recordings": 1183,
+      "n_candidate_pairs": 4257
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "tarball": "<SHARED_ROOT>/data/slurp/downloads/slurp_real.tar.gz",
+  "md5": "9efc0f058ced47bf5131c7cb2cade513",
+  "md5_expected": "9efc0f058ced47bf5131c7cb2cade513",
+  "md5_ok": true,
+  "member_types": {
+    "dir": 1,
+    "file": 72395
+  },
+  "unsafe_members": [],
+  "unsafe_count": 0,
+  "top_level": {
+    "slurp_real": 72396
+  },
+  "uncompressed_regular_bytes": 3911348301,
+  "uncompressed_gib": 3.6427269699051976,
+  "extensions": {
+    ".flac": 72395
+  },
+  "flac_files": 72395,
+  "flac_dirs": {
+    "slurp_real": 72395
+  },
+  "flac_headset": 34663,
+  "annotated_headset": 34663,
+  "annotated_headset_missing_in_tar": 0,
+  "annotated_far": 37732,
+  "annotated_far_missing_in_tar": 0,
+  "tar_flac_not_in_annotations": 0,
+  "example_member": "slurp_real/audio-1497558430.flac"
+}

@@ -1,0 +1,6818 @@
+{
+ "seed": 2026,
+ "spec": "docs/mix_spec_v1.md",
+ "rule": "Draw the mix_spec_v1 devel list: 100 swap groups (docs/mix_spec_v1.md). LIST ONLY; no audio.\nPairs: devel candidate pairs (split_v2_seed2026) after the mix_spec_v1 filter (same gender, |dd| <= 1 s, D_T and D_I\n  non-empty, no shared stem / containment between D_T and D_I values; scripts/slurp/devel_capacity_mixspec_v1.py).\nDraw (seed 2026): kept pairs sorted by (file_a, file_b), random.Random(2026) shuffle, greedy accept while both recordings\n  have been used < 3 times, until 100. Orientation (which recording is A) by the same rng.\nRIRs: SMS-WSJ cv_dev93 only (never test). Angle strata on the separation |wrap(az1 - az0)| (results/sms_wsj_geometry,\n  buckets [0,15) [15,30) [30,60) [60,180]): 25 groups per stratum; stratum labels shuffled over the groups; within a\n  stratum, examples sorted by id and sampled without replacement. theta1 = az_rel_mic0 of RIR position 0 (h_0.wav),\n  theta2 = position 1 (h_1.wav). Swap 1: A@theta1, B@theta2; swap 2: A@theta2, B@theta1; the question is always theta1.\nOffsets (8 kHz samples, follow the speaker, identical in both swaps): the longer utterance starts at 0, the shorter at\n  an integer offset drawn uniformly from [0, L_long - L_short]; L = ceil(n_16k / 2) (length after resample_poly 1/2).\nNoise: per group, SNR ~ U(20, 30) dB and an integer noise seed, both from the same rng (used by the mixing script).\nv2 mode (--v2; docs/mix_spec_v1.md \"第二版\"): after the same shuffle, the 100 pairs are chosen by a 0/1 ILP maximising\n  sum (n_kept - rank) * x subject to: exactly 100 pairs, recording use <= 3, speaker groups <= 30, male groups >= 20.\n  If infeasible: report max pairs under the constraints, and (100 pairs, use <= 3) max male groups and min max speaker\n  groups; write nothing and exit 2. The chosen pairs are then processed in rank order with the same rng as v1.\n",
+ "stats": {
+  "kept_pairs": 248,
+  "groups": 100,
+  "recordings": 124,
+  "recording_use_counts": {
+   "1": 73,
+   "2": 26,
+   "3": 25
+  },
+  "speakers": 11,
+  "speaker_group_counts": {
+   "FE-250": 30,
+   "FO-445": 30,
+   "FE-347": 30,
+   "FE-349": 30,
+   "FO-180": 19,
+   "MO-355": 19,
+   "ME-352": 16,
+   "MO-374": 14,
+   "FE-491": 9,
+   "ME-434": 2,
+   "MO-189": 1
+  },
+  "speakers_by_gender": {
+   "F": 6,
+   "M": 5
+  },
+  "mode": "v2",
+  "constraints": {
+   "max_speaker_groups": 30,
+   "min_male_groups": 20
+  },
+  "gender_groups": {
+   "F": 74,
+   "M": 26
+  },
+  "intents": 21,
+  "intent_groups": {
+   "weather_query": 20,
+   "calendar_query": 17,
+   "play_music": 14,
+   "qa_definition": 13,
+   "qa_factoid": 10,
+   "play_game": 6,
+   "cooking_recipe": 3,
+   "qa_stock": 2,
+   "news_query": 2,
+   "email_sendemail": 2,
+   "play_podcasts": 1,
+   "play_radio": 1,
+   "recommendation_locations": 1,
+   "takeaway_order": 1,
+   "iot_hue_lightoff": 1,
+   "calendar_remove": 1,
+   "lists_createoradd": 1,
+   "transport_query": 1,
+   "iot_wemo_on": 1,
+   "email_querycontact": 1,
+   "datetime_query": 1
+  },
+  "duration_diff_s": {
+   "min": 0.0,
+   "median": 0.512,
+   "max": 0.96,
+   "hist": {
+    "[0,0.25)": 20,
+    "[0.25,0.5)": 25,
+    "[0.5,0.75)": 31,
+    "[0.75,1)": 24
+   }
+  },
+  "rir_examples_unique": 100,
+  "angle_strata": {
+   "[0,15)": 25,
+   "[30,60)": 25,
+   "[15,30)": 25,
+   "[60,180]": 25
+  },
+  "t60": {
+   "min": 0.202,
+   "median": 0.372,
+   "max": 0.5,
+   "hist": {
+    "[0.2,0.3)": 34,
+    "[0.3,0.4)": 22,
+    "[0.4,0.5)": 44
+   }
+  },
+  "overlap_with_c1_ext_devel100": {
+   "recordings": 50,
+   "groups_with_any": 62,
+   "groups_with_both": 16
+  },
+  "source_split_pairs": {
+   "devel+train": 44,
+   "train+train": 45,
+   "devel+devel": 11
+  }
+ },
+ "groups": [
+  {
+   "group": 0,
+   "A": {
+    "file": "audio-1498572825-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "do i need to bring a coat today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ],
+     [
+      "weather_descriptor",
+      "coat"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 3735
+   },
+   "B": {
+    "file": "audio-1501692000-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "will it rain at all this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ],
+     [
+      "weather_descriptor",
+      "rain"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.512,
+   "rir": {
+    "example_id": "515_4k3c031e_4k7c030v",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/515",
+    "t60": 0.42,
+    "theta1": 40.61944085067893,
+    "theta2": 41.90355926928564,
+    "separation": 1.2841184186066812,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.176882623532055,
+    "seed": 1482274519
+   }
+  },
+  {
+   "group": 1,
+   "A": {
+    "file": "audio-1501693567-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "please play my favorite song by bruno mars",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "bruno mars"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199782-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "play newest bob dylan playlist",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "bob dylan"
+     ]
+    ],
+    "n_16k": 33792,
+    "n_8k": 16896,
+    "offset_8k": 676
+   },
+   "T_8k": 23552,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "571_4k3c031b_4k4c030q",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/571",
+    "t60": 0.381,
+    "theta1": -128.41353052030047,
+    "theta2": -178.72397938373933,
+    "separation": 50.310448863438864,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.690348578918435,
+    "seed": 377385434
+   }
+  },
+  {
+   "group": 2,
+   "A": {
+    "file": "audio-1501694593-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play jack johnson playlist music",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "jack johnson"
+     ]
+    ],
+    "n_16k": 36864,
+    "n_8k": 18432,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498566975-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "play me a song of adele",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "adele"
+     ]
+    ],
+    "n_16k": 22528,
+    "n_8k": 11264,
+    "offset_8k": 6622
+   },
+   "T_8k": 18432,
+   "abs_duration_diff_s": 0.8959999999999999,
+   "rir": {
+    "example_id": "666_4k6c031e_4k1c031d",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/666",
+    "t60": 0.415,
+    "theta1": -139.5162785214117,
+    "theta2": -170.6695515772215,
+    "separation": 31.15327305580982,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.948128072765563,
+    "seed": 1340142446
+   }
+  },
+  {
+   "group": 3,
+   "A": {
+    "file": "audio-1497270499-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what does regal mean",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "regal"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 543
+   },
+   "B": {
+    "file": "audio-1490262606-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "please describe this sunset for me",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "this sunset"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 0
+   },
+   "T_8k": 22528,
+   "abs_duration_diff_s": 0.19199999999999973,
+   "rir": {
+    "example_id": "376_4k7c0306_4k1c030p",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/376",
+    "t60": 0.405,
+    "theta1": 37.10317494072444,
+    "theta2": 65.37729434932822,
+    "separation": 28.27411940860381,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 27.53292252586099,
+    "seed": 970868432
+   }
+  },
+  {
+   "group": 4,
+   "A": {
+    "file": "audio-1490200872-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "what is the meaning of the word sanctimonious",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "sanctimonious"
+     ]
+    ],
+    "n_16k": 43008,
+    "n_8k": 21504,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490261257-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what is a basketball",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "basketball"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 689
+   },
+   "T_8k": 21504,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "681_4k4c0309_4k2c030l",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/681",
+    "t60": 0.471,
+    "theta1": -4.214910051292179,
+    "theta2": -21.107138763777584,
+    "separation": 16.892228712485405,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.250020253106698,
+    "seed": 1424694943
+   }
+  },
+  {
+   "group": 5,
+   "A": {
+    "file": "audio-1501693833-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather near me this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 33792,
+    "n_8k": 16896,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498573247-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "what is tomorrows weather predictions",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrows"
+     ]
+    ],
+    "n_16k": 22528,
+    "n_8k": 11264,
+    "offset_8k": 2643
+   },
+   "T_8k": 16896,
+   "abs_duration_diff_s": 0.7040000000000002,
+   "rir": {
+    "example_id": "980_4k3c031f_4k7c031c",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/980",
+    "t60": 0.306,
+    "theta1": 10.08593102789763,
+    "theta2": 21.620522683802278,
+    "separation": 11.534591655904649,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.0710556431197,
+    "seed": 2118253278
+   }
+  },
+  {
+   "group": 6,
+   "A": {
+    "file": "audio-1490201302-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "is it going to rain tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "weather_descriptor",
+      "rain"
+     ]
+    ],
+    "n_16k": 21504,
+    "n_8k": 10752,
+    "offset_8k": 3301
+   },
+   "B": {
+    "file": "audio-1498572825-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "do i need to bring a coat today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ],
+     [
+      "weather_descriptor",
+      "coat"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.6399999999999999,
+   "rir": {
+    "example_id": "526_4k2c0312_4k4c030l",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/526",
+    "t60": 0.401,
+    "theta1": -39.70003386280371,
+    "theta2": -42.00384743488351,
+    "separation": 2.303813572079804,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.136824084575718,
+    "seed": 843899613
+   }
+  },
+  {
+   "group": 7,
+   "A": {
+    "file": "audio-1490263412-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "hey play that podcast i stopped last night",
+    "intent": "play_podcasts",
+    "entities": [
+     [
+      "podcast_descriptor",
+      "stopped last night"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498572565-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "play the next podcast episode",
+    "intent": "play_podcasts",
+    "entities": [
+     [
+      "podcast_descriptor",
+      "next podcast episode"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 1896
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.2560000000000002,
+   "rir": {
+    "example_id": "189_4k6c030g_4k3c0318",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/189",
+    "t60": 0.482,
+    "theta1": -30.39999964636371,
+    "theta2": 0.671608374988125,
+    "separation": 31.071608021351835,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.201707725630634,
+    "seed": 1496996151
+   }
+  },
+  {
+   "group": 8,
+   "A": {
+    "file": "audio-1490263108-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "is the meeting scheduled for tomorrow",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "event_name",
+      "meeting"
+     ]
+    ],
+    "n_16k": 36864,
+    "n_8k": 18432,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498574116-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "appointments this wednesday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "wednesday"
+     ],
+     [
+      "event_name",
+      "appointments"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 2868
+   },
+   "T_8k": 18432,
+   "abs_duration_diff_s": 0.7039999999999997,
+   "rir": {
+    "example_id": "592_4k4c0306_4k8c030u",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/592",
+    "t60": 0.489,
+    "theta1": 23.00353275766892,
+    "theta2": 15.961425400552884,
+    "separation": 7.042107357116038,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.096999155850796,
+    "seed": 1639078152
+   }
+  },
+  {
+   "group": 9,
+   "A": {
+    "file": "audio-1501693015-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 43008,
+    "n_8k": 21504,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490262420-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what do i have scheduled for next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 32768,
+    "n_8k": 16384,
+    "offset_8k": 1743
+   },
+   "T_8k": 21504,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "668_4kac030x_4k6c030f",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/668",
+    "t60": 0.475,
+    "theta1": -77.53047781136809,
+    "theta2": -18.51026760559813,
+    "separation": 59.02021020577001,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.54378544104634,
+    "seed": 547969264
+   }
+  },
+  {
+   "group": 10,
+   "A": {
+    "file": "audio-1490261317-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what is the weather forecast for chicago",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "place_name",
+      "chicago"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 3533
+   },
+   "B": {
+    "file": "audio-1497270370-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what is the weather in sydney now",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "place_name",
+      "sydney"
+     ]
+    ],
+    "n_16k": 54272,
+    "n_8k": 27136,
+    "offset_8k": 0
+   },
+   "T_8k": 27136,
+   "abs_duration_diff_s": 0.7679999999999998,
+   "rir": {
+    "example_id": "107_4k8c031b_4kac0319",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/107",
+    "t60": 0.433,
+    "theta1": -25.975831101232586,
+    "theta2": 13.931340541381417,
+    "separation": 39.907171642614,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.676290000153593,
+    "seed": 506145077
+   }
+  },
+  {
+   "group": 11,
+   "A": {
+    "file": "audio-1499244312-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490367437-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "do i have any events happening next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 327
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.06400000000000006,
+   "rir": {
+    "example_id": "775_4k0c031d_4k3c030z",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/775",
+    "t60": 0.455,
+    "theta1": -162.99892057402243,
+    "theta2": -168.39647784468448,
+    "separation": 5.397557270662048,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.664558503119654,
+    "seed": 1908894567
+   }
+  },
+  {
+   "group": 12,
+   "A": {
+    "file": "audio--1505323945-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what is a cookie recipe",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "cookie"
+     ]
+    ],
+    "n_16k": 32768,
+    "n_8k": 16384,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490262469-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "find recipe chicken casserole",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "chicken casserole"
+     ]
+    ],
+    "n_16k": 32768,
+    "n_8k": 16384,
+    "offset_8k": 0
+   },
+   "T_8k": 16384,
+   "abs_duration_diff_s": 0.0,
+   "rir": {
+    "example_id": "749_4k4c0308_4k2c0308",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/749",
+    "t60": 0.366,
+    "theta1": 52.931850990641124,
+    "theta2": 75.45747035766306,
+    "separation": 22.525619367021932,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.453622992717992,
+    "seed": 1151810981
+   }
+  },
+  {
+   "group": 13,
+   "A": {
+    "file": "audio-1501692739-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "show results for cooking lasagna from web",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "lasagna"
+     ]
+    ],
+    "n_16k": 50176,
+    "n_8k": 25088,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498573180-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "recipe for crabmeat",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "crabmeat"
+     ]
+    ],
+    "n_16k": 34816,
+    "n_8k": 17408,
+    "offset_8k": 1919
+   },
+   "T_8k": 25088,
+   "abs_duration_diff_s": 0.96,
+   "rir": {
+    "example_id": "429_4kac030x_4k4c030j",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/429",
+    "t60": 0.269,
+    "theta1": -66.72627074069626,
+    "theta2": -50.69441406956554,
+    "separation": 16.031856671130726,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.31771634312343,
+    "seed": 616176879
+   }
+  },
+  {
+   "group": 14,
+   "A": {
+    "file": "audio-1498572808-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "what will be the highest temperature in coming week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "coming week"
+     ],
+     [
+      "weather_descriptor",
+      "temperature"
+     ]
+    ],
+    "n_16k": 48128,
+    "n_8k": 24064,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490262818-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "will i need sunblock this weekend",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this weekend"
+     ],
+     [
+      "weather_descriptor",
+      "sunblock"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 1149
+   },
+   "T_8k": 24064,
+   "abs_duration_diff_s": 0.19200000000000017,
+   "rir": {
+    "example_id": "680_4k9c031a_4kac0303",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/680",
+    "t60": 0.428,
+    "theta1": 105.65146817348449,
+    "theta2": 99.0653319802156,
+    "separation": 6.586136193268885,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 27.72422120893271,
+    "seed": 1150664795
+   }
+  },
+  {
+   "group": 15,
+   "A": {
+    "file": "audio-1490198212-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "where is george w bush from",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "george w bush"
+     ]
+    ],
+    "n_16k": 51200,
+    "n_8k": 25600,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498572604-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "who is arnold schwarzenegger",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "arnold schwarzenegger"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 2404
+   },
+   "T_8k": 25600,
+   "abs_duration_diff_s": 0.5760000000000001,
+   "rir": {
+    "example_id": "280_4k2c0308_4k6c030v",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/280",
+    "t60": 0.474,
+    "theta1": 116.68739581486653,
+    "theta2": 108.63555604021263,
+    "separation": 8.051839774653928,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.74388425484776,
+    "seed": 1723333516
+   }
+  },
+  {
+   "group": 16,
+   "A": {
+    "file": "audio-1490199539-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "play my country playlist",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "country"
+     ]
+    ],
+    "n_16k": 28672,
+    "n_8k": 14336,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498573697-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "i like to listen to jazz",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 818
+   },
+   "T_8k": 14336,
+   "abs_duration_diff_s": 0.19199999999999995,
+   "rir": {
+    "example_id": "855_4k6c030u_4k7c0307",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/855",
+    "t60": 0.213,
+    "theta1": 102.88200016469443,
+    "theta2": 149.00261698814086,
+    "separation": 46.120616823446426,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.21720808369921,
+    "seed": 1413773967
+   }
+  },
+  {
+   "group": 17,
+   "A": {
+    "file": "audio-1501692959-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play something romantic",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "romantic"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 3355
+   },
+   "B": {
+    "file": "audio-1497270747-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "indie",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "indie"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "328_4k0c030x_4k1c031b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/328",
+    "t60": 0.45,
+    "theta1": 148.1725534233268,
+    "theta2": 106.73723965957242,
+    "separation": 41.43531376375432,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.368370763585425,
+    "seed": 2124653413
+   }
+  },
+  {
+   "group": 18,
+   "A": {
+    "file": "audio-1490261275-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "play for me the game candy crush",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "candy crush"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 7442
+   },
+   "B": {
+    "file": "audio-1497269659-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "let's play a game of chess",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "chess"
+     ]
+    ],
+    "n_16k": 51200,
+    "n_8k": 25600,
+    "offset_8k": 0
+   },
+   "T_8k": 25600,
+   "abs_duration_diff_s": 0.96,
+   "rir": {
+    "example_id": "594_4k4c0301_4k3c030t",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/594",
+    "t60": 0.494,
+    "theta1": -58.163168664971835,
+    "theta2": 23.032783741675388,
+    "separation": 81.19595240664722,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.78202046806785,
+    "seed": 901570364
+   }
+  },
+  {
+   "group": 19,
+   "A": {
+    "file": "audio-1490200096-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "play for me the game temple run",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "temple run"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490262141-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "temple runner play",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "temple runner"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 1738
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "484_4k9c030d_4k1c030y",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/484",
+    "t60": 0.357,
+    "theta1": 54.52864459095065,
+    "theta2": 58.968792678737486,
+    "separation": 4.44014808778681,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.521604437248808,
+    "seed": 1419252491
+   }
+  },
+  {
+   "group": 20,
+   "A": {
+    "file": "audio-1498573697-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "i like to listen to jazz",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 245
+   },
+   "B": {
+    "file": "audio-1501692959-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play something romantic",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "romantic"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "431_4k2c0305_4k9c0309",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/431",
+    "t60": 0.436,
+    "theta1": -81.88564799723723,
+    "theta2": 171.36460076014458,
+    "separation": 106.74975124261817,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.228908225876353,
+    "seed": 742898281
+   }
+  },
+  {
+   "group": 21,
+   "A": {
+    "file": "audio-1490199897-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "tag you're it",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "tag you 're it"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498572831-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "open chess game",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "chess"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 21
+   },
+   "T_8k": 13824,
+   "abs_duration_diff_s": 0.19199999999999995,
+   "rir": {
+    "example_id": "883_4k4c0310_4k8c030a",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/883",
+    "t60": 0.436,
+    "theta1": 83.2533592403276,
+    "theta2": 100.22222922389187,
+    "separation": 16.968869983564275,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.67054859987806,
+    "seed": 1083079146
+   }
+  },
+  {
+   "group": 22,
+   "A": {
+    "file": "audio-1501695034-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498566482-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "tell me the weather for this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 534
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "285_4k9c030z_4k1c030j",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/285",
+    "t60": 0.464,
+    "theta1": 97.661875526762,
+    "theta2": 127.02311025054433,
+    "separation": 29.36123472378233,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.340136898975924,
+    "seed": 1780789955
+   }
+  },
+  {
+   "group": 23,
+   "A": {
+    "file": "audio-1490198892-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "what does my calendar look like for the next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 3898
+   },
+   "B": {
+    "file": "audio-1490263479-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "are there any events schedule for this week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 50176,
+    "n_8k": 25088,
+    "offset_8k": 0
+   },
+   "T_8k": 25088,
+   "abs_duration_diff_s": 0.512,
+   "rir": {
+    "example_id": "765_4k0c030k_4k2c0307",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/765",
+    "t60": 0.477,
+    "theta1": 156.34760234279628,
+    "theta2": 137.10128736224317,
+    "separation": 19.246314980553137,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.513312331526336,
+    "seed": 2074115801
+   }
+  },
+  {
+   "group": 24,
+   "A": {
+    "file": "audio-1498573530-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "please describe the new harley davidson street bike",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "harley davidson street bike"
+     ]
+    ],
+    "n_16k": 56320,
+    "n_8k": 28160,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1497271469-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what is a banana",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "banana"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 2775
+   },
+   "T_8k": 28160,
+   "abs_duration_diff_s": 0.5760000000000001,
+   "rir": {
+    "example_id": "823_4k6c0311_4k1c031d",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/823",
+    "t60": 0.373,
+    "theta1": -0.2906093882908465,
+    "theta2": -95.71232903241886,
+    "separation": 95.42171964412802,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.11754013877329,
+    "seed": 944339218
+   }
+  },
+  {
+   "group": 25,
+   "A": {
+    "file": "audio-1498573121-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "tell me about george washington",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "george washington"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490261527-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what year was bill pullman born",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "bill pullman"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 2606
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "877_4k6c0307_4k7c030x",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/877",
+    "t60": 0.286,
+    "theta1": -162.01314046812118,
+    "theta2": -66.3282945060595,
+    "separation": 95.68484596206167,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.208401595106462,
+    "seed": 1153817903
+   }
+  },
+  {
+   "group": 26,
+   "A": {
+    "file": "audio-1501694638-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what price google up to",
+    "intent": "qa_stock",
+    "entities": [
+     [
+      "business_name",
+      "google"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 1337
+   },
+   "B": {
+    "file": "audio-1490261296-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "show me share price of facebook",
+    "intent": "qa_stock",
+    "entities": [
+     [
+      "business_name",
+      "facebook"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 0
+   },
+   "T_8k": 23552,
+   "abs_duration_diff_s": 0.31999999999999984,
+   "rir": {
+    "example_id": "261_4k6c030m_4k3c030u",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/261",
+    "t60": 0.292,
+    "theta1": -8.5729659821437,
+    "theta2": -78.55382005563051,
+    "separation": 69.98085407348681,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.17788065819221,
+    "seed": 898611196
+   }
+  },
+  {
+   "group": 27,
+   "A": {
+    "file": "audio-1501692888-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "when was born abraham lincoln",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "abraham lincoln"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 6477
+   },
+   "B": {
+    "file": "audio-1490198212-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "where is george w bush from",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "george w bush"
+     ]
+    ],
+    "n_16k": 51200,
+    "n_8k": 25600,
+    "offset_8k": 0
+   },
+   "T_8k": 25600,
+   "abs_duration_diff_s": 0.8320000000000003,
+   "rir": {
+    "example_id": "94_4k9c030k_4k0c0304",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/94",
+    "t60": 0.339,
+    "theta1": 106.26057527071072,
+    "theta2": 122.13529452501564,
+    "separation": 15.874719254304921,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.571366199474152,
+    "seed": 1189316986
+   }
+  },
+  {
+   "group": 28,
+   "A": {
+    "file": "audio-1490292194-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what is hurricane",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "hurricane"
+     ]
+    ],
+    "n_16k": 23552,
+    "n_8k": 11776,
+    "offset_8k": 5102
+   },
+   "B": {
+    "file": "audio-1490368920-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "can you tell me what haggis looks like",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "haggis"
+     ]
+    ],
+    "n_16k": 34816,
+    "n_8k": 17408,
+    "offset_8k": 0
+   },
+   "T_8k": 17408,
+   "abs_duration_diff_s": 0.7040000000000002,
+   "rir": {
+    "example_id": "106_4k1c0309_4k9c0315",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/106",
+    "t60": 0.344,
+    "theta1": 168.26580908085862,
+    "theta2": 172.12263894408323,
+    "separation": 3.85682986322459,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.301698563205775,
+    "seed": 339250690
+   }
+  },
+  {
+   "group": 29,
+   "A": {
+    "file": "audio-1498572604-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "who is arnold schwarzenegger",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "arnold schwarzenegger"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490198672-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "who is the wife of obama",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "obama"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 1138
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.19200000000000017,
+   "rir": {
+    "example_id": "941_4k3c031a_4kac030z",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/941",
+    "t60": 0.414,
+    "theta1": -18.307452960293404,
+    "theta2": -74.6173897672751,
+    "separation": 56.309936806981696,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.92433880177532,
+    "seed": 48933144
+   }
+  },
+  {
+   "group": 30,
+   "A": {
+    "file": "audio-1499245711-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what will be this week weather condition",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 55296,
+    "n_8k": 27648,
+    "offset_8k": 391
+   },
+   "B": {
+    "file": "audio-1490366884-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "what will the weather be next week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 60416,
+    "n_8k": 30208,
+    "offset_8k": 0
+   },
+   "T_8k": 30208,
+   "abs_duration_diff_s": 0.31999999999999984,
+   "rir": {
+    "example_id": "440_4k7c030k_4k9c030c",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/440",
+    "t60": 0.463,
+    "theta1": -63.58988794902379,
+    "theta2": -46.85509334977462,
+    "separation": 16.73479459924917,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.558270255475005,
+    "seed": 942334314
+   }
+  },
+  {
+   "group": 31,
+   "A": {
+    "file": "audio-1498573247-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "what is tomorrows weather predictions",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrows"
+     ]
+    ],
+    "n_16k": 22528,
+    "n_8k": 11264,
+    "offset_8k": 3796
+   },
+   "B": {
+    "file": "audio-1501695034-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.5760000000000001,
+   "rir": {
+    "example_id": "795_4k7c0303_4k6c030d",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/795",
+    "t60": 0.202,
+    "theta1": -62.87036698064337,
+    "theta2": 78.404639488979,
+    "separation": 141.27500646962238,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.06370924458519,
+    "seed": 733484445
+   }
+  },
+  {
+   "group": 32,
+   "A": {
+    "file": "audio-1501695034-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199723-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "what time will it rain tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 1267
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.256,
+   "rir": {
+    "example_id": "387_4k0c0313_4k2c030b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/387",
+    "t60": 0.491,
+    "theta1": -49.58664227033688,
+    "theta2": -102.40537826384775,
+    "separation": 52.81873599351087,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.842821789355988,
+    "seed": 1791169101
+   }
+  },
+  {
+   "group": 33,
+   "A": {
+    "file": "audio-1490369087-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "i like to listen to jazz",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 5831
+   },
+   "B": {
+    "file": "audio-1490291177-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "can you play emo music please",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "emo music"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 0
+   },
+   "T_8k": 19456,
+   "abs_duration_diff_s": 0.8959999999999999,
+   "rir": {
+    "example_id": "758_4k2c030l_4k0c030g",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/758",
+    "t60": 0.273,
+    "theta1": -125.09190914648582,
+    "theta2": -119.15897164520965,
+    "separation": 5.932937501276172,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.21800813683423,
+    "seed": 572315428
+   }
+  },
+  {
+   "group": 34,
+   "A": {
+    "file": "audio-1490199406-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "start playing jazz music",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 442
+   },
+   "B": {
+    "file": "audio-1498574132-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "play all songs from blue genre",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "blue"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.256,
+   "rir": {
+    "example_id": "355_4k8c0312_4kac030o",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/355",
+    "t60": 0.256,
+    "theta1": -57.59082549790651,
+    "theta2": -29.000270546415464,
+    "separation": 28.590554951491043,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.283043628251153,
+    "seed": 1801892057
+   }
+  },
+  {
+   "group": 35,
+   "A": {
+    "file": "audio-1490262044-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "is there a holiday on the twenty second",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "twenty second"
+     ],
+     [
+      "event_name",
+      "holiday"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498574116-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "appointments this wednesday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "wednesday"
+     ],
+     [
+      "event_name",
+      "appointments"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 91
+   },
+   "T_8k": 13824,
+   "abs_duration_diff_s": 0.1279999999999999,
+   "rir": {
+    "example_id": "6_4k8c0319_4k0c030m",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/6",
+    "t60": 0.371,
+    "theta1": 86.12490306370887,
+    "theta2": 106.53557385271085,
+    "separation": 20.410670789001955,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.852581840025806,
+    "seed": 993657790
+   }
+  },
+  {
+   "group": 36,
+   "A": {
+    "file": "audio-1501693015-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 43008,
+    "n_8k": 21504,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio--1505323807-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 3856
+   },
+   "T_8k": 21504,
+   "abs_duration_diff_s": 0.7040000000000002,
+   "rir": {
+    "example_id": "757_4k7c030z_4k8c030p",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/757",
+    "t60": 0.21,
+    "theta1": -50.475223460092764,
+    "theta2": 95.26829749464025,
+    "separation": 145.74352095473301,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.578850423026932,
+    "seed": 1465726661
+   }
+  },
+  {
+   "group": 37,
+   "A": {
+    "file": "audio-1498572604-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "who is arnold schwarzenegger",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "arnold schwarzenegger"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1501692888-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "when was born abraham lincoln",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "abraham lincoln"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 1407
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.2560000000000002,
+   "rir": {
+    "example_id": "36_4k8c0317_4k9c030s",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/36",
+    "t60": 0.435,
+    "theta1": -43.0597413670194,
+    "theta2": -77.75504393407795,
+    "separation": 34.69530256705855,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.474125885800888,
+    "seed": 2060263284
+   }
+  },
+  {
+   "group": 38,
+   "A": {
+    "file": "audio-1498566482-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "tell me the weather for this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 522
+   },
+   "B": {
+    "file": "audio-1490199723-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "what time will it rain tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 0
+   },
+   "T_8k": 13824,
+   "abs_duration_diff_s": 0.19199999999999995,
+   "rir": {
+    "example_id": "26_4k1c0317_4k9c0312",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/26",
+    "t60": 0.421,
+    "theta1": -4.329234881533864,
+    "theta2": -1.9073160748898488,
+    "separation": 2.4219188066440154,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.88316088045093,
+    "seed": 1404597505
+   }
+  },
+  {
+   "group": 39,
+   "A": {
+    "file": "audio-1490291274-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what is the weather today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 2048
+   },
+   "B": {
+    "file": "audio-1501173005-headset.flac",
+    "usrid": "ME-434",
+    "gender": "M",
+    "sentence": "how's the weather going to be this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 0
+   },
+   "T_8k": 19456,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "327_4kac030b_4k4c031f",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/327",
+    "t60": 0.328,
+    "theta1": 163.92870426924094,
+    "theta2": 177.42631246648864,
+    "separation": 13.497608197247729,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.36715460148434,
+    "seed": 2104554465
+   }
+  },
+  {
+   "group": 40,
+   "A": {
+    "file": "audio-1499244634-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "play the latest pop song",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "pop"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 1091
+   },
+   "B": {
+    "file": "audio-1490366200-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "i like to listen to jazz",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 55296,
+    "n_8k": 27648,
+    "offset_8k": 0
+   },
+   "T_8k": 27648,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "579_4kac030w_4k1c0316",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/579",
+    "t60": 0.369,
+    "theta1": 61.14285242046114,
+    "theta2": -62.05718097416093,
+    "separation": 123.20003339462204,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.21774131660752,
+    "seed": 1572763065
+   }
+  },
+  {
+   "group": 41,
+   "A": {
+    "file": "audio-1501693833-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather near me this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 33792,
+    "n_8k": 16896,
+    "offset_8k": 2079
+   },
+   "B": {
+    "file": "audio-1498574005-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "what is the weekend weather forecast",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "weekend"
+     ]
+    ],
+    "n_16k": 49152,
+    "n_8k": 24576,
+    "offset_8k": 0
+   },
+   "T_8k": 24576,
+   "abs_duration_diff_s": 0.96,
+   "rir": {
+    "example_id": "258_4k6c030n_4k8c0309",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/258",
+    "t60": 0.265,
+    "theta1": 127.22201045575923,
+    "theta2": -34.13318969720808,
+    "separation": 161.3552001529673,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.36517250202319,
+    "seed": 2001957318
+   }
+  },
+  {
+   "group": 42,
+   "A": {
+    "file": "audio-1498573180-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "recipe for crabmeat",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "crabmeat"
+     ]
+    ],
+    "n_16k": 34816,
+    "n_8k": 17408,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio--1505323945-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what is a cookie recipe",
+    "intent": "cooking_recipe",
+    "entities": [
+     [
+      "food_type",
+      "cookie"
+     ]
+    ],
+    "n_16k": 32768,
+    "n_8k": 16384,
+    "offset_8k": 407
+   },
+   "T_8k": 17408,
+   "abs_duration_diff_s": 0.1280000000000001,
+   "rir": {
+    "example_id": "483_4k8c030g_4k0c0318",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/483",
+    "t60": 0.383,
+    "theta1": 112.07188592524102,
+    "theta2": 125.54198538610092,
+    "separation": 13.470099460859927,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.675417249920578,
+    "seed": 1717668916
+   }
+  },
+  {
+   "group": 43,
+   "A": {
+    "file": "audio-1498564967-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "get the latest news about formula one racing please",
+    "intent": "news_query",
+    "entities": [
+     [
+      "news_topic",
+      "formula one racing"
+     ]
+    ],
+    "n_16k": 54272,
+    "n_8k": 27136,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490263658-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "search for the latest news about iphone",
+    "intent": "news_query",
+    "entities": [
+     [
+      "news_topic",
+      "iphone"
+     ]
+    ],
+    "n_16k": 44032,
+    "n_8k": 22016,
+    "offset_8k": 2490
+   },
+   "T_8k": 27136,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "507_4kac0307_4k9c030c",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/507",
+    "t60": 0.5,
+    "theta1": 4.919972668266098,
+    "theta2": -125.98035699360462,
+    "separation": 130.90032966187073,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.182942225168883,
+    "seed": 232734237
+   }
+  },
+  {
+   "group": 44,
+   "A": {
+    "file": "audio-1501692491-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play the next howard stern show on the radio",
+    "intent": "play_radio",
+    "entities": [
+     [
+      "radio_name",
+      "next howard stern show"
+     ]
+    ],
+    "n_16k": 51200,
+    "n_8k": 25600,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490262905-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "turn on hot ninety seven",
+    "intent": "play_radio",
+    "entities": [
+     [
+      "radio_name",
+      "hot ninety seven"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 3365
+   },
+   "T_8k": 25600,
+   "abs_duration_diff_s": 0.7040000000000002,
+   "rir": {
+    "example_id": "895_4kac0301_4k3c030n",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/895",
+    "t60": 0.238,
+    "theta1": 123.16184105650575,
+    "theta2": 166.08234269517192,
+    "separation": 42.92050163866614,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.629336287420564,
+    "seed": 1282502488
+   }
+  },
+  {
+   "group": 45,
+   "A": {
+    "file": "audio-1490262818-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "will i need sunblock this weekend",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this weekend"
+     ],
+     [
+      "weather_descriptor",
+      "sunblock"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1498572825-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "do i need to bring a coat today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ],
+     [
+      "weather_descriptor",
+      "coat"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 3953
+   },
+   "T_8k": 22528,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "470_4k1c030u_4k4c031g",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/470",
+    "t60": 0.468,
+    "theta1": -1.1262209511957906,
+    "theta2": 25.87208825004143,
+    "separation": 26.99830920123719,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.16410047491776,
+    "seed": 1396283097
+   }
+  },
+  {
+   "group": 46,
+   "A": {
+    "file": "audio-1490199897-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "tag you're it",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "tag you 're it"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 4007
+   },
+   "B": {
+    "file": "audio-1490261275-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "play for me the game candy crush",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "candy crush"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 0
+   },
+   "T_8k": 17920,
+   "abs_duration_diff_s": 0.5120000000000002,
+   "rir": {
+    "example_id": "619_4k4c030u_4k7c030b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/619",
+    "t60": 0.385,
+    "theta1": -6.956679080199649,
+    "theta2": -57.406241765989975,
+    "separation": 50.44956268579031,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.17935523841963,
+    "seed": 1458610660
+   }
+  },
+  {
+   "group": 47,
+   "A": {
+    "file": "audio-1490199991-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "how would the volkswagen golf car look like",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "volkswagen golf car"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 368
+   },
+   "B": {
+    "file": "audio-1497271469-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what is a banana",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "banana"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 0
+   },
+   "T_8k": 23552,
+   "abs_duration_diff_s": 0.06400000000000006,
+   "rir": {
+    "example_id": "397_4kac030o_4k3c030m",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/397",
+    "t60": 0.447,
+    "theta1": 20.145762985929196,
+    "theta2": 55.29313577380785,
+    "separation": 35.14737278787865,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.8116081564179,
+    "seed": 748817317
+   }
+  },
+  {
+   "group": 48,
+   "A": {
+    "file": "audio-1497271443-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "find tacos near my home",
+    "intent": "recommendation_locations",
+    "entities": [
+     [
+      "business_type",
+      "tacos"
+     ],
+     [
+      "place_name",
+      "home"
+     ]
+    ],
+    "n_16k": 57344,
+    "n_8k": 28672,
+    "offset_8k": 2109
+   },
+   "B": {
+    "file": "audio-1498565773-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "i'm looking for some dress shows can you find clothing stores within one mile",
+    "intent": "recommendation_locations",
+    "entities": [
+     [
+      "business_type",
+      "dress shows"
+     ],
+     [
+      "place_name",
+      "within one mile"
+     ]
+    ],
+    "n_16k": 67584,
+    "n_8k": 33792,
+    "offset_8k": 0
+   },
+   "T_8k": 33792,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "604_4k9c030b_4k4c030b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/604",
+    "t60": 0.204,
+    "theta1": 141.25736673150163,
+    "theta2": 150.03108589009554,
+    "separation": 8.773719158593877,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.639546792765913,
+    "seed": 1644236133
+   }
+  },
+  {
+   "group": 49,
+   "A": {
+    "file": "audio-1501693015-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 43008,
+    "n_8k": 21504,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490263426-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what events are this week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 28672,
+    "n_8k": 14336,
+    "offset_8k": 5165
+   },
+   "T_8k": 21504,
+   "abs_duration_diff_s": 0.8960000000000001,
+   "rir": {
+    "example_id": "958_4kac0317_4k4c0319",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/958",
+    "t60": 0.357,
+    "theta1": 52.09871217938115,
+    "theta2": -91.75999653813187,
+    "separation": 143.85870871751297,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.063642496280703,
+    "seed": 922746587
+   }
+  },
+  {
+   "group": 50,
+   "A": {
+    "file": "audio-1490199723-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "what time will it rain tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 118
+   },
+   "B": {
+    "file": "audio-1501693833-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the weather near me this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 33792,
+    "n_8k": 16896,
+    "offset_8k": 0
+   },
+   "T_8k": 16896,
+   "abs_duration_diff_s": 0.3840000000000001,
+   "rir": {
+    "example_id": "145_4kac030j_4k8c030g",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/145",
+    "t60": 0.301,
+    "theta1": 124.87776313596783,
+    "theta2": 162.2013211460366,
+    "separation": 37.32355801006875,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.638094323940223,
+    "seed": 900526400
+   }
+  },
+  {
+   "group": 51,
+   "A": {
+    "file": "audio-1490366884-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "what will the weather be next week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 60416,
+    "n_8k": 30208,
+    "offset_8k": 3514
+   },
+   "B": {
+    "file": "audio-1499246534-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "could you please tell me what is the weather predication for this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 73728,
+    "n_8k": 36864,
+    "offset_8k": 0
+   },
+   "T_8k": 36864,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "449_4k1c0301_4k4c0309",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/449",
+    "t60": 0.292,
+    "theta1": -141.67330298983114,
+    "theta2": 68.4466826024312,
+    "separation": 149.8800144077377,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.080343027076438,
+    "seed": 543251333
+   }
+  },
+  {
+   "group": 52,
+   "A": {
+    "file": "audio-1490262141-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "temple runner play",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "temple runner"
+     ]
+    ],
+    "n_16k": 24576,
+    "n_8k": 12288,
+    "offset_8k": 1052
+   },
+   "B": {
+    "file": "audio-1490199897-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "tag you're it",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "tag you 're it"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 0
+   },
+   "T_8k": 13824,
+   "abs_duration_diff_s": 0.19199999999999995,
+   "rir": {
+    "example_id": "544_4k6c030r_4k2c030u",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/544",
+    "t60": 0.264,
+    "theta1": -127.49339225285327,
+    "theta2": -128.85445895464804,
+    "separation": 1.3610667017947549,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.112782656526676,
+    "seed": 1162574072
+   }
+  },
+  {
+   "group": 53,
+   "A": {
+    "file": "audio-1498573121-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "tell me about george washington",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "george washington"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1501694949-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "how old is brad pitt",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "brad pitt"
+     ]
+    ],
+    "n_16k": 28672,
+    "n_8k": 14336,
+    "offset_8k": 6355
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.8320000000000001,
+   "rir": {
+    "example_id": "863_4k6c0316_4k2c0305",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/863",
+    "t60": 0.294,
+    "theta1": -166.5679897638881,
+    "theta2": -108.99122108845262,
+    "separation": 57.57676867543546,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.738077485292294,
+    "seed": 2098450434
+   }
+  },
+  {
+   "group": 54,
+   "A": {
+    "file": "audio-1490261341-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "tell me about new york",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "place_name",
+      "new york"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 559
+   },
+   "B": {
+    "file": "audio-1497270966-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "how big is japan",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "place_name",
+      "japan"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 0
+   },
+   "T_8k": 19456,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "391_4k3c0312_4k6c030e",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/391",
+    "t60": 0.43,
+    "theta1": 161.30496192963648,
+    "theta2": -161.6528364080693,
+    "separation": 37.04220166229422,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.588874196893812,
+    "seed": 1399131106
+   }
+  },
+  {
+   "group": 55,
+   "A": {
+    "file": "audio-1490262606-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "please describe this sunset for me",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "this sunset"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 372
+   },
+   "B": {
+    "file": "audio-1490199991-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "how would the volkswagen golf car look like",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "volkswagen golf car"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.06400000000000006,
+   "rir": {
+    "example_id": "624_4k3c030l_4k8c0316",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/624",
+    "t60": 0.294,
+    "theta1": -27.07998375718273,
+    "theta2": -171.14720600572326,
+    "separation": 144.06722224854053,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.97191568098038,
+    "seed": 1683636082
+   }
+  },
+  {
+   "group": 56,
+   "A": {
+    "file": "audio-1497271223-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "closest chipotle",
+    "intent": "takeaway_order",
+    "entities": [
+     [
+      "business_name",
+      "chipotle"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490198430-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "order food from applebees",
+    "intent": "takeaway_order",
+    "entities": [
+     [
+      "business_name",
+      "applebees"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 4363
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.6399999999999997,
+   "rir": {
+    "example_id": "518_4k2c0314_4k9c0318",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/518",
+    "t60": 0.374,
+    "theta1": -92.63134339779552,
+    "theta2": -120.65021776204969,
+    "separation": 28.018874364254202,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.152366751890742,
+    "seed": 811978613
+   }
+  },
+  {
+   "group": 57,
+   "A": {
+    "file": "audio-1501694638-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what price google up to",
+    "intent": "qa_stock",
+    "entities": [
+     [
+      "business_name",
+      "google"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 1245
+   },
+   "B": {
+    "file": "audio-1490200631-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "refer the stock price of hdfc",
+    "intent": "qa_stock",
+    "entities": [
+     [
+      "business_name",
+      "hdfc"
+     ]
+    ],
+    "n_16k": 55296,
+    "n_8k": 27648,
+    "offset_8k": 0
+   },
+   "T_8k": 27648,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "199_4k4c030r_4kac030n",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/199",
+    "t60": 0.239,
+    "theta1": -170.25636555891037,
+    "theta2": 68.82851330519418,
+    "separation": 120.91512113589545,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.067721810289385,
+    "seed": 657592528
+   }
+  },
+  {
+   "group": 58,
+   "A": {
+    "file": "audio-1497269659-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "let's play a game of chess",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "chess"
+     ]
+    ],
+    "n_16k": 51200,
+    "n_8k": 25600,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1501692539-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play solitaire with me",
+    "intent": "play_game",
+    "entities": [
+     [
+      "game_name",
+      "solitaire"
+     ]
+    ],
+    "n_16k": 40960,
+    "n_8k": 20480,
+    "offset_8k": 1179
+   },
+   "T_8k": 25600,
+   "abs_duration_diff_s": 0.6400000000000001,
+   "rir": {
+    "example_id": "890_4k6c0308_4k3c0313",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/890",
+    "t60": 0.42,
+    "theta1": 148.5250507407103,
+    "theta2": -164.5759950163229,
+    "separation": 46.89895424296685,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.312566831507933,
+    "seed": 262327478
+   }
+  },
+  {
+   "group": 59,
+   "A": {
+    "file": "audio-1490198503-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "turn off the upstairs bathroom light",
+    "intent": "iot_hue_lightoff",
+    "entities": [
+     [
+      "house_place",
+      "bathroom"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 70
+   },
+   "B": {
+    "file": "audio-1501694879-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "turn the lights off in the living room",
+    "intent": "iot_hue_lightoff",
+    "entities": [
+     [
+      "house_place",
+      "living room"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.1280000000000001,
+   "rir": {
+    "example_id": "244_4k9c0315_4k3c030x",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/244",
+    "t60": 0.249,
+    "theta1": -85.80546988382514,
+    "theta2": 144.87064505251374,
+    "separation": 129.32388506366115,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.803671865873874,
+    "seed": 1285666288
+   }
+  },
+  {
+   "group": 60,
+   "A": {
+    "file": "audio-1498573573-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "can you delete the doctors appointment i had tuesday",
+    "intent": "calendar_remove",
+    "entities": [
+     [
+      "date",
+      "tuesday"
+     ],
+     [
+      "event_name",
+      "doctors appointment"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 1466
+   },
+   "B": {
+    "file": "audio-1501694806-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "remove my car payment on the fifteenth from my calendar",
+    "intent": "calendar_remove",
+    "entities": [
+     [
+      "date",
+      "fifteenth"
+     ],
+     [
+      "event_name",
+      "car payment"
+     ]
+    ],
+    "n_16k": 56320,
+    "n_8k": 28160,
+    "offset_8k": 0
+   },
+   "T_8k": 28160,
+   "abs_duration_diff_s": 0.5760000000000001,
+   "rir": {
+    "example_id": "771_4k1c0305_4k2c030r",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/771",
+    "t60": 0.468,
+    "theta1": -14.864673924923068,
+    "theta2": 147.48870546303385,
+    "separation": 162.35337938795692,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.39188686516572,
+    "seed": 1531803746
+   }
+  },
+  {
+   "group": 61,
+   "A": {
+    "file": "audio-1490262818-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "will i need sunblock this weekend",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this weekend"
+     ],
+     [
+      "weather_descriptor",
+      "sunblock"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio--1505323914-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "will it be cold tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "weather_descriptor",
+      "cold"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 1048
+   },
+   "T_8k": 22528,
+   "abs_duration_diff_s": 0.9599999999999997,
+   "rir": {
+    "example_id": "264_4k1c030i_4k2c030i",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/264",
+    "t60": 0.423,
+    "theta1": -137.09118953504125,
+    "theta2": -128.0646409691908,
+    "separation": 9.026548565850447,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.57294182243155,
+    "seed": 801320915
+   }
+  },
+  {
+   "group": 62,
+   "A": {
+    "file": "audio-1490261257-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what is a basketball",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "basketball"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 439
+   },
+   "B": {
+    "file": "audio-1497271469-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what is a banana",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "banana"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 0
+   },
+   "T_8k": 23552,
+   "abs_duration_diff_s": 0.7039999999999997,
+   "rir": {
+    "example_id": "217_4kac030z_4k4c030c",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/217",
+    "t60": 0.431,
+    "theta1": -17.11708077733428,
+    "theta2": 4.300529632079105,
+    "separation": 21.417610409413385,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 27.51358525347964,
+    "seed": 660988857
+   }
+  },
+  {
+   "group": 63,
+   "A": {
+    "file": "audio-1490368435-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "how many meetings do i have next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 3390
+   },
+   "B": {
+    "file": "audio-1499244312-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.512,
+   "rir": {
+    "example_id": "372_4k0c030u_4kac0310",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/372",
+    "t60": 0.27,
+    "theta1": -132.2089788669109,
+    "theta2": -146.84630673877,
+    "separation": 14.6373278718591,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.412251191049755,
+    "seed": 2103427153
+   }
+  },
+  {
+   "group": 64,
+   "A": {
+    "file": "audio-1490261936-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "how tall is micheal jackson",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "micheal jackson"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 59
+   },
+   "B": {
+    "file": "audio-1501692888-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "when was born abraham lincoln",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "abraham lincoln"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 0
+   },
+   "T_8k": 18944,
+   "abs_duration_diff_s": 0.12799999999999967,
+   "rir": {
+    "example_id": "97_4k7c030x_4k2c030a",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/97",
+    "t60": 0.35,
+    "theta1": -89.27418119384811,
+    "theta2": -127.64633469226277,
+    "separation": 38.37215349841466,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.006481768260638,
+    "seed": 1564041481
+   }
+  },
+  {
+   "group": 65,
+   "A": {
+    "file": "audio--1505323807-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 94
+   },
+   "B": {
+    "file": "audio-1490262420-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what do i have scheduled for next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 32768,
+    "n_8k": 16384,
+    "offset_8k": 0
+   },
+   "T_8k": 16384,
+   "abs_duration_diff_s": 0.06400000000000006,
+   "rir": {
+    "example_id": "162_4k9c030x_4kac0305",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/162",
+    "t60": 0.269,
+    "theta1": 152.3223772899487,
+    "theta2": -179.614270343802,
+    "separation": 28.06335236624932,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.656398496061136,
+    "seed": 1747175333
+   }
+  },
+  {
+   "group": 66,
+   "A": {
+    "file": "audio-1490290980-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "give me the definition of the word haughty",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "haughty"
+     ]
+    ],
+    "n_16k": 68608,
+    "n_8k": 34304,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1499246946-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what does the word hypocrisy mean",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "hypocrisy"
+     ]
+    ],
+    "n_16k": 59392,
+    "n_8k": 29696,
+    "offset_8k": 1269
+   },
+   "T_8k": 34304,
+   "abs_duration_diff_s": 0.5760000000000001,
+   "rir": {
+    "example_id": "73_4k0c030y_4k9c030r",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/73",
+    "t60": 0.372,
+    "theta1": 43.86975902641433,
+    "theta2": 77.85224547450633,
+    "separation": 33.982486448092004,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.00131317410643,
+    "seed": 625544306
+   }
+  },
+  {
+   "group": 67,
+   "A": {
+    "file": "audio-1490199782-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "play newest bob dylan playlist",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "bob dylan"
+     ]
+    ],
+    "n_16k": 33792,
+    "n_8k": 16896,
+    "offset_8k": 1463
+   },
+   "B": {
+    "file": "audio-1501694593-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play jack johnson playlist music",
+    "intent": "play_music",
+    "entities": [
+     [
+      "artist_name",
+      "jack johnson"
+     ]
+    ],
+    "n_16k": 36864,
+    "n_8k": 18432,
+    "offset_8k": 0
+   },
+   "T_8k": 18432,
+   "abs_duration_diff_s": 0.19199999999999973,
+   "rir": {
+    "example_id": "201_4k4c0310_4k9c030f",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/201",
+    "t60": 0.357,
+    "theta1": -162.33526278925024,
+    "theta2": -143.84685167929945,
+    "separation": 18.48841110995079,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.082379880567863,
+    "seed": 2022230816
+   }
+  },
+  {
+   "group": 68,
+   "A": {
+    "file": "audio-1497270499-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what does regal mean",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "regal"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 30
+   },
+   "B": {
+    "file": "audio-1490199991-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "how would the volkswagen golf car look like",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "volkswagen golf car"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.2559999999999998,
+   "rir": {
+    "example_id": "669_4k4c030d_4k0c0310",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/669",
+    "t60": 0.45,
+    "theta1": -26.990855872595745,
+    "theta2": -2.498409859222761,
+    "separation": 24.492446013372984,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.581692017216685,
+    "seed": 1516235320
+   }
+  },
+  {
+   "group": 69,
+   "A": {
+    "file": "audio-1497270747-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "indie",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "indie"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199406-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "start playing jazz music",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 4800
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.8960000000000001,
+   "rir": {
+    "example_id": "238_4k0c0306_4k7c030l",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/238",
+    "t60": 0.488,
+    "theta1": 172.11568003151922,
+    "theta2": -160.5170680892977,
+    "separation": 27.367251879183073,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.438390620398692,
+    "seed": 1104784572
+   }
+  },
+  {
+   "group": 70,
+   "A": {
+    "file": "audio-1490199834-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "how old is barack obama",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "barack obaba"
+     ]
+    ],
+    "n_16k": 23552,
+    "n_8k": 11776,
+    "offset_8k": 1346
+   },
+   "B": {
+    "file": "audio-1501694949-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "how old is brad pitt",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "brad pitt"
+     ]
+    ],
+    "n_16k": 28672,
+    "n_8k": 14336,
+    "offset_8k": 0
+   },
+   "T_8k": 14336,
+   "abs_duration_diff_s": 0.32000000000000006,
+   "rir": {
+    "example_id": "548_4k1c0313_4kac0312",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/548",
+    "t60": 0.209,
+    "theta1": 37.37205026850131,
+    "theta2": -155.81357424327638,
+    "separation": 166.81437548822237,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 27.567571329182968,
+    "seed": 703560369
+   }
+  },
+  {
+   "group": 71,
+   "A": {
+    "file": "audio-1490200429-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "today's weather is awesome",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today 's"
+     ],
+     [
+      "weather_descriptor",
+      "awesome"
+     ]
+    ],
+    "n_16k": 25600,
+    "n_8k": 12800,
+    "offset_8k": 783
+   },
+   "B": {
+    "file": "audio--1505323914-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "will it be cold tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "weather_descriptor",
+      "cold"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 0
+   },
+   "T_8k": 14848,
+   "abs_duration_diff_s": 0.256,
+   "rir": {
+    "example_id": "243_4k2c030g_4k1c030t",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/243",
+    "t60": 0.339,
+    "theta1": -146.2757705251634,
+    "theta2": 99.05098171392467,
+    "separation": 114.67324776091193,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.69088164094496,
+    "seed": 386778289
+   }
+  },
+  {
+   "group": 72,
+   "A": {
+    "file": "audio-1498573121-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "tell me about george washington",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "george washington"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 3463
+   },
+   "B": {
+    "file": "audio-1497270900-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "how old is angelina jolie",
+    "intent": "qa_factoid",
+    "entities": [
+     [
+      "person",
+      "angelina jolie"
+     ]
+    ],
+    "n_16k": 56320,
+    "n_8k": 28160,
+    "offset_8k": 0
+   },
+   "T_8k": 28160,
+   "abs_duration_diff_s": 0.8959999999999999,
+   "rir": {
+    "example_id": "272_4k1c030a_4k9c0305",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/272",
+    "t60": 0.217,
+    "theta1": -85.59273957988759,
+    "theta2": -158.55315050812047,
+    "separation": 72.96041092823287,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.63399207838863,
+    "seed": 856569719
+   }
+  },
+  {
+   "group": 73,
+   "A": {
+    "file": "audio-1497270056-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "send to jane only help",
+    "intent": "email_sendemail",
+    "entities": [
+     [
+      "person",
+      "jane"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199179-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "reply to mark's email",
+    "intent": "email_sendemail",
+    "entities": [
+     [
+      "person",
+      "mark 's"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 1398
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.768,
+   "rir": {
+    "example_id": "7_4kac030e_4k3c030k",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/7",
+    "t60": 0.237,
+    "theta1": 79.53940034492928,
+    "theta2": 138.84121640376162,
+    "separation": 59.3018160588324,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.411207871485725,
+    "seed": 2124109522
+   }
+  },
+  {
+   "group": 74,
+   "A": {
+    "file": "audio-1490262981-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "add pencil to school supplies list",
+    "intent": "lists_createoradd",
+    "entities": [
+     [
+      "list_name",
+      "school supplies"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 435
+   },
+   "B": {
+    "file": "audio-1501694719-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "put pencil on a new grocery list",
+    "intent": "lists_createoradd",
+    "entities": [
+     [
+      "list_name",
+      "grocery"
+     ]
+    ],
+    "n_16k": 47104,
+    "n_8k": 23552,
+    "offset_8k": 0
+   },
+   "T_8k": 23552,
+   "abs_duration_diff_s": 0.1280000000000001,
+   "rir": {
+    "example_id": "144_4kac0315_4k1c030p",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/144",
+    "t60": 0.484,
+    "theta1": -146.622326632922,
+    "theta2": -147.5802268167646,
+    "separation": 0.9579001838425825,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 23.723497253545602,
+    "seed": 1812360292
+   }
+  },
+  {
+   "group": 75,
+   "A": {
+    "file": "audio-1499244634-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "play the latest pop song",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "pop"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490291177-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "can you play emo music please",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "emo music"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 2953
+   },
+   "T_8k": 22528,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "433_4k6c030m_4k3c030j",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/433",
+    "t60": 0.411,
+    "theta1": 164.63326818970978,
+    "theta2": -98.60986585166603,
+    "separation": 96.75686595862419,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.231775213732327,
+    "seed": 1559894114
+   }
+  },
+  {
+   "group": 76,
+   "A": {
+    "file": "audio-1501692959-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "play something romantic",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "romantic"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199406-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "start playing jazz music",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "jazz"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 856
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.256,
+   "rir": {
+    "example_id": "843_4k4c031h_4k8c0313",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/843",
+    "t60": 0.248,
+    "theta1": 106.69434510133624,
+    "theta2": 91.65679915303588,
+    "separation": 15.03754594830039,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.684305065028912,
+    "seed": 1891832741
+   }
+  },
+  {
+   "group": 77,
+   "A": {
+    "file": "audio-1490201302-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "is it going to rain tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "weather_descriptor",
+      "rain"
+     ]
+    ],
+    "n_16k": 21504,
+    "n_8k": 10752,
+    "offset_8k": 3946
+   },
+   "B": {
+    "file": "audio--1505323914-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "will it be cold tomorrow",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ],
+     [
+      "weather_descriptor",
+      "cold"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 0
+   },
+   "T_8k": 14848,
+   "abs_duration_diff_s": 0.512,
+   "rir": {
+    "example_id": "12_4k4c0315_4k9c0304",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/12",
+    "t60": 0.253,
+    "theta1": -80.80697794315978,
+    "theta2": -140.15128783371802,
+    "separation": 59.344309890558236,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.917636072539533,
+    "seed": 906467882
+   }
+  },
+  {
+   "group": 78,
+   "A": {
+    "file": "audio--1505323842-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what's going on in the world right now",
+    "intent": "news_query",
+    "entities": [
+     [
+      "news_topic",
+      "world"
+     ]
+    ],
+    "n_16k": 36864,
+    "n_8k": 18432,
+    "offset_8k": 3027
+   },
+   "B": {
+    "file": "audio-1490263658-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "search for the latest news about iphone",
+    "intent": "news_query",
+    "entities": [
+     [
+      "news_topic",
+      "iphone"
+     ]
+    ],
+    "n_16k": 44032,
+    "n_8k": 22016,
+    "offset_8k": 0
+   },
+   "T_8k": 22016,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "99_4k9c0309_4k1c030s",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/99",
+    "t60": 0.406,
+    "theta1": -166.0149914165009,
+    "theta2": -155.4745171463805,
+    "separation": 10.540474270120399,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.95446454851723,
+    "seed": 338523960
+   }
+  },
+  {
+   "group": 79,
+   "A": {
+    "file": "audio-1490261101-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "do i have any events happening next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio--1505323807-headset.flac",
+    "usrid": "FE-491",
+    "gender": "F",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 2899
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.8959999999999999,
+   "rir": {
+    "example_id": "829_4k1c030m_4k6c0307",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/829",
+    "t60": 0.421,
+    "theta1": -126.28081304055652,
+    "theta2": -138.53729681882947,
+    "separation": 12.256483778272951,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 27.148064500020602,
+    "seed": 678890499
+   }
+  },
+  {
+   "group": 80,
+   "A": {
+    "file": "audio-1497270056-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "send to jane only help",
+    "intent": "email_sendemail",
+    "entities": [
+     [
+      "person",
+      "jane"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 117
+   },
+   "B": {
+    "file": "audio-1498573886-headset.flac",
+    "usrid": "FE-250",
+    "gender": "F",
+    "sentence": "let's email sandy",
+    "intent": "email_sendemail",
+    "entities": [
+     [
+      "person",
+      "sandy"
+     ]
+    ],
+    "n_16k": 40960,
+    "n_8k": 20480,
+    "offset_8k": 0
+   },
+   "T_8k": 20480,
+   "abs_duration_diff_s": 0.06400000000000006,
+   "rir": {
+    "example_id": "948_4k3c031e_4k9c030f",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/948",
+    "t60": 0.217,
+    "theta1": 118.84755874118684,
+    "theta2": -48.314660357728116,
+    "separation": 167.16221909891496,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.721218467024553,
+    "seed": 1862241519
+   }
+  },
+  {
+   "group": 81,
+   "A": {
+    "file": "audio-1497270747-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "indie",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "indie"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490199539-headset.flac",
+    "usrid": "FE-347",
+    "gender": "F",
+    "sentence": "play my country playlist",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "country"
+     ]
+    ],
+    "n_16k": 28672,
+    "n_8k": 14336,
+    "offset_8k": 1550
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.8320000000000001,
+   "rir": {
+    "example_id": "932_4k3c030a_4k4c031c",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/932",
+    "t60": 0.416,
+    "theta1": 129.13913825378165,
+    "theta2": -118.64722703373866,
+    "separation": 112.21363471247969,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.994805659949996,
+    "seed": 1837803275
+   }
+  },
+  {
+   "group": 82,
+   "A": {
+    "file": "audio-1497270499-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what does regal mean",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "regal"
+     ]
+    ],
+    "n_16k": 41984,
+    "n_8k": 20992,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490261257-headset.flac",
+    "usrid": "FE-349",
+    "gender": "F",
+    "sentence": "what is a basketball",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "basketball"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 124
+   },
+   "T_8k": 20992,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "302_4k4c030i_4k6c0308",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/302",
+    "t60": 0.356,
+    "theta1": 43.931736685844726,
+    "theta2": -44.06711227515356,
+    "separation": 87.9988489609983,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.469034386500248,
+    "seed": 622262560
+   }
+  },
+  {
+   "group": 83,
+   "A": {
+    "file": "audio-1499246953-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490290907-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "show me the programmes i have today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 2201
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.512,
+   "rir": {
+    "example_id": "598_4k8c030j_4k3c030b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/598",
+    "t60": 0.345,
+    "theta1": 132.60899863298926,
+    "theta2": 146.27565536838432,
+    "separation": 13.666656735395065,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.87116629921889,
+    "seed": 1568638070
+   }
+  },
+  {
+   "group": 84,
+   "A": {
+    "file": "audio-1490368390-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "what events are in my calendar for today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 1631
+   },
+   "B": {
+    "file": "audio-1499246953-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "104_4k1c0306_4k7c030d",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/104",
+    "t60": 0.282,
+    "theta1": -149.51359439570854,
+    "theta2": -147.91009267149283,
+    "separation": 1.603501724215704,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.09521554980982,
+    "seed": 1976561535
+   }
+  },
+  {
+   "group": 85,
+   "A": {
+    "file": "audio-1499244634-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "play the latest pop song",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "pop"
+     ]
+    ],
+    "n_16k": 45056,
+    "n_8k": 22528,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490367450-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "can you play emo music please",
+    "intent": "play_music",
+    "entities": [
+     [
+      "music_genre",
+      "emo music"
+     ]
+    ],
+    "n_16k": 40960,
+    "n_8k": 20480,
+    "offset_8k": 1118
+   },
+   "T_8k": 22528,
+   "abs_duration_diff_s": 0.2559999999999998,
+   "rir": {
+    "example_id": "797_4k9c030k_4k7c0313",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/797",
+    "t60": 0.462,
+    "theta1": -40.84889484283241,
+    "theta2": -31.79453954905202,
+    "separation": 9.054355293780418,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.40468819098048,
+    "seed": 2096680266
+   }
+  },
+  {
+   "group": 86,
+   "A": {
+    "file": "audio-1490292534-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what events are this week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 19456,
+    "n_8k": 9728,
+    "offset_8k": 1130
+   },
+   "B": {
+    "file": "audio-1490368435-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "how many meetings do i have next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 0
+   },
+   "T_8k": 15872,
+   "abs_duration_diff_s": 0.768,
+   "rir": {
+    "example_id": "413_4k7c0313_4k3c031d",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/413",
+    "t60": 0.219,
+    "theta1": -69.910985042413,
+    "theta2": -26.48933131694824,
+    "separation": 43.42165372546478,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.07462821851161,
+    "seed": 618441781
+   }
+  },
+  {
+   "group": 87,
+   "A": {
+    "file": "audio-1490369023-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "describe blanket",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "blanket"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490292194-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what is hurricane",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "hurricane"
+     ]
+    ],
+    "n_16k": 23552,
+    "n_8k": 11776,
+    "offset_8k": 911
+   },
+   "T_8k": 13824,
+   "abs_duration_diff_s": 0.256,
+   "rir": {
+    "example_id": "841_4k1c0306_4k9c030l",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/841",
+    "t60": 0.216,
+    "theta1": 41.18276130928814,
+    "theta2": 17.191846691650255,
+    "separation": 23.990914617637884,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.69671363823076,
+    "seed": 1958577400
+   }
+  },
+  {
+   "group": 88,
+   "A": {
+    "file": "audio-1497270909-headset.flac",
+    "usrid": "FO-180",
+    "gender": "F",
+    "sentence": "what is the next metro to dc",
+    "intent": "transport_query",
+    "entities": [
+     [
+      "place_name",
+      "dc"
+     ],
+     [
+      "transport_type",
+      "metro"
+     ]
+    ],
+    "n_16k": 54272,
+    "n_8k": 27136,
+    "offset_8k": 772
+   },
+   "B": {
+    "file": "audio-1501693006-headset.flac",
+    "usrid": "FO-445",
+    "gender": "F",
+    "sentence": "what is the time train coming from sacramento",
+    "intent": "transport_query",
+    "entities": [
+     [
+      "place_name",
+      "sacramento"
+     ],
+     [
+      "transport_type",
+      "train"
+     ]
+    ],
+    "n_16k": 57344,
+    "n_8k": 28672,
+    "offset_8k": 0
+   },
+   "T_8k": 28672,
+   "abs_duration_diff_s": 0.19200000000000017,
+   "rir": {
+    "example_id": "672_4k0c030z_4k2c030b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/672",
+    "t60": 0.203,
+    "theta1": -142.9924763908007,
+    "theta2": -123.13439672049405,
+    "separation": 19.858079670306637,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.085411431867076,
+    "seed": 207168383
+   }
+  },
+  {
+   "group": 89,
+   "A": {
+    "file": "audio-1499246953-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "make sure i have nothing to do on friday",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "friday"
+     ]
+    ],
+    "n_16k": 46080,
+    "n_8k": 23040,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490367437-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "do i have any events happening next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 2859
+   },
+   "T_8k": 23040,
+   "abs_duration_diff_s": 0.44799999999999995,
+   "rir": {
+    "example_id": "691_4kac0312_4k8c030y",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/691",
+    "t60": 0.431,
+    "theta1": -74.32996151459976,
+    "theta2": -104.61753382311981,
+    "separation": 30.287572308520055,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 26.70021284820093,
+    "seed": 1401239808
+   }
+  },
+  {
+   "group": 90,
+   "A": {
+    "file": "audio-1490368940-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "is this week a payday week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 2087
+   },
+   "B": {
+    "file": "audio-1490290907-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "show me the programmes i have today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 0
+   },
+   "T_8k": 18944,
+   "abs_duration_diff_s": 0.5119999999999998,
+   "rir": {
+    "example_id": "335_4k6c030x_4k4c0317",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/335",
+    "t60": 0.328,
+    "theta1": -37.398289005598656,
+    "theta2": -43.34989859840175,
+    "separation": 5.951609592803095,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.673370397242095,
+    "seed": 338562968
+   }
+  },
+  {
+   "group": 91,
+   "A": {
+    "file": "audio-1490292530-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "turn my smart plug socket on",
+    "intent": "iot_wemo_on",
+    "entities": [
+     [
+      "device_type",
+      "smart plug socket"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 3776
+   },
+   "B": {
+    "file": "audio-1490368934-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "on mobile charger plug",
+    "intent": "iot_wemo_on",
+    "entities": [
+     [
+      "device_type",
+      "mobile charger plug"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.6399999999999999,
+   "rir": {
+    "example_id": "361_4k7c0315_4k4c0316",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/361",
+    "t60": 0.274,
+    "theta1": 155.4856713332664,
+    "theta2": 120.94927693179739,
+    "separation": 34.53639440146898,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.685593347694137,
+    "seed": 422244167
+   }
+  },
+  {
+   "group": 92,
+   "A": {
+    "file": "audio-1490367463-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "will it rain at all this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ],
+     [
+      "weather_descriptor",
+      "rain"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 2261
+   },
+   "B": {
+    "file": "audio-1499245521-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "is today a sunscreen day",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ],
+     [
+      "weather_descriptor",
+      "sunscreen"
+     ]
+    ],
+    "n_16k": 49152,
+    "n_8k": 24576,
+    "offset_8k": 0
+   },
+   "T_8k": 24576,
+   "abs_duration_diff_s": 0.8319999999999999,
+   "rir": {
+    "example_id": "676_4k3c0308_4k9c031b",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/676",
+    "t60": 0.208,
+    "theta1": 15.057338071575941,
+    "theta2": 39.58186420103391,
+    "separation": 24.524526129457996,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 22.96757996359693,
+    "seed": 345927530
+   }
+  },
+  {
+   "group": 93,
+   "A": {
+    "file": "audio-1490368435-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "how many meetings do i have next week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "next week"
+     ]
+    ],
+    "n_16k": 31744,
+    "n_8k": 15872,
+    "offset_8k": 2417
+   },
+   "B": {
+    "file": "audio-1490290907-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "show me the programmes i have today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 37888,
+    "n_8k": 18944,
+    "offset_8k": 0
+   },
+   "T_8k": 18944,
+   "abs_duration_diff_s": 0.3839999999999999,
+   "rir": {
+    "example_id": "663_4k6c030v_4k0c030g",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/663",
+    "t60": 0.286,
+    "theta1": 149.88969584334689,
+    "theta2": -175.96822249044288,
+    "separation": 34.14208166621026,
+    "stratum": "[30,60)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 20.418732395041754,
+    "seed": 1943207259
+   }
+  },
+  {
+   "group": 94,
+   "A": {
+    "file": "audio-1490366027-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "what is a hibachi grill",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "hibachi grill"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490292194-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what is hurricane",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "hurricane"
+     ]
+    ],
+    "n_16k": 23552,
+    "n_8k": 11776,
+    "offset_8k": 4623
+   },
+   "T_8k": 17920,
+   "abs_duration_diff_s": 0.7680000000000002,
+   "rir": {
+    "example_id": "517_4k0c030q_4k6c030h",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/517",
+    "t60": 0.466,
+    "theta1": 140.42115425142504,
+    "theta2": 157.79782559341743,
+    "separation": 17.376671341992335,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.087972401546995,
+    "seed": 1962645444
+   }
+  },
+  {
+   "group": 95,
+   "A": {
+    "file": "audio-1490290980-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "give me the definition of the word haughty",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "haughty"
+     ]
+    ],
+    "n_16k": 68608,
+    "n_8k": 34304,
+    "offset_8k": 5024
+   },
+   "B": {
+    "file": "audio-1497438314-headset.flac",
+    "usrid": "MO-189",
+    "gender": "M",
+    "sentence": "define acceleration",
+    "intent": "qa_definition",
+    "entities": [
+     [
+      "definition_word",
+      "acceleration"
+     ]
+    ],
+    "n_16k": 78848,
+    "n_8k": 39424,
+    "offset_8k": 0
+   },
+   "T_8k": 39424,
+   "abs_duration_diff_s": 0.6399999999999997,
+   "rir": {
+    "example_id": "631_4k1c0301_4k8c030x",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/631",
+    "t60": 0.252,
+    "theta1": -41.618484592086986,
+    "theta2": -52.897737195180156,
+    "separation": 11.27925260309317,
+    "stratum": "[0,15)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 24.786306212900787,
+    "seed": 94344765
+   }
+  },
+  {
+   "group": 96,
+   "A": {
+    "file": "audio-1490292505-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "how do i dial sarah",
+    "intent": "email_querycontact",
+    "entities": [
+     [
+      "person",
+      "sarah"
+     ],
+     [
+      "personal_info",
+      "dial"
+     ]
+    ],
+    "n_16k": 21504,
+    "n_8k": 10752,
+    "offset_8k": 1254
+   },
+   "B": {
+    "file": "audio-1490368420-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "what is the address of tara john",
+    "intent": "email_querycontact",
+    "entities": [
+     [
+      "person",
+      "tara john"
+     ],
+     [
+      "personal_info",
+      "address"
+     ]
+    ],
+    "n_16k": 35840,
+    "n_8k": 17920,
+    "offset_8k": 0
+   },
+   "T_8k": 17920,
+   "abs_duration_diff_s": 0.8960000000000001,
+   "rir": {
+    "example_id": "840_4k3c0319_4k0c030y",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/840",
+    "t60": 0.284,
+    "theta1": 147.3990410411226,
+    "theta2": -39.071801255588014,
+    "separation": 173.52915770328946,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 28.981747874499337,
+    "seed": 576902591
+   }
+  },
+  {
+   "group": 97,
+   "A": {
+    "file": "audio-1490291032-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what was the weather report for today",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 27648,
+    "n_8k": 13824,
+    "offset_8k": 217
+   },
+   "B": {
+    "file": "audio-1501173005-headset.flac",
+    "usrid": "ME-434",
+    "gender": "M",
+    "sentence": "how's the weather going to be this week",
+    "intent": "weather_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 38912,
+    "n_8k": 19456,
+    "offset_8k": 0
+   },
+   "T_8k": 19456,
+   "abs_duration_diff_s": 0.704,
+   "rir": {
+    "example_id": "527_4k4c0303_4k1c030z",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/527",
+    "t60": 0.455,
+    "theta1": 135.6380417553425,
+    "theta2": 106.71850252895877,
+    "separation": 28.919539226383733,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 21.051531314241718,
+    "seed": 394530142
+   }
+  },
+  {
+   "group": 98,
+   "A": {
+    "file": "audio-1490291100-headset.flac",
+    "usrid": "ME-352",
+    "gender": "M",
+    "sentence": "what's the date tomorrow",
+    "intent": "datetime_query",
+    "entities": [
+     [
+      "date",
+      "tomorrow"
+     ]
+    ],
+    "n_16k": 18432,
+    "n_8k": 9216,
+    "offset_8k": 1377
+   },
+   "B": {
+    "file": "audio-1499246453-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what day is it today",
+    "intent": "datetime_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 0
+   },
+   "T_8k": 14848,
+   "abs_duration_diff_s": 0.7040000000000002,
+   "rir": {
+    "example_id": "127_4k2c030t_4k3c0316",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/127",
+    "t60": 0.439,
+    "theta1": 154.11930499898278,
+    "theta2": 173.77217404038964,
+    "separation": 19.652869041406888,
+    "stratum": "[15,30)"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 25.347672839498294,
+    "seed": 1094994316
+   }
+  },
+  {
+   "group": 99,
+   "A": {
+    "file": "audio-1499244312-headset.flac",
+    "usrid": "MO-374",
+    "gender": "M",
+    "sentence": "what are my reminders today",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "today"
+     ]
+    ],
+    "n_16k": 39936,
+    "n_8k": 19968,
+    "offset_8k": 0
+   },
+   "B": {
+    "file": "audio-1490368940-headset.flac",
+    "usrid": "MO-355",
+    "gender": "M",
+    "sentence": "is this week a payday week",
+    "intent": "calendar_query",
+    "entities": [
+     [
+      "date",
+      "this week"
+     ]
+    ],
+    "n_16k": 29696,
+    "n_8k": 14848,
+    "offset_8k": 149
+   },
+   "T_8k": 19968,
+   "abs_duration_diff_s": 0.6399999999999999,
+   "rir": {
+    "example_id": "398_4k4c0316_4k2c030f",
+    "rir_dir": "<SEPARATION_DATA_ROOT>/data/sms_wsj/rirs/cv_dev93/398",
+    "t60": 0.493,
+    "theta1": 54.71420856555318,
+    "theta2": -102.49028024114489,
+    "separation": 157.20448880669807,
+    "stratum": "[60,180]"
+   },
+   "swaps": [
+    {
+     "swap": 1,
+     "A_pos": 0,
+     "B_pos": 1,
+     "target": "A",
+     "question_theta": "theta1"
+    },
+    {
+     "swap": 2,
+     "A_pos": 1,
+     "B_pos": 0,
+     "target": "B",
+     "question_theta": "theta1"
+    }
+   ],
+   "noise": {
+    "snr_db": 29.71868314193111,
+    "seed": 305480895
+   }
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "FSC valid",
+  "native_target": ["action", "object", "location"],
+  "exact_rule": "all three normalized slot values equal",
+  "target_any_rule": "at least one target slot value equals exactly",
+  "intent_family": {
+    "status": "auxiliary_only",
+    "mapping": "not used for primary decisions; requires manual audited mapping to SLURP concepts"
+  },
+  "unmapped_policy": "exclude only from mapped auxiliary metrics and report coverage; never replace exact-slot metrics",
+  "speaker_binding": "target speaker slot values versus interferer speaker slot values",
+  "seed": 2026
+}

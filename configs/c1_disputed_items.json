@@ -1,0 +1,11 @@
+{
+ "note": "C1 pilot (job 22010083) items whose automatic error label is disputed. Status 待确认: not listened to; spot-check after the 100-item results (decision 2026-11-05). Scores are not changed by this list.",
+ "items": [
+  {"file": "audio-1499244626-headset.flac", "slurp_id": 5021, "reason": "music_genre 'r n b' vs 'RnB': normalisation (v2 maps both to 'r n b')"},
+  {"file": "audio-1490199209-headset.flac", "slurp_id": 16821, "reason": "person \"derek 's\" vs 'derek': possessive boundary convention"},
+  {"file": "audio-1498567099-headset.flac", "slurp_id": 8447, "reason": "time 'five' vs \"five o'clock\", date 'saturday' vs 'next saturday': reference span convention"},
+  {"file": "audio-1497271142-headset.flac", "slurp_id": 10870, "reason": "'buy groceries' not annotated; hyp list_name 'my to do list'"},
+  {"file": "audio-1490291426-headset.flac", "slurp_id": 30, "reason": "transcript 'do now' (ref) vs 'do know' (hyp): needs listening"},
+  {"file": "audio-1497270542-headset.flac", "slurp_id": 9189, "reason": "transcript 'the meeting' (ref) vs 'a meeting' (hyp): needs listening"}
+ ]
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 2026,
+  "fraction": 0.2,
+  "annotations": "<SHARED_ROOT>/data/slurp/annotations/8eb1654",
+  "population": "headset recordings, known-gender usrid",
+  "known_gender_speakers": {
+    "F": 55,
+    "M": 39
+  },
+  "unk_speakers_never_held_out": 35,
+  "heldout": {
+    "F": [
+      "FE-145",
+      "FE-149",
+      "FE-344",
+      "FE-351",
+      "FO-150",
+      "FO-171",
+      "FO-231",
+      "FO-413",
+      "FO-419",
+      "FO-462",
+      "FO-488"
+    ],
+    "M": [
+      "ME-354",
+      "ME-373",
+      "ME-473",
+      "MO-164",
+      "MO-190",
+      "MO-375",
+      "MO-463",
+      "MO-467"
+    ]
+  },
+  "heldout_total": 19,
+  "excluded_files": {
+    "audio-1502309360-headset.flac": "same file attached to slurp_id 15959 and 16142 (different sentences)"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "model": "fasnet_tac",
+  "run_dir": "<SEPARATION_REPO>/multichannel/fasnet_tac/exp/sms_fasnet_tac_v1",
+  "gpu": "NVIDIA A100-PCIE-40GB",
+  "torch": "2.5.1+cu121",
+  "slurm_job_id": "21997820",
+  "provenance": {
+    "checkpoint_sha256_matches_recorded": true,
+    "checkpoint_config_equals_run_config": true,
+    "selected_epoch_matches_recorded": true,
+    "source_sha256_unchanged": true,
+    "audit_and_manifests_unchanged": true,
+    "test_utterances": 1332
+  },
+  "recorded": {
+    "si_sdr_db": 9.44040932558902,
+    "si_sdri_db": 14.895269850229806,
+    "mixture_si_sdr_db": -5.454860524640785
+  },
+  "reproduced": {
+    "si_sdr_db": 9.44040932558902,
+    "si_sdri_db": 14.895269850229806,
+    "mixture_si_sdr_db": -5.454860524640785
+  },
+  "mean_abs_diff": {
+    "si_sdr_db": 0.0,
+    "si_sdri_db": 0.0,
+    "mixture_si_sdr_db": 0.0
+  },
+  "utt_max_abs_diff": {
+    "si_sdr_db": 0.0,
+    "si_sdri_db": 0.0,
+    "mixture_si_sdr_db": 0.0
+  },
+  "permutation_mismatches": 0,
+  "utterances": 1332,
+  "elapsed_seconds": 92.32472890099962,
+  "match": true,
+  "tolerance_db": {
+    "mean": 0.001,
+    "utterance": 0.01
+  }
+}

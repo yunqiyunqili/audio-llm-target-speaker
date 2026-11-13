@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or report, please cite it as below. Dataset licences: see DATA_LICENSES.md."
+title: "audio-llm-target-speaker: target-speaker spoken language understanding with audio LLMs and ASR cascades (SLURP, FSC)"
+authors:
+  - family-names: "Li"
+    given-names: "Yunqi"
+version: "v1"
+date-released: "2026-11-13"
+license: MIT
+repository-code: "https://github.com/yunqiyunqili/audio-llm-target-speaker"

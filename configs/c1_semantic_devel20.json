@@ -1,0 +1,369 @@
+{
+  "seed": 2026,
+  "n": 20,
+  "candidates": 146,
+  "candidate_speakers": 10,
+  "rule": "A; official devel sentences x devel speakers (f_test=0.4); test texts removed",
+  "items": [
+    {
+      "file": "audio-1498573440-headset.flac",
+      "slurp_id": 6548,
+      "usrid": "FE-250",
+      "gender": "F",
+      "seconds": 2.112,
+      "sentence": "today was a tiring day",
+      "intent": "general_quirky",
+      "intent_field": "general_quirky",
+      "entities": [
+        [
+          "date",
+          "today"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490199143-headset.flac",
+      "slurp_id": 2835,
+      "usrid": "FE-347",
+      "gender": "F",
+      "seconds": 1.664,
+      "sentence": "tell me the date today",
+      "intent": "datetime_query",
+      "intent_field": "datetime_query",
+      "entities": [
+        [
+          "date",
+          "today"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1497439493-headset.flac",
+      "slurp_id": 16580,
+      "usrid": "MO-189",
+      "gender": "M",
+      "seconds": 7.488,
+      "sentence": "google find the new email address for bill that i added friday",
+      "intent": "email_query",
+      "intent_field": "email_query",
+      "entities": [
+        [
+          "date",
+          "friday"
+        ],
+        [
+          "person",
+          "bill"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1499244626-headset.flac",
+      "slurp_id": 5021,
+      "usrid": "MO-374",
+      "gender": "M",
+      "seconds": 3.2,
+      "sentence": "i like r n b",
+      "intent": "music_likeness",
+      "intent_field": "music_likeness",
+      "entities": [
+        [
+          "music_genre",
+          "r n b"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490261341-headset.flac",
+      "slurp_id": 14285,
+      "usrid": "FE-349",
+      "gender": "F",
+      "seconds": 1.984,
+      "sentence": "tell me about new york",
+      "intent": "qa_factoid",
+      "intent_field": "qa_factoid",
+      "entities": [
+        [
+          "place_name",
+          "new york"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1501692000-headset.flac",
+      "slurp_id": 4424,
+      "usrid": "FO-445",
+      "gender": "F",
+      "seconds": 2.496,
+      "sentence": "will it rain at all this week",
+      "intent": "weather_query",
+      "intent_field": "weather_query",
+      "entities": [
+        [
+          "date",
+          "this week"
+        ],
+        [
+          "weather_descriptor",
+          "rain"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1497270542-headset.flac",
+      "slurp_id": 9189,
+      "usrid": "FO-180",
+      "gender": "F",
+      "seconds": 3.136,
+      "sentence": "remind me about the meeting in one hour",
+      "intent": "calendar_set",
+      "intent_field": "calendar_set",
+      "entities": [
+        [
+          "event_name",
+          "meeting"
+        ],
+        [
+          "time",
+          "one hour"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490291426-headset.flac",
+      "slurp_id": 30,
+      "usrid": "ME-352",
+      "gender": "M",
+      "seconds": 4.736,
+      "sentence": "cleaning is good dust is so bad do now your magic clean my carpet",
+      "intent": "iot_cleaning",
+      "intent_field": "iot_cleaning",
+      "entities": [
+        [
+          "house_place",
+          "carpet"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490368390-headset.flac",
+      "slurp_id": 7065,
+      "usrid": "MO-355",
+      "gender": "M",
+      "seconds": 2.496,
+      "sentence": "what events are in my calendar for today",
+      "intent": "calendar_query",
+      "intent_field": "calendar_query",
+      "entities": [
+        [
+          "date",
+          "today"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1498573697-headset.flac",
+      "slurp_id": 147,
+      "usrid": "FE-250",
+      "gender": "F",
+      "seconds": 1.6,
+      "sentence": "i like to listen to jazz",
+      "intent": "play_music",
+      "intent_field": "play_music",
+      "entities": [
+        [
+          "music_genre",
+          "jazz"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490264329-headset.flac",
+      "slurp_id": 534,
+      "usrid": "FE-349",
+      "gender": "F",
+      "seconds": 2.688,
+      "sentence": "set a wake up call for ten am",
+      "intent": "alarm_set",
+      "intent_field": "alarm_set",
+      "entities": [
+        [
+          "time",
+          "ten am"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490199209-headset.flac",
+      "slurp_id": 16821,
+      "usrid": "FE-347",
+      "gender": "F",
+      "seconds": 2.112,
+      "sentence": "open derek's contact information",
+      "intent": "email_querycontact",
+      "intent_field": "email_querycontact",
+      "entities": [
+        [
+          "person",
+          "derek 's"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1497439695-headset.flac",
+      "slurp_id": 9965,
+      "usrid": "MO-189",
+      "gender": "M",
+      "seconds": 3.328,
+      "sentence": "how can i cook pasta",
+      "intent": "cooking_recipe",
+      "intent_field": "cooking_recipe",
+      "entities": [
+        [
+          "food_type",
+          "pasta"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1501691810-headset.flac",
+      "slurp_id": 58,
+      "usrid": "FO-445",
+      "gender": "F",
+      "seconds": 4.096,
+      "sentence": "find my thai takeaways around grass market",
+      "intent": "takeaway_query",
+      "intent_field": "takeaway_query",
+      "entities": [
+        [
+          "food_type",
+          "thai"
+        ],
+        [
+          "order_type",
+          "takeaways"
+        ],
+        [
+          "place_name",
+          "grassmarket"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1499244960-headset.flac",
+      "slurp_id": 12236,
+      "usrid": "MO-374",
+      "gender": "M",
+      "seconds": 2.432,
+      "sentence": "book uber from my home",
+      "intent": "transport_taxi",
+      "intent_field": "transport_taxi",
+      "entities": [
+        [
+          "place_name",
+          "home"
+        ],
+        [
+          "transport_agency",
+          "uber"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1497271142-headset.flac",
+      "slurp_id": 10870,
+      "usrid": "FO-180",
+      "gender": "F",
+      "seconds": 4.608,
+      "sentence": "add buy groceries to my to do list for today",
+      "intent": "lists_createoradd",
+      "intent_field": "lists_createoradd",
+      "entities": [
+        [
+          "date",
+          "today"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490368920-headset.flac",
+      "slurp_id": 14430,
+      "usrid": "MO-355",
+      "gender": "M",
+      "seconds": 2.176,
+      "sentence": "can you tell me what haggis looks like",
+      "intent": "qa_definition",
+      "intent_field": "qa_definition",
+      "entities": [
+        [
+          "definition_word",
+          "haggis"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1490292324-headset.flac",
+      "slurp_id": 12095,
+      "usrid": "ME-352",
+      "gender": "M",
+      "seconds": 2.88,
+      "sentence": "can you recommend any pub in mg road",
+      "intent": "recommendation_locations",
+      "intent_field": "recommendation_locations",
+      "entities": [
+        [
+          "business_type",
+          "pub"
+        ],
+        [
+          "place_name",
+          "mg road"
+        ]
+      ]
+    },
+    {
+      "file": "audio--1505323875-headset.flac",
+      "slurp_id": 7880,
+      "usrid": "FE-491",
+      "gender": "F",
+      "seconds": 3.456,
+      "sentence": "tell me all the events between today and the twenty first",
+      "intent": "calendar_query",
+      "intent_field": "calendar_query",
+      "entities": [
+        [
+          "date",
+          "today"
+        ],
+        [
+          "date",
+          "twenty first"
+        ]
+      ]
+    },
+    {
+      "file": "audio-1498567099-headset.flac",
+      "slurp_id": 8447,
+      "usrid": "FE-250",
+      "gender": "F",
+      "seconds": 3.456,
+      "sentence": "set a reminder for next saturday go to the library at five o'clock",
+      "intent": "calendar_set",
+      "intent_field": "calendar_set",
+      "entities": [
+        [
+          "date",
+          "saturday"
+        ],
+        [
+          "place_name",
+          "library"
+        ],
+        [
+          "time",
+          "five"
+        ]
+      ]
+    }
+  ]
+}

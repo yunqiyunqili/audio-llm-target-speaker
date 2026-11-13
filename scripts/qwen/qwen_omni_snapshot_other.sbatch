@@ -1,0 +1,21 @@
+#!/bin/bash
+# Snapshot front-end downstream on the OTHER stream (docs/c6_delta_spatialnet_v1.md). IN-TRAINING snapshot; diagnosis only.
+# Usage: sbatch scripts/qwen/qwen_omni_snapshot_other.sbatch <model> <snapshot_dir_name> <selection_jsonl>
+#SBATCH --job-name=qwen-omni-snapoth
+#SBATCH --account=<SLURM_ACCOUNT>
+#SBATCH --partition=<GPU_PARTITION>
+#SBATCH --gres=gpu:a100:1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=48G
+#SBATCH --time=00:30:00
+#SBATCH --output=<REPO_ROOT>/outputs/logs/qwen_omni_snapshot_other_%j.out
+set -euo pipefail
+cd <REPO_ROOT>
+SHARED=<SHARED_ROOT>
+export PATH=$SHARED/envs/qwen_omni/bin:$PATH
+export HF_HOME=$SHARED/checkpoints/hf HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
+export OMP_NUM_THREADS=4 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1
+M=$1; SNAP=$2; SEL=$3
+nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv
+python scripts/qwen/qwen_omni_snapshot.py --model $M --sep-dir $SHARED/data/mix_v1/separated_v1_snapshot/$SNAP \
+  --selection $SEL --out "outputs/qwen_omni_snapshot_other/${SLURM_JOB_ID}_$M"
