@@ -65,19 +65,22 @@
 - FSC 的评分依赖冻结的 SLURP → FSC 映射表；映射表起草人曾看过 pilot 的部分输出（规则只依据标签定义和 FSC train 频次）。
 
 ## 文档索引
-| 文件 | 内容 |
-|---|---|
-| `docs/slurp_test_report_v1.md` | **对外报告（论文底稿）**：设置、主要结果、FSC 跨数据集、风险、局限、后续工作 |
-| `docs/slurp_test_freeze_v1.md` | SLURP test 冻结协议、审批决定、S0–S5 运行记录（作业号、commit、sha256） |
-| `docs/fsc_extension_plan_v1.md` | FSC 扩充方案与冻结映射表（每条规则的依据和计数） |
-| `docs/fsc_extension_results_v1.md` | FSC 扩充运行记录、结果、事后探索性分析 |
-| `docs/lora_slu_plan_v2.md` / `docs/lora_v2_runs.md` | LoRA 训练计划与 devel 阶段全部运行记录 |
-| `docs/mix_spec_v1.md` | 两人混合构造规则（mix_v1） |
-| `docs/c6_real_v1.md` | 真实方向不确定性评估（扇区、噪声、拒答 A/B） |
-| `docs/spatialnet_final_v1.md` | SpatialNet ep100 最终 checkpoint 与 devel 评估 |
-| `docs/binding_score_v1.md` / `docs/scoring_rules.md` | 评分定义 |
-| `docs/fsc_pilot_plan.md` | FSC 获取、审计与 64 条 pilot |
-| `docs/plan_update_v2.md` | 主线修订与 M1/M2/M3 定义 |
+| 文件 | 英文译本 | 内容 |
+|---|---|---|
+| `docs/slurp_test_report_v1.md` | `docs/slurp_test_report_v1.en.md` | **对外报告（论文底稿）**：设置、主要结果、FSC 跨数据集、风险、局限、后续工作 |
+| `docs/slurp_test_freeze_v1.md` | `docs/slurp_test_freeze_v1.en.md` | SLURP test 冻结协议、审批决定、S0–S5 运行记录（作业号、commit、sha256） |
+| `docs/fsc_extension_plan_v1.md` | `docs/fsc_extension_plan_v1.en.md` | FSC 扩充方案与冻结映射表（每条规则的依据和计数） |
+| `docs/fsc_extension_results_v1.md` | `docs/fsc_extension_results_v1.en.md` | FSC 扩充运行记录、结果、事后探索性分析 |
+| `docs/lora_slu_plan_v2.md` / `docs/lora_v2_runs.md` | `docs/lora_slu_plan_v2.en.md` / `docs/lora_v2_runs.en.md` | LoRA 训练计划与 devel 阶段全部运行记录 |
+| `docs/mix_spec_v1.md` | `docs/mix_spec_v1.en.md` | 两人混合构造规则（mix_v1） |
+| `docs/c6_real_v1.md` | `docs/c6_real_v1.en.md` | 真实方向不确定性评估（扇区、噪声、拒答 A/B） |
+| `docs/spatialnet_final_v1.md` | `docs/spatialnet_final_v1.en.md` | SpatialNet ep100 最终 checkpoint 与 devel 评估 |
+| `docs/binding_score_v1.md` / `docs/scoring_rules.md` | `docs/binding_score_v1.en.md` / `docs/scoring_rules.en.md` | 评分定义 |
+| `docs/fsc_pilot_plan.md` | `docs/fsc_pilot_plan.en.md` | FSC 获取、审计与 64 条 pilot |
+| `docs/plan_update_v2.md` | `docs/plan_update_v2.en.md` | 主线修订与 M1/M2/M3 定义 |
+| `docs/glossary_zh_en.md` | （中英对照，无单独译本） | 中英术语表（英文译本统一使用的译法） |
+
+docs/ 下每份文档都有英文译本（*.en.md），以中文原文为准。
 
 ## 复现
 **环境**（`envs/` → `<SHARED_ROOT>/envs`）：

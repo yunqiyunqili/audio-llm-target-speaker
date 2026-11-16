@@ -65,19 +65,22 @@ Figures (`docs/figures/`, generated from the result files by `scripts/figures/ma
 - FSC scoring depends on a frozen SLURP → FSC mapping table; the author of the mapping table had seen part of the pilot outputs (the rules are based only on label definitions and FSC train frequencies).
 
 ## Document index
-| File | Content |
-|---|---|
-| `docs/slurp_test_report_v1.md` | **External report (paper draft)**: setup, main results, FSC cross-dataset check, risk, limitations, future work |
-| `docs/slurp_test_freeze_v1.md` | SLURP test freeze protocol, approval decisions, S0–S5 run records (job IDs, commits, sha256) |
-| `docs/fsc_extension_plan_v1.md` | FSC extension plan and frozen mapping table (basis and counts for every rule) |
-| `docs/fsc_extension_results_v1.md` | FSC extension run records, results, post-hoc exploratory analyses |
-| `docs/lora_slu_plan_v2.md` / `docs/lora_v2_runs.md` | LoRA training plan and all devel-stage run records |
-| `docs/mix_spec_v1.md` | Two-talker mixture construction rules (mix_v1) |
-| `docs/c6_real_v1.md` | Realistic direction-uncertainty evaluation (sector, noise, abstention A/B) |
-| `docs/spatialnet_final_v1.md` | SpatialNet ep100 final checkpoint and devel evaluation |
-| `docs/binding_score_v1.md` / `docs/scoring_rules.md` | Scoring definitions |
-| `docs/fsc_pilot_plan.md` | FSC acquisition, audit and the 64-utterance pilot |
-| `docs/plan_update_v2.md` | Main-line revision and M1/M2/M3 definitions |
+| File (Chinese original) | English translation | Content |
+|---|---|---|
+| `docs/slurp_test_report_v1.md` | `docs/slurp_test_report_v1.en.md` | **External report (paper draft)**: setup, main results, FSC cross-dataset check, risk, limitations, future work |
+| `docs/slurp_test_freeze_v1.md` | `docs/slurp_test_freeze_v1.en.md` | SLURP test freeze protocol, approval decisions, S0–S5 run records (job IDs, commits, sha256) |
+| `docs/fsc_extension_plan_v1.md` | `docs/fsc_extension_plan_v1.en.md` | FSC extension plan and frozen mapping table (basis and counts for every rule) |
+| `docs/fsc_extension_results_v1.md` | `docs/fsc_extension_results_v1.en.md` | FSC extension run records, results, post-hoc exploratory analyses |
+| `docs/lora_slu_plan_v2.md` / `docs/lora_v2_runs.md` | `docs/lora_slu_plan_v2.en.md` / `docs/lora_v2_runs.en.md` | LoRA training plan and all devel-stage run records |
+| `docs/mix_spec_v1.md` | `docs/mix_spec_v1.en.md` | Two-talker mixture construction rules (mix_v1) |
+| `docs/c6_real_v1.md` | `docs/c6_real_v1.en.md` | Realistic direction-uncertainty evaluation (sector, noise, abstention A/B) |
+| `docs/spatialnet_final_v1.md` | `docs/spatialnet_final_v1.en.md` | SpatialNet ep100 final checkpoint and devel evaluation |
+| `docs/binding_score_v1.md` / `docs/scoring_rules.md` | `docs/binding_score_v1.en.md` / `docs/scoring_rules.en.md` | Scoring definitions |
+| `docs/fsc_pilot_plan.md` | `docs/fsc_pilot_plan.en.md` | FSC acquisition, audit and the 64-utterance pilot |
+| `docs/plan_update_v2.md` | `docs/plan_update_v2.en.md` | Main-line revision and M1/M2/M3 definitions |
+| `docs/glossary_zh_en.md` | (bilingual, no separate translation) | Chinese–English glossary (terms used consistently in the English translations) |
+
+Each document under docs/ has an English translation (*.en.md); the Chinese original is authoritative.
 
 ## Reproduction
 **Environments** (`envs/` → `<SHARED_ROOT>/envs`):
