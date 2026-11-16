@@ -1,5 +1,7 @@
 English translation of mix_spec_v1.md (translated 2026-11-16). The Chinese original is authoritative. 中文原文：mix_spec_v1.md
 
+This document was frozen before results were seen; the translation was made afterwards and does not change the frozen content.
+
 # Mixture pairing specification v1 (mix_spec_v1; 2026-11-05)
 
 Status: pair filtering done; the C3 direction instruction frozen (2026-11-05); the list redrawn under the second-version constraints below (v2, superseding the first version); mixing rules written, with a dry-run that writes no audio.

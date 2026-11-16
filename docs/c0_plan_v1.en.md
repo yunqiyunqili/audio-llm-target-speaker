@@ -1,5 +1,7 @@
 English translation of c0_plan_v1.md (translated 2026-11-16). The Chinese original is authoritative. 中文原文：c0_plan_v1.md
 
+This document was frozen before results were seen; the translation was made afterwards and does not change the frozen content.
+
 # C0 v1: SLURP reference transcripts → frozen T2 (c0-v1; 2026-11-06; **plan and job configuration, not yet submitted, awaiting approval**)
 
 > - Purpose: remove the "listening" problem entirely and see the upper bound of text understanding (C0 in `docs/conditions.md`).
